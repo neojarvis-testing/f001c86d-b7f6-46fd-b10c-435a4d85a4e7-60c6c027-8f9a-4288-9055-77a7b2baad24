@@ -44,6 +44,7 @@
       <artifactId>selenium-java</artifactId>
       <version>4.15.0</version>
     </dependency>
+
     <dependency>
       <groupId>org.apache.poi</groupId>
       <artifactId>poi</artifactId>
@@ -65,7 +66,6 @@
     <version>1.2.17</version>
 </dependency>
   </dependencies>
-  
   <build>
     <pluginManagement>      <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
@@ -111,4 +111,4 @@
       </plugins>
     </pluginManagement>
   </build>
-</project>
+  </project>
