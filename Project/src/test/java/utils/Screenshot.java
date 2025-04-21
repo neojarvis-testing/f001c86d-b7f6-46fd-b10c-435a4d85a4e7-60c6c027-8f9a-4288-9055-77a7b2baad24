@@ -1,5 +1,39 @@
 package utils;
 
-public class Screenshot {
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+import com.google.common.io.Files;
+
+
+public class Screenshot extends Base{
+
+    public static TakesScreenshot takesScreenshot;
+
+    public static void takeScreenshot(String fileName){
+        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+        String newFileName = fileName +"_"+ timeStamp +".png";
+        takesScreenshot = (TakesScreenshot) driver;
+
+        File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
+
+        File screenshotsDirectory = new File(System.getProperty("user.dir")+ "/Screenshots");
+        if(!screenshotsDirectory .exists()){
+            screenshotsDirectory.mkdirs();
+        }
+
+        File targetFile = new File(screenshotsDirectory,newFileName);
+        try{
+            Files.copy(sourceFile,targetFile);
+        }catch(IOException e){
+            e.printStackTrace();
+
+        }
+    }
 
 }
