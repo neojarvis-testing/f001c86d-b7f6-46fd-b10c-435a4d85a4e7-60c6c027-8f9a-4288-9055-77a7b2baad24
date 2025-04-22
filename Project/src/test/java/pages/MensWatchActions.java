@@ -18,11 +18,11 @@ public class MensWatchActions extends Base{
     WebDriverHelper helper;
     ExtentTest test;
     Assertion asserts;
-    ExtentTest test;
 
     public MensWatchActions(ExtentTest test) {
         helper = new WebDriverHelper(driver);
         this.test=test;
+    }
     /*
      * Method Name: MensWatchActions
      * Author Name: Muskan Jha
@@ -70,11 +70,7 @@ public class MensWatchActions extends Base{
             test.log(Status.FAIL,"cant clicked cookies");
             LoggerHandler.logInfo("clicked on cookies");
             test.log(Status.PASS, "clicked on cookies");
-        } catch (Exception e) {
-            e.getMessage();
-            LoggerHandler.logError("clicked on cookies");
-            test.log(Status.FAIL, "clicked on cookies");
-        }
+        } 
     }
 
     /*
