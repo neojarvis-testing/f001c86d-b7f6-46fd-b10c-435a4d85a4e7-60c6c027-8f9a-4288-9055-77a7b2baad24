@@ -38,12 +38,10 @@ public class Base {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        // String siteUrl = prop.getProperty("url");
-        // driver = new ChromeDriver();
+        
         try {
             driver = new RemoteWebDriver(new URL(prop.getProperty("gridurl")), new ChromeOptions());
         } catch (MalformedURLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         driver.get(prop.getProperty("url"));

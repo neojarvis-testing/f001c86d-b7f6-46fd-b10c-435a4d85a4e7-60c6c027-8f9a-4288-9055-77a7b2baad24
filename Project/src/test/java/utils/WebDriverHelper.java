@@ -27,6 +27,16 @@ public class WebDriverHelper {
             System.out.println(e.getMessage());
         }
     }
+
+    public void waitForElementToBeClickable(By locator, int timeoutInSeconds) {
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds))
+                .until(ExpectedConditions.elementToBeClickable(locator));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
     public void clickOnElement(By locator){
         try{
         WebElement elem = driver.findElement(locator);
@@ -66,7 +76,7 @@ public class WebDriverHelper {
     }
     public void enterText(By locator, String data) {
         try {
-            WebElement webElement = driver.findElement(locator);
+           WebElement webElement = driver.findElement(locator);
           webElement.sendKeys(data);
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -88,6 +98,7 @@ public class WebDriverHelper {
     }
     public void enterAction(By locator) {
         try {
+
             WebElement webElement = driver.findElement(locator);
             webElement.sendKeys(Keys.ENTER);
         } catch (Exception e) {
