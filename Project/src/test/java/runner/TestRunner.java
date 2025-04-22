@@ -29,7 +29,6 @@ public class TestRunner extends Base{
     public void configBrowser(){
         openBrowser();
     }
-
     // @Test 
     // public void Rolex(){
     //     HomePage obj = new HomePage(test);
@@ -69,6 +68,18 @@ public class TestRunner extends Base{
         p1.clickOnCarlex();
         p1.clickOnFirst();
         p1.clickOnLive();
+    @Test (priority = 1)
+    public void Rolex(){
+        test = reports.createTest("TestCase02");
+        HomePage obj = new HomePage(test);
+        obj.rolex();
+    }
+    @Test (priority = 2)
+    public void testCasethree()
+    {
+        test = reports.createTest("TestCase03");
+        MensWatchActions mensWatch = new MensWatchActions(driver, test);
+        mensWatch.MensWatchTestCase();
     }
 
 
