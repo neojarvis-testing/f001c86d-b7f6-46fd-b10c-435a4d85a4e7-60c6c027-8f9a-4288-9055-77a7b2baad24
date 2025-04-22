@@ -19,6 +19,13 @@ public class WebDriverHelper {
     public  WebDriverHelper(WebDriver driver){
         this.driver = driver;
        }
+    /*
+     * Method Name : waitForElementToBeVisible
+     * Author Name : Praneeth
+     * Description : This method is used to wait until the element get visible
+     * Parameters : locator , timeoutInSeconds
+     * Return Type : void
+     */
     public void waitForElementToBeVisible(By locator, int timeoutInSeconds) {
         try {
             new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds))
@@ -27,7 +34,13 @@ public class WebDriverHelper {
             System.out.println(e.getMessage());
         }
     }
-
+    /*
+     * Method Name : waitForElementToBeClickable
+     * Author Name : Praneeth
+     * Description : This method is used to wait until the element is clicked
+     * Parameters : locator , timeoutInSeconds
+     * Return Type : void
+     */
     public void waitForElementToBeClickable(By locator, int timeoutInSeconds) {
         try {
             new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds))
@@ -36,7 +49,13 @@ public class WebDriverHelper {
             System.out.println(e.getMessage());
         }
     }
-    
+    /*
+     * Method Name : clickOnElement
+     * Author Name : Praneeth
+     * Description : This method is used to click on the element
+     * Parameters : locator
+     * Return Type : void
+     */
     public void clickOnElement(By locator){
         try{
         WebElement elem = driver.findElement(locator);
@@ -45,7 +64,13 @@ public class WebDriverHelper {
             System.out.println(e.getMessage());
         }
      }
-    
+    /*
+     * Method Name : typeInElement
+     * Author Name : Praneeth
+     * Description : This method is used to input value
+     * Parameters : locator , text
+     * Return Type : void
+     */
     public void typeInElement(By locator, String text){
         try {
             WebElement elem = driver.findElement(locator);
@@ -55,6 +80,13 @@ public class WebDriverHelper {
         }
         
     }
+    /*
+     * Method Name : selectDropDown
+     * Author Name : Praneeth
+     * Description : This method is used to select value in a dropdown
+     * Parameters : path , value
+     * Return Type : void
+     */
     public void selectDropDown(By path, String value){
         try {
             WebElement element = driver.findElement(path);
@@ -65,6 +97,13 @@ public class WebDriverHelper {
         }
         
     }
+    /*
+     * Method Name : hoverOverElement
+     * Author Name : Praneeth
+     * Description : This method is used to hover on a element
+     * Parameters : locator
+     * Return Type : void
+     */
     public void hoverOverElement(By locator) {
         try {
             WebElement webElement = driver.findElement(locator);
@@ -74,6 +113,13 @@ public class WebDriverHelper {
             System.out.println(e.getMessage());
         }
     }
+    /*
+     * Method Name : enterText
+     * Author Name : Praneeth
+     * Description : This method is used to enter data 
+     * Parameters : locator , data
+     * Return Type : void
+     */
     public void enterText(By locator, String data) {
         try {
            WebElement webElement = driver.findElement(locator);
@@ -83,6 +129,13 @@ public class WebDriverHelper {
         }
           
     }
+    /*
+     * Method Name : windowSwitch
+     * Author Name : Praneeth
+     * Description : This method is used to shift the focus of the window
+     * Parameters : NA
+     * Return Type : void
+     */
     public void windowSwitch(){
         try {
             String current = driver.getWindowHandle();
@@ -96,6 +149,13 @@ public class WebDriverHelper {
             System.out.println(e.getMessage());
         }
     }
+    /*
+     * Method Name : enterAction
+     * Author Name : Praneeth
+     * Description : This method is used to perform enter action after entering value
+     * Parameters : locator
+     * Return Type : void
+     */
     public void enterAction(By locator) {
         try {
 
@@ -105,6 +165,13 @@ public class WebDriverHelper {
             System.out.println(e.getMessage());
         }
     }
+    /*
+     * Method Name : javascriptScroll
+     * Author Name : Praneeth
+     * Description : This method is used to scroll to the element 
+     * Parameters : locator
+     * Return Type : void
+     */
     public void javascriptScroll(By locator) {
         try {
             WebElement element = driver.findElement(locator);
@@ -114,6 +181,13 @@ public class WebDriverHelper {
             System.out.println(e.getMessage());
         }    
     }
+    /*
+     * Method Name : alertMessage
+     * Author Name : Praneeth
+     * Description : This method is used to handle alerts
+     * Parameters : path
+     * Return Type : void
+     */
     public void alertMessage(By path){
         try {
             Alert alert = driver.switchTo().alert();

@@ -9,17 +9,9 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
-import pages.AccessibilityActions;
-import pages.ContactPageActions;
-import pages.BraceletsActions;
 import pages.*;
-import pages.HomePage;
-import pages.WatchesPage;
-import pages.MensWatchActions;
-import pages.RingsPageActions;
 import utils.Base;
 import utils.Reporter;
-import pages.SearchActions;
 
 public class TestRunner extends Base{
     ExtentReports reports;
@@ -40,7 +32,6 @@ public class TestRunner extends Base{
     public void case1(){
         test=reports.createTest("case1");
         WatchesPage obj1=new WatchesPage(test);
-        
         obj1.testcase1();
     }
     @Test
@@ -72,9 +63,7 @@ public class TestRunner extends Base{
         c1.clickOnDelivery();
         c1.clickOnclick();
         c1.clickOnReturn();
-        c1.clickOnAffrim();
-        c1.clickOnFeedback();
-        c1.clusterVerification();
+    }
 
     @Test (priority = 1)
     public void Rolex(){
@@ -82,14 +71,14 @@ public class TestRunner extends Base{
         HomePage obj = new HomePage(test);
         obj.rolex();
     }
-    @Test
+    @Test(priority = 2)
     public void testCasethree()
     {
         test = reports.createTest("TestCase03");
         MensWatchActions mensWatch = new MensWatchActions(driver, test);
         mensWatch.MensWatchTestCase();
     }
-    @Test
+    @Test(priority = 3)
     public void testCase4()
     {
         test = reports.createTest("Test case 4");
@@ -104,7 +93,7 @@ public class TestRunner extends Base{
         AboutMayors abtMay = new AboutMayors(test);
         abtMay.test10();
     }
-    @Test
+    @Test(priority = 6)
     public void test(){
         test = reports.createTest("TestCase-07");
         SearchActions sa = new SearchActions(driver,test);
@@ -112,7 +101,7 @@ public class TestRunner extends Base{
         sa.search();
 
     }
-    @Test
+    @Test(priority = 5)
     public void testBracelets(){
         test = reports.createTest("TestCase-05");
         BraceletsActions ba = new BraceletsActions(driver,test);
