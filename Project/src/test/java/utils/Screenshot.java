@@ -19,7 +19,7 @@ public class Screenshot extends Base{
         String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
         String newFileName = fileName +"_"+ timeStamp +".png";
         takesScreenshot = (TakesScreenshot) driver;
-
+        
         File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
 
         File screenshotsDirectory = new File(System.getProperty("user.dir")+ "/screenshots");

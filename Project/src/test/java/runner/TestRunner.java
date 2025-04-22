@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+import pages.*;
 import pages.HomePage;
 import pages.MensWatchActions;
 import pages.RingsPageActions;
@@ -29,6 +30,7 @@ public class TestRunner extends Base{
     public void configBrowser(){
         openBrowser();
     }
+
     // @Test 
     // public void Rolex(){
     //     HomePage obj = new HomePage(test);
@@ -74,12 +76,27 @@ public class TestRunner extends Base{
         HomePage obj = new HomePage(test);
         obj.rolex();
     }
-    @Test (priority = 2)
+    @Test
     public void testCasethree()
     {
         test = reports.createTest("TestCase03");
         MensWatchActions mensWatch = new MensWatchActions(driver, test);
         mensWatch.MensWatchTestCase();
+    }
+    @Test
+    public void testCase4()
+    {
+        test = reports.createTest("Test case 4");
+        JewelryPage jew  = new JewelryPage(test);
+        jew.test4();
+    }
+
+    @Test
+    public void testCase10()
+    {
+        test = reports.createTest("Test case 10");
+        AboutMayors abtMay = new AboutMayors(test);
+        abtMay.test10();
     }
 
 
