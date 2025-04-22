@@ -14,7 +14,6 @@ import utils.Base;
 import utils.Reporter;
 
 public class TestRunner extends Base{
-    
     ExtentReports reports;
     ExtentTest test;
 
