@@ -37,19 +37,9 @@ public class TestRunner extends Base{
     @Test (priority = 2)
     public void testCasethree()
     {
-        MensWatchActions mensWatch = new MensWatchActions(driver);
-        test = reports.createTest("testCase03");
-        mensWatch.clickOnAcceptCookies();
-        mensWatch.hoverOverBrands();
-        mensWatch.clickOnOmega();
-        mensWatch.verifyOmegaTitle();
-        mensWatch.clickOnMensWatches();
-        mensWatch.clickOnSeaMaster();
-        mensWatch.clickOnBlue();
-        mensWatch.clickOnFirstProduct();
-        mensWatch.clickOnAddToShoppingBag();
-        mensWatch.verifyKeyword();
-        mensWatch.takeScreenshot();
+        test = reports.createTest("TestCase03");
+        MensWatchActions mensWatch = new MensWatchActions(driver, test);
+        mensWatch.MensWatchTestCase();
     }
 
 
