@@ -15,6 +15,7 @@ public class Assertion {
 	public void verifyTextInPage(By locator, String value) {
 		try {
 			WebElement element = driver.findElement(locator);
+			LoggerHandler.logInfo(element.getText());
 			Assert.assertTrue(element.getText().contains(value));
 		} catch (AssertionError e) {
 			e.printStackTrace();
@@ -24,6 +25,7 @@ public class Assertion {
 	public void verifyURLOfPage(String value) {
 		try {
 			String text = driver.getCurrentUrl();
+			LoggerHandler.logInfo(text);
 			Assert.assertTrue(text.contains(value));
 		} catch (AssertionError e) {
 			e.getStackTrace();
@@ -34,6 +36,7 @@ public class Assertion {
 	public void verifyTitleOfPage(String value) {
 		try {
 			String text = driver.getTitle();
+			LoggerHandler.logInfo(text);
 			Assert.assertTrue(text.contains(value));
 		} catch (AssertionError e) {
 			e.getStackTrace();
