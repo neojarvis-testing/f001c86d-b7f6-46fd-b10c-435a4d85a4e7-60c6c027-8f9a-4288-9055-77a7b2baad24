@@ -15,11 +15,4 @@ public class WatchesLocators {
     public static By clickOnBlack=By.xpath("//div[text()='Black ']");
     public static By clickOnFirstProduct=By.xpath("//div[@class='productTileName']");
     public static By clickOnAdd=By.cssSelector("button[id='addToCartSubmit']");
-    
-
-
-
-
-
-
 }

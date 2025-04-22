@@ -106,6 +106,7 @@ public class WatchesPage {
         try {
             helper.waitForElementToBeVisible(WatchesLocators.clickOnAdd,5);
             helper.clickOnElement(WatchesLocators.clickOnAdd);
+            Screenshot.takeScreenshot("Add To Shopping Bag");
         } catch (Exception e) {
             e.printStackTrace();
         }
