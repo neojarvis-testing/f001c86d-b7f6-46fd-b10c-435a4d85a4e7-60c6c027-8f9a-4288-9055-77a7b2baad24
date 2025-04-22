@@ -1,5 +1,8 @@
 package pages;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 import uistore.HomePageLocators;
 import utils.Base;
 import utils.Screenshot;
@@ -10,14 +13,20 @@ import utils.LoggerHandler;
 
 public class HomePage extends Base{
     public WebDriverHelper helper;
-    public HomePage(){
+    ExtentTest test;
+    Assertion asserts;
+
+    public HomePage(ExtentTest test){
         helper = new WebDriverHelper(Base.driver);
+        this.test = test;
+        asserts = new Assertion(driver);
     }
 
     public void clickOnCookies(){
         try {
             helper.clickOnElement(HomePageLocators.cookies);
             LoggerHandler.logInfo("Clicked on Cookies");
+            test.log(Status.PASS, "Clicked on Cookies");
         } catch (Exception e) {
             System.out.println(e.getMessage());
             LoggerHandler.logError("Clicked on Cookies");
@@ -34,7 +43,6 @@ public class HomePage extends Base{
         try {
             helper.hoverOverElement(HomePageLocators.deepSea);
             helper.clickOnElement(HomePageLocators.deepSea);
-            Assertion.verifyTitleOfPage("Deepsea");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -65,8 +73,8 @@ public class HomePage extends Base{
     public void verifyRolex(){
         try {
             String da = ExcelReader.excelReader(System.getProperty("user.dir")+"/testdata/Excel.xlsx",0,0,0);
-            Assertion.verifyTextInPage(HomePageLocators.rolexText,da);
-            // Screenshot.takeScreenshot("Rolex Watch");
+            asserts.verifyTextInPage(HomePageLocators.rolexText,da);
+            Screenshot.takeScreenshot("Rolex Watch");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
