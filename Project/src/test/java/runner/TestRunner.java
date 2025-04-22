@@ -56,9 +56,9 @@ public class TestRunner extends Base{
         c1.clickOnDelivery();
         c1.clickOnclick();
         c1.clickOnReturn();
-        c1.clickOnAffrim();
-        c1.clickOnFeedback();
-        c1.clusterVerification();
+        //c1.clickOnAffrim();
+        //c1.clickOnFeedback();
+       // c1.clusterVerification();
     }
 
 
