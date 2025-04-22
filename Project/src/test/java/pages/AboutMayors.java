@@ -39,6 +39,8 @@ public class AboutMayors extends Base{
         helper.clickOnElement(JewelryLocators.acceptCook);
         helper.javascriptScroll(AboutUsPageLocators.aboutMayors);
         test.log(Status.INFO,"scroll down to footer");
+        
+
         helper.clickOnElement(AboutUsPageLocators.aboutMayors);
         Base.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         assertt.verifyURLOfPage("https://www.mayors.com/about-us");
@@ -267,9 +269,9 @@ public class AboutMayors extends Base{
         assertt.verifyTextInPage(AboutUsPageLocators.aboutUsVer,"About Mayors");
         test.log(Status.PASS,"verified About Mayors");
         Screenshot.takeScreenshot("mayors");
-        Reporter.captureScreenShot("mayors");
-        Reporter.attachScreenshotToReport("mayors",test,"verified");
-        test.log(Status.INFO,"Verification of About Mayors text is done");
+        Reporter.attachScreenshotToReport("mayors.png",test,"");
+        test.log(Status.INFO,"");
+
         test.log(Status.PASS,"Successfully verified and took a screenshot");
         LoggerHandler.logInfo("Successfully verified and took a screenshot");
         }

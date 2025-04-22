@@ -3,7 +3,7 @@ package uistore;
 import org.openqa.selenium.By;
 
 public class JewelryLocators {
-    public static By jewelry = By.cssSelector("ul.rolloverArea > li:nth-child(6)");
+    public static By jewelry = By.xpath("(//a[text()='Jewelry'])[1]");
     public static By logo = By.cssSelector("a>img[alt='Back to Home']");
     public static By chanel = By.xpath("(//a[text()='CHANEL'])[3]");
     public static By cate = By.xpath("//div[text()='Category']");
