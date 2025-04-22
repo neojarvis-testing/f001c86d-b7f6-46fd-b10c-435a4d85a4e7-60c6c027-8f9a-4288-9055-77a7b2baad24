@@ -6,7 +6,7 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelReader {
-    public String excelReader(String filePath, int sheetIndex, int rowNum, int colNum) {
+    public static String excelReader(String filePath, int sheetIndex, int rowNum, int colNum) {
         try (FileInputStream fis = new FileInputStream(filePath);
              Workbook workbook = new XSSFWorkbook(fis)) {
 
