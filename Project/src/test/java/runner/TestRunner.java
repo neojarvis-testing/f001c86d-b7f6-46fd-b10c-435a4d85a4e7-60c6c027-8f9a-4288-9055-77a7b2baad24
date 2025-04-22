@@ -32,7 +32,6 @@ public class TestRunner extends Base{
     public void Rolex(){
         test = reports.createTest("TestCase02");
         HomePage obj = new HomePage(test);
-        
         obj.rolex();
     }
     @Test (priority = 2)
