@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+import pages.AccessibilityActions;
 import pages.HomePage;
 import pages.MensWatchActions;
 import utils.Base;
@@ -41,6 +42,13 @@ public class TestRunner extends Base{
         test = reports.createTest("TestCase03");
         MensWatchActions mensWatch = new MensWatchActions(driver, test);
         mensWatch.MensWatchTestCase();
+    }
+
+    @Test (priority = 3)
+    public void testCaseNine(){
+        test = reports.createTest("TestCase09");
+        AccessibilityActions accessy = new AccessibilityActions(driver,test);
+        accessy.accessibilityTestCase();
     }
 
 
