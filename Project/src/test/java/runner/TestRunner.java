@@ -8,6 +8,8 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+
+import pages.HomePage;
 import pages.WatchesPage;
 import pages.MensWatchActions;
 import utils.Base;
@@ -29,9 +31,16 @@ public class TestRunner extends Base{
 
     @Test
     public void case1(){
-        WatchesPage obj1=new WatchesPage();
-        test=reports.createTest("testcase1");
+        test=reports.createTest("case1");
+        WatchesPage obj1=new WatchesPage(test);
+        
         obj1.testcase1();
+    }
+    @Test
+    public void Rolex(){
+        HomePage obj = new HomePage(test);
+        test = reports.createTest("TestCase02");
+        obj.rolex();
     }
     @Test
     public void testCasethree()
@@ -65,5 +74,6 @@ public class TestRunner extends Base{
     {
         reports.flush();
     }
+
 
 }
