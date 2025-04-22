@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
-
+import pages.ContactPageActions;
 import pages.BraceletsActions;
 import pages.*;
 import pages.HomePage;
@@ -58,7 +58,20 @@ public class TestRunner extends Base{
         p1.clickOnCarlex();
         p1.clickOnFirst();
         p1.clickOnLive();
+        p1.verifyRings();
     }
+    @Test
+    public void contactExecute(){
+        ContactPageActions c1 = new ContactPageActions(test);
+        c1.clickOnAccept();
+        c1.clickOnContact();
+        c1.clickOnLuxury();
+        c1.clickOnStore();
+        c1.clickOnDelivery();
+        c1.clickOnclick();
+        c1.clickOnReturn();
+    }
+
     @Test (priority = 1)
     public void Rolex(){
         test = reports.createTest("TestCase02");
@@ -80,7 +93,7 @@ public class TestRunner extends Base{
         jew.test4();
     }
 
-    @Test(priority = 7)
+    @Test()
     public void testCase10()
     {
         test = reports.createTest("Test case 10");
@@ -100,6 +113,7 @@ public class TestRunner extends Base{
         test = reports.createTest("TestCase-05");
         BraceletsActions ba = new BraceletsActions(driver,test);
         ba.braceletsTest();
+
     }
 
 
