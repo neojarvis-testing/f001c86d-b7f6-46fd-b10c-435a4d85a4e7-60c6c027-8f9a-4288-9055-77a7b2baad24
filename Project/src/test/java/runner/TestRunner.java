@@ -9,15 +9,12 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
-
-import pages.BraceletsActions;
 import pages.*;
 import pages.HomePage;
 import pages.MensWatchActions;
 import pages.RingsPageActions;
 import utils.Base;
 import utils.Reporter;
-import pages.SearchActions;
 
 public class TestRunner extends Base{
     ExtentReports reports;
@@ -26,7 +23,6 @@ public class TestRunner extends Base{
     @BeforeClass
     public void configReport(){
         reports = Reporter.createReport("Mayors_Report");
-        
     }
 
     @BeforeMethod
@@ -78,20 +74,6 @@ public class TestRunner extends Base{
         test = reports.createTest("Test case 10");
         AboutMayors abtMay = new AboutMayors(test);
         abtMay.test10();
-    }
-    @Test
-    public void test(){
-        test = reports.createTest("TestCase-07");
-        SearchActions sa = new SearchActions(driver,test);
-        
-        sa.search();
-
-    }
-    @Test
-    public void testBracelets(){
-        test = reports.createTest("TestCase-05");
-        BraceletsActions ba = new BraceletsActions(driver,test);
-        ba.braceletsTest();
     }
 
 
