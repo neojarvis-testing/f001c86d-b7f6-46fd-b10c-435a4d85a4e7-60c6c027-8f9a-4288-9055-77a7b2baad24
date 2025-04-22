@@ -26,6 +26,7 @@ public class AboutMayors extends Base{
         helper.clickOnElement(JewelryLocators.acceptCook);
         helper.javascriptScroll(AboutUsPageLocators.aboutMayors);
         test.log(Status.INFO,"scroll down to footer");
+        LoggerHandler.logInfo("scroll down to footer");
         
 
         helper.clickOnElement(AboutUsPageLocators.aboutMayors);
@@ -221,7 +222,7 @@ public class AboutMayors extends Base{
         assertt.verifyTextInPage(AboutUsPageLocators.aboutUsVer,"About Mayors");
         test.log(Status.PASS,"verified About Mayors");
         Screenshot.takeScreenshot("mayors");
-        Reporter.attachScreenshotToReport("mayors.png",test,"");
+        Reporter.attachScreenshotToReport("mayors", test, "mayors");
         test.log(Status.INFO,"");
 
         test.log(Status.PASS,"Successfully verified and took a screenshot");
@@ -246,5 +247,6 @@ public class AboutMayors extends Base{
         clickOnWedd();
         clickOnRolexxx();
         clickOnBrandss();
+        verifyAndScreenshot();
     }
 }

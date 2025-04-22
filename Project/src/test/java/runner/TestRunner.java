@@ -9,12 +9,15 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+
+import pages.BraceletsActions;
 import pages.*;
 import pages.HomePage;
 import pages.MensWatchActions;
 import pages.RingsPageActions;
 import utils.Base;
 import utils.Reporter;
+import pages.SearchActions;
 
 public class TestRunner extends Base{
     ExtentReports reports;
@@ -23,13 +26,14 @@ public class TestRunner extends Base{
     @BeforeClass
     public void configReport(){
         reports = Reporter.createReport("Mayors_Report");
+        
     }
 
     @BeforeMethod
     public void configBrowser(){
         openBrowser();
     }
-    @Test
+    @Test(priority = 4)
     public void execute1(){
         test = reports.createTest("testCase04");
         RingsPageActions p1 = new RingsPageActions(test);
@@ -53,14 +57,14 @@ public class TestRunner extends Base{
         HomePage obj = new HomePage(test);
         obj.rolex();
     }
-    @Test
+    @Test(priority = 2)
     public void testCasethree()
     {
         test = reports.createTest("TestCase03");
         MensWatchActions mensWatch = new MensWatchActions(driver, test);
         mensWatch.MensWatchTestCase();
     }
-    @Test
+    @Test(priority = 3)
     public void testCase4()
     {
         test = reports.createTest("Test case 4");
@@ -68,12 +72,26 @@ public class TestRunner extends Base{
         jew.test4();
     }
 
-    @Test
+    @Test(priority = 7)
     public void testCase10()
     {
         test = reports.createTest("Test case 10");
         AboutMayors abtMay = new AboutMayors(test);
         abtMay.test10();
+    }
+    @Test(priority = 6)
+    public void test(){
+        test = reports.createTest("TestCase-07");
+        SearchActions sa = new SearchActions(driver,test);
+        
+        sa.search();
+
+    }
+    @Test(priority = 5)
+    public void testBracelets(){
+        test = reports.createTest("TestCase-05");
+        BraceletsActions ba = new BraceletsActions(driver,test);
+        ba.braceletsTest();
     }
 
 
