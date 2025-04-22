@@ -27,6 +27,16 @@ public class WebDriverHelper {
             System.out.println(e.getMessage());
         }
     }
+
+    public void waitForElementToBeClickable(By locator, int timeoutInSeconds) {
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds))
+                .until(ExpectedConditions.elementToBeClickable(locator));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
     public void clickOnElement(By locator){
         try{
         WebElement elem = driver.findElement(locator);

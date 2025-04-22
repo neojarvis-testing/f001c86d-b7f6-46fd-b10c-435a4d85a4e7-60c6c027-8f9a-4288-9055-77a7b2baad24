@@ -13,6 +13,7 @@ import com.aventstack.extentreports.ExtentTest;
 import pages.BraceletsActions;
 import pages.*;
 import pages.HomePage;
+import pages.WatchesPage;
 import pages.MensWatchActions;
 import pages.RingsPageActions;
 import utils.Base;
@@ -35,6 +36,13 @@ public class TestRunner extends Base{
         openBrowser();
     }
 
+    @Test
+    public void case1(){
+        test=reports.createTest("case1");
+        WatchesPage obj1=new WatchesPage(test);
+        
+        obj1.testcase1();
+    }
     // @Test 
     // public void Rolex(){
     //     HomePage obj = new HomePage(test);
