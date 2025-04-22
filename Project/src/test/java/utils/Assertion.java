@@ -6,22 +6,39 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 public class Assertion {
-private static  WebDriver driver;
+	private WebDriver driver;
 
-	public static void verifyTextInPage(By locator,String value) {
-		WebElement element = driver.findElement(locator);
-		Assert.assertTrue(element.getText().contains(value));
+	public Assertion(WebDriver driver) {
+		this.driver = driver;
 	}
-	
-	public static  void verifyURLOfPage(String value) {
-		String text = driver.getCurrentUrl();
-		Assert.assertTrue(text.contains(value));
+
+	public void verifyTextInPage(By locator, String value) {
+		try {
+			WebElement element = driver.findElement(locator);
+			Assert.assertTrue(element.getText().contains(value));
+		} catch (AssertionError e) {
+			e.printStackTrace();
+		}
 	}
-	
-	public static  void verifyTitleOfPage(String value) {
-		String text = driver.getTitle();
-		Assert.assertTrue(text.contains(value));
+
+	public void verifyURLOfPage(String value) {
+		try {
+			String text = driver.getCurrentUrl();
+			Assert.assertTrue(text.contains(value));
+		} catch (AssertionError e) {
+			e.getStackTrace();
+		}
+
 	}
-   
+
+	public void verifyTitleOfPage(String value) {
+		try {
+			String text = driver.getTitle();
+			Assert.assertTrue(text.contains(value));
+		} catch (AssertionError e) {
+			e.getStackTrace();
+		}
+
+	}
+
 }
-

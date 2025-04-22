@@ -8,9 +8,9 @@ public class JewelryLocators {
     public static By chanel = By.xpath("(//a[text()='CHANEL'])[3]");
     public static By cate = By.xpath("//div[text()='Category']");
     public static By  rings = By.xpath("(//li[@class=' facetAction  '])[5]");
-    public static By brandCol = By.xpath("//div[text()='Brand Collections']");
+    public static By brandType = By.xpath("//div[text()='Brand Collections']");
     public static By cocoRush = By.xpath("//div[text()='Coco Crush ']");
-    public static By dial = By.xpath("//div[text()='Metal Type']");
+    public static By dial = By.xpath("//div[@aria-label='Filters below for Metal Type']");
     public static By whiteGold = By.xpath("//div[text()='White Gold ']");
     public static By firstPro = By.xpath("(//div[@class='productTileBrand'])[1]");
     public static By acceptCook = By.xpath("//button[text()='Accept All Cookies and Terms and Conditions']");
