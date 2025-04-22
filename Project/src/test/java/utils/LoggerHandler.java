@@ -1,9 +1,17 @@
 package utils;
  
+import java.io.File;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
  
 public class LoggerHandler {
+    static {
+        File logDir = new File("logs");
+        if(!logDir.exists()){
+            logDir.mkdirs();
+        }
+    }
     private static final Logger log = LogManager.getLogger(LoggerHandler.class);
  
     public static void logTrace(String msg) {
