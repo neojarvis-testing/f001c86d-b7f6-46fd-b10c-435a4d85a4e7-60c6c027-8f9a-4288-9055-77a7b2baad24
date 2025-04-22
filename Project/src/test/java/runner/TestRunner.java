@@ -41,8 +41,6 @@ public class TestRunner extends Base{
         test = reports.createTest("TestCase03");
         MensWatchActions mensWatch = new MensWatchActions(driver, test);
         mensWatch.MensWatchTestCase();
-        
-        
     }
 
 
