@@ -1,5 +1,5 @@
 package utils;
-
+ 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -13,30 +13,44 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.events.EventFiringDecorator;
 import org.openqa.selenium.support.events.WebDriverListener;
-
+ 
 public class Base {
     public static WebDriver driver;
     public static FileInputStream file;
     public static Properties prop;
-    Property property= new Property();
-
+ 
+    public void loadProperties() throws IOException {
+        String propertiesPath = System.getProperty("user.dir") + "/config/browser.properties";
+        try {
+            file = new FileInputStream(propertiesPath);
+            prop = new Properties();
+            prop.load(file);
+ 
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+ 
+        }
+    }
+ 
     public void openBrowser() {
         try {
-            prop=property.loadBaseProperties();
+            loadProperties();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+        // String siteUrl = prop.getProperty("url");
+        // driver = new ChromeDriver();
         try {
             driver = new RemoteWebDriver(new URL(prop.getProperty("gridurl")), new ChromeOptions());
         } catch (MalformedURLException e) {
+            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         driver.get(prop.getProperty("url"));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
-
+ 
         WebDriverListener listener = new EventHandler();
         driver = new EventFiringDecorator<>(listener).decorate(driver);
     }
