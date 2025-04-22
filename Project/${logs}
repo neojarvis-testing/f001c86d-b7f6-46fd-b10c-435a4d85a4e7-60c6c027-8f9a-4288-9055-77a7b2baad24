@@ -1,0 +1,155 @@
+2025-04-22T09:13:27,365 INFO  utils.LoggerHandler - Clicked on Cookies
+2025-04-22T09:13:27,368 ERROR utils.LoggerHandler - Clicked on Cookies
+2025-04-22T09:13:56,161 INFO  utils.LoggerHandler - hi
+2025-04-22T09:15:57,191 INFO  utils.LoggerHandler - Clicked on Cookies
+2025-04-22T09:15:57,194 ERROR utils.LoggerHandler - Clicked on Cookies
+2025-04-22T09:16:34,743 INFO  utils.LoggerHandler - hi
+2025-04-22T09:19:32,893 INFO  utils.LoggerHandler - Clicked on Cookies
+2025-04-22T09:19:32,896 ERROR utils.LoggerHandler - Clicked on Cookies
+2025-04-22T09:20:34,354 INFO  utils.LoggerHandler - hi
+2025-04-22T09:21:55,114 INFO  utils.LoggerHandler - Clicked on Cookies
+2025-04-22T09:21:55,152 ERROR utils.LoggerHandler - Clicked on Cookies
+2025-04-22T09:22:26,740 INFO  utils.LoggerHandler - hi
+2025-04-22T10:04:43,908 INFO  utils.LoggerHandler - Clicked on Cookies
+2025-04-22T10:04:43,911 ERROR utils.LoggerHandler - Clicked on Cookies
+2025-04-22T10:07:01,211 INFO  utils.LoggerHandler - Clicked on Cookies
+2025-04-22T10:07:01,215 ERROR utils.LoggerHandler - Clicked on Cookies
+2025-04-22T10:07:18,382 INFO  utils.LoggerHandler - Clicked on accept cookies
+2025-04-22T10:07:18,389 INFO  utils.LoggerHandler - Clicked on search
+2025-04-22T10:07:18,390 INFO  utils.LoggerHandler - Clicked on searchbar
+2025-04-22T10:07:18,391 INFO  utils.LoggerHandler - Entered on search
+2025-04-22T10:07:18,391 INFO  utils.LoggerHandler - Clicked on searc
+2025-04-22T10:07:18,394 INFO  utils.LoggerHandler - Clicked on rings
+2025-04-22T10:07:18,397 INFO  utils.LoggerHandler - Clicked on forher
+2025-04-22T10:07:18,398 INFO  utils.LoggerHandler - Clicked on brand
+2025-04-22T10:07:18,399 INFO  utils.LoggerHandler - Clicked on carlex
+2025-04-22T10:07:18,400 INFO  utils.LoggerHandler - Clicked on first
+2025-04-22T10:07:18,401 INFO  utils.LoggerHandler - Clicked on live
+2025-04-22T10:07:18,402 INFO  utils.LoggerHandler - hi
+2025-04-22T10:08:50,667 INFO  utils.LoggerHandler - Clicked on Cookies
+2025-04-22T10:08:50,670 ERROR utils.LoggerHandler - Clicked on Cookies
+2025-04-22T10:11:30,184 INFO  utils.LoggerHandler - Clicked on Cookies
+2025-04-22T10:11:30,186 ERROR utils.LoggerHandler - Clicked on Cookies
+2025-04-22T10:11:46,195 INFO  utils.LoggerHandler - Clicked on accept cookies
+2025-04-22T10:11:46,892 INFO  utils.LoggerHandler - Clicked on search
+2025-04-22T10:11:47,033 INFO  utils.LoggerHandler - Clicked on searchbar
+2025-04-22T10:11:50,458 INFO  utils.LoggerHandler - Entered on search
+2025-04-22T10:11:51,157 INFO  utils.LoggerHandler - Clicked on searc
+2025-04-22T10:11:51,591 INFO  utils.LoggerHandler - Clicked on rings
+2025-04-22T10:11:52,512 INFO  utils.LoggerHandler - Clicked on forher
+2025-04-22T10:11:52,795 INFO  utils.LoggerHandler - Clicked on brand
+2025-04-22T10:11:53,151 INFO  utils.LoggerHandler - Clicked on carlex
+2025-04-22T10:11:57,564 INFO  utils.LoggerHandler - Clicked on first
+2025-04-22T10:11:58,080 INFO  utils.LoggerHandler - Clicked on live
+2025-04-22T10:11:58,080 INFO  utils.LoggerHandler - hi
+2025-04-22T10:14:46,674 INFO  utils.LoggerHandler - Clicked on Cookies
+2025-04-22T10:14:46,677 ERROR utils.LoggerHandler - Clicked on Cookies
+2025-04-22T10:15:05,073 INFO  utils.LoggerHandler - Clicked on accept cookies
+2025-04-22T10:15:06,055 INFO  utils.LoggerHandler - Clicked on search
+2025-04-22T10:15:06,359 INFO  utils.LoggerHandler - Clicked on searchbar
+2025-04-22T10:15:09,753 INFO  utils.LoggerHandler - Entered on search
+2025-04-22T10:15:10,502 INFO  utils.LoggerHandler - Clicked on searc
+2025-04-22T10:15:10,977 INFO  utils.LoggerHandler - Clicked on rings
+2025-04-22T10:15:11,878 INFO  utils.LoggerHandler - Clicked on forher
+2025-04-22T10:15:12,214 INFO  utils.LoggerHandler - Clicked on brand
+2025-04-22T10:15:12,589 INFO  utils.LoggerHandler - Clicked on carlex
+2025-04-22T10:15:16,895 INFO  utils.LoggerHandler - Clicked on first
+2025-04-22T10:15:17,407 INFO  utils.LoggerHandler - Clicked on live
+2025-04-22T10:15:17,407 INFO  utils.LoggerHandler - hi
+2025-04-22T10:19:19,680 INFO  utils.LoggerHandler - Clicked on Cookies
+2025-04-22T10:19:19,683 ERROR utils.LoggerHandler - Clicked on Cookies
+2025-04-22T10:19:35,360 INFO  utils.LoggerHandler - Clicked on accept cookies
+2025-04-22T10:19:36,080 INFO  utils.LoggerHandler - Clicked on search
+2025-04-22T10:19:36,310 INFO  utils.LoggerHandler - Clicked on searchbar
+2025-04-22T10:19:39,461 INFO  utils.LoggerHandler - Entered on search
+2025-04-22T10:19:40,083 INFO  utils.LoggerHandler - Clicked on searc
+2025-04-22T10:19:40,487 INFO  utils.LoggerHandler - Clicked on rings
+2025-04-22T10:19:41,422 INFO  utils.LoggerHandler - Clicked on forher
+2025-04-22T10:19:41,674 INFO  utils.LoggerHandler - Clicked on brand
+2025-04-22T10:19:41,965 INFO  utils.LoggerHandler - Clicked on carlex
+2025-04-22T10:19:45,855 INFO  utils.LoggerHandler - Clicked on first
+2025-04-22T10:19:46,526 INFO  utils.LoggerHandler - Clicked on live
+2025-04-22T10:22:14,862 INFO  utils.LoggerHandler - Clicked on Cookies
+2025-04-22T10:22:14,866 ERROR utils.LoggerHandler - Clicked on Cookies
+2025-04-22T10:22:31,367 INFO  utils.LoggerHandler - Clicked on accept cookies
+2025-04-22T10:22:32,197 INFO  utils.LoggerHandler - Clicked on search
+2025-04-22T10:22:32,361 INFO  utils.LoggerHandler - Clicked on searchbar
+2025-04-22T10:22:35,353 INFO  utils.LoggerHandler - Entered on search
+2025-04-22T10:22:36,202 INFO  utils.LoggerHandler - Clicked on searc
+2025-04-22T10:22:36,662 INFO  utils.LoggerHandler - Clicked on rings
+2025-04-22T10:22:37,561 INFO  utils.LoggerHandler - Clicked on forher
+2025-04-22T10:22:37,897 INFO  utils.LoggerHandler - Clicked on brand
+2025-04-22T10:22:38,197 INFO  utils.LoggerHandler - Clicked on carlex
+2025-04-22T10:22:42,586 INFO  utils.LoggerHandler - Clicked on first
+2025-04-22T10:22:43,007 INFO  utils.LoggerHandler - Clicked on live
+2025-04-22T10:22:43,007 INFO  utils.LoggerHandler - hi
+2025-04-22T10:27:32,450 INFO  utils.LoggerHandler - Clicked on accept cookies
+2025-04-22T10:27:32,964 INFO  utils.LoggerHandler - Clicked on search
+2025-04-22T10:27:33,201 INFO  utils.LoggerHandler - Clicked on searchbar
+2025-04-22T10:27:36,460 INFO  utils.LoggerHandler - Entered on search
+2025-04-22T10:27:37,086 INFO  utils.LoggerHandler - Clicked on searc
+2025-04-22T10:27:37,568 INFO  utils.LoggerHandler - Clicked on rings
+2025-04-22T10:27:38,512 INFO  utils.LoggerHandler - Clicked on forher
+2025-04-22T10:27:38,762 INFO  utils.LoggerHandler - Clicked on brand
+2025-04-22T10:27:39,051 INFO  utils.LoggerHandler - Clicked on carlex
+2025-04-22T10:27:43,523 INFO  utils.LoggerHandler - Clicked on first
+2025-04-22T10:27:43,832 INFO  utils.LoggerHandler - Clicked on live
+2025-04-22T10:27:43,832 INFO  utils.LoggerHandler - hi
+2025-04-22T10:28:17,728 INFO  utils.LoggerHandler - Clicked on accept cookies
+2025-04-22T10:28:18,053 INFO  utils.LoggerHandler - Clicked on search
+2025-04-22T10:28:18,298 INFO  utils.LoggerHandler - Clicked on searchbar
+2025-04-22T10:28:21,492 INFO  utils.LoggerHandler - Entered on search
+2025-04-22T10:28:22,272 INFO  utils.LoggerHandler - Clicked on searc
+2025-04-22T10:28:22,691 INFO  utils.LoggerHandler - Clicked on rings
+2025-04-22T10:28:23,300 INFO  utils.LoggerHandler - Clicked on forher
+2025-04-22T10:28:24,105 INFO  utils.LoggerHandler - Clicked on forher
+2025-04-22T10:28:25,013 INFO  utils.LoggerHandler - Clicked on brand
+2025-04-22T10:28:35,916 INFO  utils.LoggerHandler - Clicked on carlex
+2025-04-22T10:28:39,561 INFO  utils.LoggerHandler - Clicked on first
+2025-04-22T10:28:39,905 INFO  utils.LoggerHandler - Clicked on live
+2025-04-22T10:28:39,905 INFO  utils.LoggerHandler - hi
+2025-04-22T10:29:59,289 INFO  utils.LoggerHandler - Clicked on Cookies
+2025-04-22T10:29:59,291 ERROR utils.LoggerHandler - Clicked on Cookies
+2025-04-22T10:30:15,981 INFO  utils.LoggerHandler - Clicked on accept cookies
+2025-04-22T10:30:16,966 INFO  utils.LoggerHandler - Clicked on search
+2025-04-22T10:30:17,205 INFO  utils.LoggerHandler - Clicked on searchbar
+2025-04-22T10:30:20,299 INFO  utils.LoggerHandler - Entered on search
+2025-04-22T10:30:21,156 INFO  utils.LoggerHandler - Clicked on searc
+2025-04-22T10:30:21,582 INFO  utils.LoggerHandler - Clicked on rings
+2025-04-22T10:30:22,508 INFO  utils.LoggerHandler - Clicked on forher
+2025-04-22T10:30:22,863 INFO  utils.LoggerHandler - Clicked on forher
+2025-04-22T10:30:23,406 INFO  utils.LoggerHandler - Clicked on brand
+2025-04-22T10:30:34,556 INFO  utils.LoggerHandler - Clicked on carlex
+2025-04-22T10:30:42,578 INFO  utils.LoggerHandler - Clicked on first
+2025-04-22T10:30:58,610 INFO  utils.LoggerHandler - Clicked on live
+2025-04-22T10:30:58,610 INFO  utils.LoggerHandler - hi
+2025-04-22T10:40:45,420 INFO  utils.LoggerHandler - Clicked on Cookies
+2025-04-22T10:40:45,485 ERROR utils.LoggerHandler - Clicked on Cookies
+2025-04-22T10:41:08,039 INFO  utils.LoggerHandler - Clicked on accept cookies
+2025-04-22T10:41:09,647 INFO  utils.LoggerHandler - Clicked on search
+2025-04-22T10:41:09,803 INFO  utils.LoggerHandler - Clicked on searchbar
+2025-04-22T10:41:14,106 INFO  utils.LoggerHandler - Entered on search
+2025-04-22T10:41:15,018 INFO  utils.LoggerHandler - Clicked on searc
+2025-04-22T10:41:15,711 INFO  utils.LoggerHandler - Clicked on rings
+2025-04-22T10:41:17,628 INFO  utils.LoggerHandler - Clicked on forher
+2025-04-22T10:41:18,623 INFO  utils.LoggerHandler - Clicked on forher
+2025-04-22T10:41:18,958 INFO  utils.LoggerHandler - Clicked on brand
+2025-04-22T10:41:19,421 INFO  utils.LoggerHandler - Clicked on carlex
+2025-04-22T10:41:24,432 INFO  utils.LoggerHandler - Clicked on first
+2025-04-22T10:41:25,143 INFO  utils.LoggerHandler - Clicked on live
+2025-04-22T10:41:25,144 INFO  utils.LoggerHandler - hi
+2025-04-22T12:22:05,538 INFO  utils.LoggerHandler - Clicked on Cookies
+2025-04-22T12:22:05,558 ERROR utils.LoggerHandler - Clicked on Cookies
+2025-04-22T12:22:28,396 INFO  utils.LoggerHandler - Clicked on accept cookies
+2025-04-22T12:22:29,995 INFO  utils.LoggerHandler - Clicked on search
+2025-04-22T12:22:30,298 INFO  utils.LoggerHandler - Clicked on searchbar
+2025-04-22T12:22:34,332 INFO  utils.LoggerHandler - Entered on search
+2025-04-22T12:22:35,196 INFO  utils.LoggerHandler - Clicked on searc
+2025-04-22T12:22:36,118 INFO  utils.LoggerHandler - Clicked on rings
+2025-04-22T12:22:38,127 INFO  utils.LoggerHandler - Clicked on forher
+2025-04-22T12:22:39,143 INFO  utils.LoggerHandler - Clicked on forher
+2025-04-22T12:22:39,549 INFO  utils.LoggerHandler - Clicked on brand
+2025-04-22T12:22:40,001 INFO  utils.LoggerHandler - Clicked on carlex
+2025-04-22T12:22:45,239 INFO  utils.LoggerHandler - Clicked on first
+2025-04-22T12:22:46,087 INFO  utils.LoggerHandler - Clicked on live
+2025-04-22T12:22:46,087 INFO  utils.LoggerHandler - hi

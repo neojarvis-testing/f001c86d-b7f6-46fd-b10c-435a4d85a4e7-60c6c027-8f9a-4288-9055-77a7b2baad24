@@ -12,4 +12,5 @@ public class RingsPageLocators {
     public static By live = By.xpath("//div[text()='Get live expert advice']");
     public static By accept = By.xpath("//button[text()='Accept All Cookies and Terms and Conditions']");
     public static By close = By.xpath("//div[@class='dismiss-popup']");
+   
 }
