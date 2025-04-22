@@ -22,7 +22,7 @@ public class Screenshot extends Base{
 
         File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
 
-        File screenshotsDirectory = new File(System.getProperty("user.dir")+ "/Screenshots");
+        File screenshotsDirectory = new File(System.getProperty("user.dir")+ "/screenshots");
         if(!screenshotsDirectory .exists()){
             screenshotsDirectory.mkdirs();
         }
