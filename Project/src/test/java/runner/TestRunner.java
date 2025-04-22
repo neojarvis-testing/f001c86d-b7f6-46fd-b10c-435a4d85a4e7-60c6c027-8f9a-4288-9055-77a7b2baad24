@@ -30,27 +30,19 @@ public class TestRunner extends Base{
 
     @Test (priority = 1)
     public void Rolex(){
-        HomePage obj = new HomePage(test);
         test = reports.createTest("TestCase02");
+        HomePage obj = new HomePage(test);
+        
         obj.rolex();
     }
     @Test (priority = 2)
     public void testCasethree()
     {
-        test = reports.createTest("testCase03");
+        test = reports.createTest("TestCase03");
         MensWatchActions mensWatch = new MensWatchActions(driver, test);
+        mensWatch.MensWatchTestCase();
         
-        mensWatch.clickOnAcceptCookies();
-        mensWatch.hoverOverBrands();
-        mensWatch.clickOnOmega();
-        mensWatch.verifyOmegaTitle();
-        mensWatch.clickOnMensWatches();
-        mensWatch.clickOnSeaMaster();
-        mensWatch.clickOnBlue();
-        mensWatch.clickOnFirstProduct();
-        mensWatch.clickOnAddToShoppingBag();
-        mensWatch.verifyKeyword();
-        mensWatch.takeScreenshot();
+        
     }
 
 
