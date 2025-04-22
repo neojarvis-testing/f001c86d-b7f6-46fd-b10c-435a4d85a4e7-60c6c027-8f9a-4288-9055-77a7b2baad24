@@ -18,23 +18,11 @@ public class Base {
     public static WebDriver driver;
     public static FileInputStream file;
     public static Properties prop;
-
-    public void loadProperties() throws IOException {
-        String propertiesPath = System.getProperty("user.dir") + "/config/browser.properties";
-        try {
-            file = new FileInputStream(propertiesPath);
-            prop = new Properties();
-            prop.load(file);
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-
-        }
-    }
+    Property property= new Property();
 
     public void openBrowser() {
         try {
-            loadProperties();
+            prop=property.loadBaseProperties();
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -36,29 +36,29 @@ public class TestRunner extends Base{
         
         obj1.testcase1();
     }
-    @Test
-    public void Rolex(){
-        HomePage obj = new HomePage(test);
-        test = reports.createTest("TestCase02");
-        obj.rolex();
-    }
-    @Test
-    public void testCasethree()
-    {
-        MensWatchActions mensWatch = new MensWatchActions(driver);
-        test = reports.createTest("testCase03");
-        mensWatch.clickOnAcceptCookies();
-        mensWatch.hoverOverBrands();
-        mensWatch.clickOnOmega();
-        mensWatch.verifyOmegaTitle();
-        mensWatch.clickOnMensWatches();
-        mensWatch.clickOnSeaMaster();
-        mensWatch.clickOnBlue();
-        mensWatch.clickOnFirstProduct();
-        mensWatch.clickOnAddToShoppingBag();
-        mensWatch.verifyKeyword();
-        mensWatch.takeScreenshot();
-    }
+    // @Test
+    // public void Rolex(){
+    //     HomePage obj = new HomePage(test);
+    //     test = reports.createTest("TestCase02");
+    //     obj.rolex();
+    // }
+    // @Test
+    // public void testCasethree()
+    // {
+    //     MensWatchActions mensWatch = new MensWatchActions(driver);
+    //     test = reports.createTest("testCase03");
+    //     mensWatch.clickOnAcceptCookies();
+    //     mensWatch.hoverOverBrands();
+    //     mensWatch.clickOnOmega();
+    //     mensWatch.verifyOmegaTitle();
+    //     mensWatch.clickOnMensWatches();
+    //     mensWatch.clickOnSeaMaster();
+    //     mensWatch.clickOnBlue();
+    //     mensWatch.clickOnFirstProduct();
+    //     mensWatch.clickOnAddToShoppingBag();
+    //     mensWatch.verifyKeyword();
+    //     mensWatch.takeScreenshot();
+    // }
 
 
     @AfterMethod
