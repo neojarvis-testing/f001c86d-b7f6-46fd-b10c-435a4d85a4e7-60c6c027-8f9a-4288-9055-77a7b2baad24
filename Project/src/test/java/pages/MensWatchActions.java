@@ -26,9 +26,10 @@ public class MensWatchActions extends Base{
     /*
      * Method Name: MensWatchActions
      * Author Name: Muskan Jha
-     * Description : This method is a constructor of class MensWatchActions which
-     * Parameters : N/A
-     * Return Type : void
+     * Description : This method is a constructor of class MensWatchActions 
+     * which initialises the instance variables of the class
+     * Parameters : driver, test
+     * Return Type : none
      */
     public MensWatchActions(WebDriver driver, ExtentTest test) {
         this.driver = driver;
@@ -37,6 +38,13 @@ public class MensWatchActions extends Base{
         asserts = new Assertion(driver);
     }
 
+    /*
+     * Method Name: MensWatchTestCase
+     * Author Name: Muskan Jha
+     * Description : This method is a cluster method for this class which calls all the method in it.
+     * Parameters : N/A
+     * Return Type : void
+     */
     public void MensWatchTestCase() {
 
         clickOnAcceptCookies();
