@@ -9,17 +9,9 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
-import pages.AccessibilityActions;
-import pages.ContactPageActions;
-import pages.BraceletsActions;
 import pages.*;
-import pages.HomePage;
-import pages.WatchesPage;
-import pages.MensWatchActions;
-import pages.RingsPageActions;
 import utils.Base;
 import utils.Reporter;
-import pages.SearchActions;
 
 public class TestRunner extends Base{
     ExtentReports reports;
@@ -94,7 +86,7 @@ public class TestRunner extends Base{
         jew.test4();
     }
 
-    @Test()
+    @Test
     public void testCase10()
     {
         test = reports.createTest("Test case 10");

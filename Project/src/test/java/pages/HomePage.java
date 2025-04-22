@@ -35,8 +35,8 @@ public class HomePage extends Base{
             LoggerHandler.logInfo("Clicked on Cookies");
             test.log(Status.INFO,"Click on cookies");
             test.log(Status.PASS, "Cookies clicked");
-            Screenshot.takeScreenshot("Cookies");
-            Reporter.attachScreenshotToReport("Brands", test, "Cookies attached");
+            Screenshot.takeScreenshot("mayors");
+            Reporter.attachScreenshotToReport("mayors", test, "mayors");
         } catch (Exception e) {
             LoggerHandler.logError("Clicked on Cookies");
             test.log(Status.FAIL,"Not clicked on Cookies");
@@ -98,6 +98,8 @@ public class HomePage extends Base{
             LoggerHandler.logInfo("Clicked on Rolex Watches");
             test.log(Status.INFO,"Click on Rolex watches");
             test.log(Status.PASS,"Clicked on Rolex Watches");
+            LoggerHandler.logInfo("scroll down to footer");
+            test.log(Status.PASS,"navigate back to home page");
         } catch (Exception e) {
             LoggerHandler.logError("Clicked on Rolex Watches");
             test.log(Status.FAIL,"Clicked on Rolex Watches");
