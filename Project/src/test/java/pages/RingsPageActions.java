@@ -1,24 +1,31 @@
 package pages;
 
-import uistore.MensWatchLocators;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 import uistore.RingsPageLocators;
 import utils.Base;
 import utils.LoggerHandler;
 import utils.WebDriverHelper;
 import utils.Assertion;
 
-public class RingsPageActions {
-    public WebDriverHelper helper;
-	public RingsPageActions() {
-		helper = new WebDriverHelper(Base.driver);
-		
-	}
+public class RingsPageActions extends Base{
+    WebDriverHelper helper;
+    Assertion asserts;
+    ExtentTest test;
+
+    public RingsPageActions(ExtentTest test) {
+        helper = new WebDriverHelper(driver);
+        this.test=test;
+        asserts = new Assertion(driver);
+    }
     public void clickOnSearch(){
         try{
 
         helper.waitForElementToBeVisible(RingsPageLocators.searchbar, 3);
         helper.clickOnElement(RingsPageLocators.searchbar);
         LoggerHandler.logInfo("Clicked on search");
+        test.log(Status.PASS,"Clicked on searchbar");
         }
         catch(Exception e){
             System.out.println(e.getMessage());

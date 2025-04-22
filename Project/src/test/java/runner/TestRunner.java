@@ -30,32 +30,32 @@ public class TestRunner extends Base{
         openBrowser();
     }
 
-    @Test 
-    public void Rolex(){
-        HomePage obj = new HomePage(test);
-        test = reports.createTest("TestCase02");
-        obj.rolex();
-    }
-    @Test 
-    public void testCasethree()
-    {
-        MensWatchActions mensWatch = new MensWatchActions(driver);
-        test = reports.createTest("testCase03");
-        mensWatch.clickOnAcceptCookies();
-        mensWatch.hoverOverBrands();
-        mensWatch.clickOnOmega();
-        mensWatch.verifyOmegaTitle();
-        mensWatch.clickOnMensWatches();
-        mensWatch.clickOnSeaMaster();
-        mensWatch.clickOnBlue();
-        mensWatch.clickOnFirstProduct();
-        mensWatch.clickOnAddToShoppingBag();
-        mensWatch.verifyKeyword();
-        mensWatch.takeScreenshot();
-    }
+    // @Test 
+    // public void Rolex(){
+    //     HomePage obj = new HomePage(test);
+    //     test = reports.createTest("TestCase02");
+    //     obj.rolex();
+    // }
+    // @Test 
+    // public void testCasethree()
+    // {test = reports.createTest("testCase03");
+    //     MensWatchActions mensWatch = new MensWatchActions(test);
+    //     // mensWatch.clickOnAcceptCookies();
+    //     mensWatch.hoverOverBrands();
+    //     mensWatch.clickOnOmega();
+    //     mensWatch.verifyOmegaTitle();
+    //     mensWatch.clickOnMensWatches();
+    //     mensWatch.clickOnSeaMaster();
+    //     mensWatch.clickOnBlue();
+    //     mensWatch.clickOnFirstProduct();
+    //     mensWatch.clickOnAddToShoppingBag();
+    //     mensWatch.verifyKeyword();
+    //     mensWatch.takeScreenshot();
+    // }
     @Test
     public void execute1(){
-        RingsPageActions p1 = new RingsPageActions();
+        test = reports.createTest("testCase04");
+        RingsPageActions p1 = new RingsPageActions(test);
         p1.clickOnAccept();
         p1.clickOnSearch();
         p1.inputOnSearchBar();
@@ -69,8 +69,6 @@ public class TestRunner extends Base{
         p1.clickOnCarlex();
         p1.clickOnFirst();
         p1.clickOnLive();
-       
-        LoggerHandler.logInfo("hi");
     }
 
 

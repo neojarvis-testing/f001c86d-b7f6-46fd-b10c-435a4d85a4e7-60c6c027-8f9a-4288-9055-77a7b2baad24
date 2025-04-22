@@ -2,28 +2,36 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 import uistore.MensWatchLocators;
 import utils.Assertion;
+import utils.Base;
+import utils.LoggerHandler;
 import utils.Screenshot;
 import utils.WebDriverHelper;
 
-public class MensWatchActions {
-
-    WebDriver driver;
+public class MensWatchActions extends Base{
     WebDriverHelper helper;
     Assertion asserts;
+    ExtentTest test;
 
-    public MensWatchActions(WebDriver driver) {
-        this.driver = driver;
+    public MensWatchActions(ExtentTest test) {
         helper = new WebDriverHelper(driver);
+        this.test=test;
         asserts = new Assertion(driver);
     }
 
     public void clickOnAcceptCookies(){
         try {
             helper.clickOnElement(MensWatchLocators.acceptCookies);
+            LoggerHandler.logInfo("clicked cookies");
+            test.log(Status.PASS,"clicked cookies");
         } catch (Exception e) {
             e.getMessage();
+            LoggerHandler.logError("cant clicked cookies");
+            test.log(Status.FAIL,"cant clicked cookies");
         }
     }
 
