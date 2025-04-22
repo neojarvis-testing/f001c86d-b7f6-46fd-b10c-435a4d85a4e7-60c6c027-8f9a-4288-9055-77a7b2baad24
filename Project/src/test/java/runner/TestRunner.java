@@ -1,38 +1,87 @@
 package runner;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 
-import pages.SearchActions;
+import pages.BraceletsActions;
+import pages.HomePage;
+import pages.MensWatchActions;
 import utils.Base;
-public class TestRunner  extends Base{
- 
-    // ExtentReports report;
-    // ExtentTest test;
+import utils.Reporter;
+import pages.SearchActions;
 
-    // @BeforeClass
-    // public void gen(){
-    //     report = Reporter.
-    // }
+public class TestRunner extends Base{
+    ExtentReports reports;
+    ExtentTest test;
+
+    @BeforeClass
+    public void configReport(){
+        reports = Reporter.createReport("Mayors_Report");
+        
+    }
 
     @BeforeMethod
-    public void launch(){
+    public void configBrowser(){
         openBrowser();
     }
 
+    @Test (priority = 1)
+    public void Rolex(){
+        HomePage obj = new HomePage(test);
+        test = reports.createTest("TestCase02");
+        obj.rolex();
+    }
+    @Test (priority = 2)
+    public void testCasethree()
+    {
+        MensWatchActions mensWatch = new MensWatchActions(driver);
+        test = reports.createTest("testCase03");
+        mensWatch.clickOnAcceptCookies();
+        mensWatch.hoverOverBrands();
+        mensWatch.clickOnOmega();
+        mensWatch.verifyOmegaTitle();
+        mensWatch.clickOnMensWatches();
+        mensWatch.clickOnSeaMaster();
+        mensWatch.clickOnBlue();
+        mensWatch.clickOnFirstProduct();
+        mensWatch.clickOnAddToShoppingBag();
+        mensWatch.verifyKeyword();
+        mensWatch.takeScreenshot();
+    }
     @Test
     public void test(){
-        SearchActions sa = new SearchActions();
+        test = reports.createTest("TestCase-07");
+        SearchActions sa = new SearchActions(driver,test);
+        
         sa.search();
 
     }
-    @AfterMethod
-    public void tearDown(){
-        driver.quit();
-       
+    @Test
+    public void testBracelets(){
+        test = reports.createTest("TestCase-05");
+        BraceletsActions ba = new BraceletsActions(driver,test);
+        ba.braceletsTest();
     }
 
-    
+
+    @AfterMethod
+    public void teardown(){
+        if(driver!=null){
+            driver.quit();
+        }
+
+    }
+
+    @AfterClass
+    public void flushReport()
+    {
+        reports.flush();
+    }
+
 }
