@@ -13,6 +13,7 @@ import com.aventstack.extentreports.ExtentTest;
 import pages.BraceletsActions;
 import pages.*;
 import pages.HomePage;
+import pages.WatchesPage;
 import pages.MensWatchActions;
 import pages.RingsPageActions;
 import utils.Base;
@@ -33,7 +34,14 @@ public class TestRunner extends Base{
     public void configBrowser(){
         openBrowser();
     }
-    @Test(priority = 4)
+
+    @Test
+    public void case1(){
+        test=reports.createTest("case1");
+        WatchesPage obj1=new WatchesPage(test);
+        obj1.testcase1();
+    }
+    @Test
     public void execute1(){
         test = reports.createTest("testCase04");
         RingsPageActions p1 = new RingsPageActions(test);
