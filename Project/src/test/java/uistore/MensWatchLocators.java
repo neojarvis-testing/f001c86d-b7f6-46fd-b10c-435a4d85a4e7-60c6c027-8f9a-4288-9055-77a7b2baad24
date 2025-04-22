@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 public class MensWatchLocators {
 
     public static By acceptCookies = By.xpath("//button[text()='Accept All Cookies and Terms and Conditions']");
-    public static By brands = By.cssSelector("a[href='/c/Brands']");
+    public static By brands = By.xpath("(//a[text()='Brands'])[1]");
     public static By omega = By.xpath("(//a[@href='/c/Brands/Omega'])[2]");
     public static By mensWatches = By.xpath("(//p[text()='Mens Watches'])[3]");
     public static By seaMasterFilter = By.xpath("//div[text()='Seamaster ']");
