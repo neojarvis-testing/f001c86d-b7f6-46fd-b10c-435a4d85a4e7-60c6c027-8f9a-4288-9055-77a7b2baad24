@@ -80,7 +80,6 @@ public class MensWatchActions extends Base{
             test.log(Status.PASS, "clicked on cookies");
         } 
     }
-
     /*
      * Method Name: clickOnAcceptCookies
      * Author Name: Muskan Jha
