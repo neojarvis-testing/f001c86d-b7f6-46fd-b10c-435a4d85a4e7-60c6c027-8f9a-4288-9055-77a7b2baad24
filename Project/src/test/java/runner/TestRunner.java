@@ -9,11 +9,9 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
-import pages.HomePage;
-import pages.MensWatchActions;
+import pages.ContactPageActions;
 import pages.RingsPageActions;
 import utils.Base;
-import utils.LoggerHandler;
 import utils.Reporter;
 
 public class TestRunner extends Base{
@@ -29,29 +27,6 @@ public class TestRunner extends Base{
     public void configBrowser(){
         openBrowser();
     }
-
-    // @Test 
-    // public void Rolex(){
-    //     HomePage obj = new HomePage(test);
-    //     test = reports.createTest("TestCase02");
-    //     obj.rolex();
-    // }
-    // @Test 
-    // public void testCasethree()
-    // {test = reports.createTest("testCase03");
-    //     MensWatchActions mensWatch = new MensWatchActions(test);
-    //     // mensWatch.clickOnAcceptCookies();
-    //     mensWatch.hoverOverBrands();
-    //     mensWatch.clickOnOmega();
-    //     mensWatch.verifyOmegaTitle();
-    //     mensWatch.clickOnMensWatches();
-    //     mensWatch.clickOnSeaMaster();
-    //     mensWatch.clickOnBlue();
-    //     mensWatch.clickOnFirstProduct();
-    //     mensWatch.clickOnAddToShoppingBag();
-    //     mensWatch.verifyKeyword();
-    //     mensWatch.takeScreenshot();
-    // }
     @Test
     public void execute1(){
         test = reports.createTest("testCase04");
@@ -69,6 +44,21 @@ public class TestRunner extends Base{
         p1.clickOnCarlex();
         p1.clickOnFirst();
         p1.clickOnLive();
+        p1.verifyRings();
+    }
+    @Test
+    public void contactExecute(){
+        ContactPageActions c1 = new ContactPageActions(test);
+        c1.clickOnAccept();
+        c1.clickOnContact();
+        c1.clickOnLuxury();
+        c1.clickOnStore();
+        c1.clickOnDelivery();
+        c1.clickOnclick();
+        c1.clickOnReturn();
+        c1.clickOnAffrim();
+        c1.clickOnFeedback();
+        c1.clusterVerification();
     }
 
 
