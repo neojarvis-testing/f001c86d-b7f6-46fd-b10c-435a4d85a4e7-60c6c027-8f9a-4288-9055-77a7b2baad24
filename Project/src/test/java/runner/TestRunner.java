@@ -31,8 +31,9 @@ public class TestRunner extends Base{
     @Test
     public void testCasethree()
     {
-        MensWatchActions mensWatch = new MensWatchActions(driver);
         test = reports.createTest("testCase03");
+        MensWatchActions mensWatch = new MensWatchActions(driver, test);
+        
         mensWatch.clickOnAcceptCookies();
         mensWatch.hoverOverBrands();
         mensWatch.clickOnOmega();

@@ -2,6 +2,9 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 import uistore.MensWatchLocators;
 import utils.Assertion;
 import utils.Screenshot;
@@ -11,11 +14,14 @@ public class MensWatchActions {
 
     WebDriver driver;
     WebDriverHelper helper;
+    ExtentTest test;
     Assertion asserts;
 
-    public MensWatchActions(WebDriver driver) {
+
+    public MensWatchActions(WebDriver driver, ExtentTest test) {
         this.driver = driver;
         helper = new WebDriverHelper(driver);
+        this.test = test;
         asserts = new Assertion(driver);
     }
 
@@ -94,6 +100,7 @@ public class MensWatchActions {
     public void verifyKeyword(){
         try {
             asserts.verifyTextInPage(MensWatchLocators.textVerify, "stores");
+            test.log(Status.PASS,"stores keyword verified");
         } catch (Exception e) {
             e.getMessage();
         }
