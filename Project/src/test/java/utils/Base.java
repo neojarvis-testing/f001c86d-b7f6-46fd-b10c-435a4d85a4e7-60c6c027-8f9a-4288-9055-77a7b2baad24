@@ -17,9 +17,10 @@ public class Base {
     public static Properties prop;
     Property property = new Property();
      
-    /*a.Method name:openBrowser
-    *b.Author:Sumayya Sultana
-    *Description:This Method is for opening Browser
+    /*Method name:openBrowser
+    *Author:Sumayya Sultana
+    *Description:This method is for opening Browser
+    *Parameters:N/A
     *Return Type:void
     */
     public void openBrowser() {
@@ -38,3 +39,4 @@ public class Base {
         driver = new EventFiringDecorator<>(listener).decorate(driver);
     }
 }
+

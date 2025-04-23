@@ -7,9 +7,9 @@ public class Property {
     public static FileInputStream file;
     public static Properties prop=null;
 
-    /*a.Method name:loadBaseProperties
-    *b.Author:Sumayya Sultana
-    *Description:This Method is for load configuration settings from an external properties file
+    /*Method name:loadBaseProperties
+    *Author:Sumayya Sultana
+    *Description:This method is for load configuration settings from an external properties file
     *Return Type:Properties
     */
 
