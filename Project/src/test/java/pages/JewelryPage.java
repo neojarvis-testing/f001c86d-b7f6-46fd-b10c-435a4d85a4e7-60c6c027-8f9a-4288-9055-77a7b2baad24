@@ -6,10 +6,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import uistore.JewelryLocators;
-import utils.Assertion;
-import utils.Base;
-import utils.LoggerHandler;
-import utils.WebDriverHelper;
+import utils.*;
 
 public class JewelryPage extends Base{
     public WebDriverHelper helper;
@@ -19,6 +16,8 @@ public class JewelryPage extends Base{
      * Constructor name: JewelryPage
      * Author: Pavan Kumar
      * Description: this contrustor creates a reference for WebDriverHelper variable, Assertion variable and initializes ExtentTest variable
+     * Return type: none
+     * Parameters: ExtentTest instance
      */
     public JewelryPage(ExtentTest test)
     {
@@ -53,6 +52,7 @@ public class JewelryPage extends Base{
             test.log(Status.INFO,"Failed to hover over jewelry and click on chanel");
             test.log(Status.FAIL,"Hovering over Jewelry and clicking on chanel is a failure");
             LoggerHandler.logError("Hovering over Jewelry and clicking on chanel is a failure");
+            Reporter.attachScreenshotToReport("Failed to hover over jewelry and click on chanel",test,"");
         }
 
     }
@@ -77,6 +77,7 @@ public class JewelryPage extends Base{
             test.log(Status.INFO,"Chanel page title verification has failed");
             test.log(Status.FAIL,"Verification of title of chanel page is a failure");
             LoggerHandler.logError("Verification of title of chanel page is a failure");
+            Reporter.attachScreenshotToReport("Failed to verify Chanel page title",test,"");
         }
     }
 
@@ -105,6 +106,7 @@ public class JewelryPage extends Base{
             test.log(Status.INFO,"Failed to filter based on rings");
            test.log(Status.FAIL,"Filtering based on rings is a failure");
             LoggerHandler.logError("Filtering based on rings is a failure");
+            Reporter.attachScreenshotToReport("Failed to click on rings",test,"");
         }
     }
 
@@ -133,6 +135,7 @@ public class JewelryPage extends Base{
             test.log(Status.INFO,"Failed to apply filter based on coco brush brand");
             test.log(Status.FAIL,"Filtering for coco brush for brand type is a failure");
             LoggerHandler.logError("Filtering for coco brush for brand type is a failure");
+            Reporter.attachScreenshotToReport("Failed to click on coco brush",test,"");
         }
 
     }
@@ -162,6 +165,7 @@ public class JewelryPage extends Base{
             test.log(Status.INFO,"Failed to filter based on metal type");
             test.log(Status.FAIL,"Filtering for metal type is a failure");
             LoggerHandler.logError("Filtering for metal type is a failure");
+            Reporter.attachScreenshotToReport("Failed to click on white gold",test,"");
         }
 
     }
@@ -188,6 +192,7 @@ public class JewelryPage extends Base{
             test.log(Status.INFO,"Could not click on first product");
             test.log(Status.FAIL,"Failed to apply appropriate filters and to click on first product");
             LoggerHandler.logError("Failed to apply appropriate filters and to click on first product");
+            Reporter.attachScreenshotToReport("Failed to click on frist product",test,"");
         }
 
     }

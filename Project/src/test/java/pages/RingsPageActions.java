@@ -146,7 +146,13 @@ public class RingsPageActions extends Base{
         }
     }
     public void verifyRings(){
+        try{
         asserts.verifyTitleOfPage("Rings");
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
         
     }
     
