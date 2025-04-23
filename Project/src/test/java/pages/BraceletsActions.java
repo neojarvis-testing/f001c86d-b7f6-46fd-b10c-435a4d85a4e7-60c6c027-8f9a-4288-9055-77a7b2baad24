@@ -18,22 +18,23 @@ public class BraceletsActions {
     WebDriverHelper helper;
     Assertion assertion;
     ExtentTest test;
-
-    public BraceletsActions(WebDriver driver,ExtentTest test) {
+    LoggerHandler logs;
+    public BraceletsActions(WebDriver driver, ExtentTest test, LoggerHandler logs) {
         this.driver = driver;
         helper = new WebDriverHelper(driver);
-        this.test =test;
-        assertion = new Assertion(driver);
+        this.test = test;
+        assertion = new Assertion(driver, logs);
+        this.logs = logs;
     }
 
      public void clickOnAccept(){
         try{
         helper.clickOnElement(BraceletsLocators.acceptAndCookies);
-         LoggerHandler.logInfo("Clicked On Accept and Cookies");
+         logs.logInfo("Clicked On Accept and Cookies");
             test.log(Status.PASS, "Clicked On Accept and Cookies");
         }catch(Exception e){
             System.out.println(e.getMessage());
-            LoggerHandler.logError("Clicked On Accept and Cookies");
+            logs.logError("Clicked On Accept and Cookies");
             test.log(Status.FAIL, "Clicked On Accept and Cookies");
         }
     }
@@ -42,12 +43,12 @@ public class BraceletsActions {
     public void hoverOnWedding(){
         try {
             helper.hoverOverElement(BraceletsLocators.wedding);
-            LoggerHandler.logInfo("Hovered over wedding");
+            logs.logInfo("Hovered over wedding");
             test.log(Status.PASS, "Hovered over wedding");
             
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            LoggerHandler.logError("Hovered over wedding");
+            logs.logError("Hovered over wedding");
             test.log(Status.FAIL, "Hovered over wedding");
         }
 
@@ -56,36 +57,36 @@ public class BraceletsActions {
     public void clickOnBracelets(){
         try{
             helper.clickOnElement(BraceletsLocators.bracelets);
-            LoggerHandler.logInfo("Clicked On Bracelets");
+            logs.logInfo("Clicked On Bracelets");
             test.log(Status.PASS, "Clicked On Bracelets");
            
 
         }catch(Exception e){
             System.out.println(e.getMessage());
-            LoggerHandler.logError("Clicked On Bracelets");
+            logs.logError("Clicked On Bracelets");
             test.log(Status.FAIL,"Clicked On Bracelets");
         }
     }
     public void verifyJew(){
         try {
             assertion.verifyTextInPage(BraceletsLocators.verJewelry,"jewelry");
-            LoggerHandler.logInfo("Verified the text Jewelry");
+            logs.logInfo("Verified the text Jewelry");
             test.log(Status.PASS, "Verified the text Jewelry");
             
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            LoggerHandler.logError("Verified the text Jewelry");
+            logs.logError("Verified the text Jewelry");
             test.log(Status.FAIL, "Verified the text Jewelry");
         }
     }
     public void clickOnDismiss(){
         try{
         helper.clickOnElement(SearchLocators.dismiss);
-        LoggerHandler.logInfo("Clicked On Dismiss");
+        logs.logInfo("Clicked On Dismiss");
         test.log(Status.PASS, "Clicked On Dismiss");
     }catch(Exception e){
         System.out.println(e.getMessage());
-        LoggerHandler.logError("Clicked On Dismis");
+        logs.logError("Clicked On Dismis");
         test.log(Status.FAIL, "Clicked On Dismiss");
     }
     }
@@ -94,12 +95,12 @@ public class BraceletsActions {
         try{
             helper.clickOnElement(BraceletsLocators.metalType);
             helper.clickOnElement(BraceletsLocators.yellowGold);
-            LoggerHandler.logInfo("Clicked On Yellow Gold");
+            logs.logInfo("Clicked On Yellow Gold");
         test.log(Status.PASS, "Clicked On Yellow Gold");
 
         }catch (Exception e) {
             System .out.println(e.getMessage());
-            LoggerHandler.logError("Clicked On Yellow Gold");
+            logs.logError("Clicked On Yellow Gold");
             test.log(Status.FAIL, "Clicked On Yellow Gold");
         }
     }
@@ -108,13 +109,13 @@ public class BraceletsActions {
         try{
             helper.clickOnElement(BraceletsLocators.gemstone);
             helper.clickOnElement(BraceletsLocators.diamond);
-            LoggerHandler.logInfo("Clicked On Diamond");
+            logs.logInfo("Clicked On Diamond");
         test.log(Status.PASS, "Clicked On Diamond");
 
             
         }catch (Exception e) {
             System .out.println(e.getMessage());
-            LoggerHandler.logError("Clicked On Diamond");
+            logs.logError("Clicked On Diamond");
         test.log(Status.FAIL, "Clicked On Diamond");
         }
     }
@@ -123,13 +124,13 @@ public class BraceletsActions {
         try {
             helper.clickOnElement(BraceletsLocators.braceletStyle);
             helper.clickOnElement(BraceletsLocators.brace);
-            LoggerHandler.logInfo("Clicked On Bracelets Under BraceletStyles");
+            logs.logInfo("Clicked On Bracelets Under BraceletStyles");
         test.log(Status.PASS, "Clicked On Bracelets Under BraceletStyles");
 
             
         } catch (Exception e) {
             System .out.println(e.getMessage());
-            LoggerHandler.logError("Clicked On Bracelets Under BraceletStyles");
+            logs.logError("Clicked On Bracelets Under BraceletStyles");
         test.log(Status.FAIL, "Clicked On Bracelets Under BraceletStyles");
         }
     }
@@ -137,12 +138,12 @@ public class BraceletsActions {
     public void clickOnfirstPro(){
         try{
             helper.clickOnElement(BraceletsLocators.firstPro);
-            LoggerHandler.logInfo("Clicked On First Product");
+            logs.logInfo("Clicked On First Product");
         test.log(Status.PASS, "Clicked On First Product");
 
         }catch(Exception e){
             System.out.println(e.getMessage());
-            LoggerHandler.logError("Clicked On First Product");
+            logs.logError("Clicked On First Product");
         test.log(Status.FAIL, "Clicked On First Product");
         }
     }
@@ -150,12 +151,12 @@ public class BraceletsActions {
     public void clickOnAddToShopping(){
         try {
             helper.clickOnElement(BraceletsLocators.addToShopping);
-            LoggerHandler.logInfo("Clicked On AddToShopping");
+            logs.logInfo("Clicked On AddToShopping");
         test.log(Status.PASS, "Clicked On AddToShopping");
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            LoggerHandler.logError("Clicked On AddToShopping");
+            logs.logError("Clicked On AddToShopping");
         test.log(Status.FAIL, "Clicked On AddToShopping");
         }
 
@@ -164,11 +165,11 @@ public class BraceletsActions {
     public void getScreenshot() {
         try{
         Screenshot.takeScreenshot("Bracelets");
-        LoggerHandler.logInfo("Captured Bracelets Screenshot");
+        logs.logInfo("Captured Bracelets Screenshot");
         test.log(Status.PASS, "Clicked On Bracelets Screenshot");
     }catch(Exception e){
         System.out.println(e.getMessage());
-        LoggerHandler.logError("Captured Bracelets Screenshot");
+        logs.logError("Captured Bracelets Screenshot");
         test.log(Status.FAIL, "Clicked On Bracelets Screenshot");
     }
     }

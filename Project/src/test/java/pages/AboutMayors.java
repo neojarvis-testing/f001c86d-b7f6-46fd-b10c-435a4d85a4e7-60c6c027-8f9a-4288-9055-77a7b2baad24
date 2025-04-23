@@ -13,11 +13,13 @@ public class AboutMayors extends Base{
     public WebDriverHelper helper;
     public ExtentTest test;
     public Assertion assertt;
-    public AboutMayors(ExtentTest test)
+    LoggerHandler logs;
+    public AboutMayors(ExtentTest test,LoggerHandler logs)
     {
         helper = new WebDriverHelper(driver);
         this.test=test;
-        assertt = new Assertion(driver);
+        assertt = new Assertion(driver,logs);
+        this.logs = logs;
     }
 
     public void clickOnAboutM()
@@ -26,7 +28,7 @@ public class AboutMayors extends Base{
         helper.clickOnElement(JewelryLocators.acceptCook);
         helper.javascriptScroll(AboutUsPageLocators.aboutMayors);
         test.log(Status.INFO,"scroll down to footer");
-        LoggerHandler.logInfo("scroll down to footer");
+        logs.logInfo("scroll down to footer");
         
 
         helper.clickOnElement(AboutUsPageLocators.aboutMayors);
@@ -37,11 +39,11 @@ public class AboutMayors extends Base{
         test.log(Status.INFO,"");
 
         test.log(Status.PASS,"Successfully performed About Mayors clicking operations");
-        LoggerHandler.logInfo("Successfully performed About Mayors clicking operations");
+        logs.logInfo("Successfully performed About Mayors clicking operations");
         }
         catch(Exception e)
         {
-            LoggerHandler.logError("Failed to perform About Mayors clicking operations");
+            logs.logError("Failed to perform About Mayors clicking operations");
             test.log(Status.FAIL,"Failed to perform About Mayors clicking operations");
         }
     }
@@ -59,13 +61,13 @@ public class AboutMayors extends Base{
         test.log(Status.INFO,"");
 
         test.log(Status.PASS,"Clicking on Press is a success");
-        LoggerHandler.logInfo("Clicking on Press is a success");
+        logs.logInfo("Clicking on Press is a success");
         }
         catch(Exception e)
         {
             test.log(Status.INFO,"");
 
-            LoggerHandler.logError("Failed to perform press click operations");
+            logs.logError("Failed to perform press click operations");
             test.log(Status.FAIL,"Failed to perform press click operations");
         }
 
@@ -84,13 +86,13 @@ public class AboutMayors extends Base{
         test.log(Status.INFO,"");
 
         test.log(Status.PASS,"Successfully performed career click operations");
-        LoggerHandler.logInfo("Successfully performed career click operations");
+        logs.logInfo("Successfully performed career click operations");
         }
         catch(Exception e)
         {
             test.log(Status.INFO,"");
 
-            LoggerHandler.logError("Failed to perform career click operations");
+            logs.logError("Failed to perform career click operations");
             test.log(Status.FAIL,"Failed to perform career click operations");
         }
     } 
@@ -107,13 +109,13 @@ public class AboutMayors extends Base{
         test.log(Status.INFO,"");
 
         test.log(Status.PASS,"Sucessfully performed clicking on Sustainability operations");
-        LoggerHandler.logInfo("Sucessfully performed clicking on Sustainability operations");
+        logs.logInfo("Sucessfully performed clicking on Sustainability operations");
         }
         catch(Exception e)
         {
             test.log(Status.INFO,"");
 
-            LoggerHandler.logError("Failed to perform Sustainability click operations");
+            logs.logError("Failed to perform Sustainability click operations");
             test.log(Status.FAIL,"Failed to perform Sustainability click operations");
         }
 
@@ -131,13 +133,13 @@ public class AboutMayors extends Base{
         test.log(Status.INFO,"");
 
         test.log(Status.PASS,"Successfully performed News Letter clicking operations");
-        LoggerHandler.logInfo("Successfully performed News Letter clicking operations");
+        logs.logInfo("Successfully performed News Letter clicking operations");
         }
         catch(Exception e)
         {
             test.log(Status.INFO,"");
 
-            LoggerHandler.logError("Failed to perfrom News Letter clicking operations");
+            logs.logError("Failed to perfrom News Letter clicking operations");
             test.log(Status.FAIL,"Failed to perfrom News Letter clicking operations");
         }
     }
@@ -155,13 +157,13 @@ public class AboutMayors extends Base{
         test.log(Status.INFO,"");
 
         test.log(Status.PASS,"Successfully performed rolex clicking operations");
-        LoggerHandler.logInfo("Successfully performed rolex clicking operations");
+        logs.logInfo("Successfully performed rolex clicking operations");
         }
         catch(Exception e)
         {
             test.log(Status.INFO,"");
 
-            LoggerHandler.logError("Failed to perform rolex clicking operations");
+            logs.logError("Failed to perform rolex clicking operations");
             test.log(Status.FAIL,"Failed to perform rolex clicking operations");
         }
     }
@@ -179,13 +181,13 @@ public class AboutMayors extends Base{
         test.log(Status.INFO,"");
 
         test.log(Status.PASS,"Successfully performed wedding clicking operations");
-        LoggerHandler.logInfo("Successfully performed wedding clicking operations");
+        logs.logInfo("Successfully performed wedding clicking operations");
         }
         catch(Exception e)
         {
             test.log(Status.INFO,"");
 
-            LoggerHandler.logError("Failed to perform Wedding click operations");
+            logs.logError("Failed to perform Wedding click operations");
             test.log(Status.FAIL,"Failed to perform Wedding click operations");
         }
     }
@@ -203,13 +205,13 @@ public class AboutMayors extends Base{
         test.log(Status.INFO,"");
 
         test.log(Status.PASS,"Successfully performed Brands clicking operations");
-        LoggerHandler.logInfo("Successfully performed Brands clicking operations");
+        logs.logInfo("Successfully performed Brands clicking operations");
         }
         catch(Exception e)
         {
             test.log(Status.INFO,"");
 
-            LoggerHandler.logError("Failed to perform Brands clicking operations");
+            logs.logError("Failed to perform Brands clicking operations");
             test.log(Status.FAIL,"Failed to perform Brands clicking operations");
         }
     }
@@ -226,13 +228,13 @@ public class AboutMayors extends Base{
         test.log(Status.INFO,"");
 
         test.log(Status.PASS,"Successfully verified and took a screenshot");
-        LoggerHandler.logInfo("Successfully verified and took a screenshot");
+        logs.logInfo("Successfully verified and took a screenshot");
         }
         catch(Exception e)
         {
             test.log(Status.INFO,"");
 
-            LoggerHandler.logError("Failed to verify and take a screenshot");
+            logs.logError("Failed to verify and take a screenshot");
             test.log(Status.FAIL,"Failed to verify and take a screenshot");
         }
     }

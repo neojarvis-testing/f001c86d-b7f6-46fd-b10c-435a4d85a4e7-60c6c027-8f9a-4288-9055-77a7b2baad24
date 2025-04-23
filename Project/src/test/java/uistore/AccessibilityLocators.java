@@ -13,5 +13,6 @@ public class AccessibilityLocators {
     public static By payByLinkTerms = By.xpath("//a[text()='PayByLink Terms']");
     public static By watches = By.xpath("(//a[text()='Watches'])`[3]");
     public static By jewellery = By.xpath("(//a[text()='Jewelry'])[3]");
+    public static By categoryKeyword = By.xpath("//div[text()='Category']");
 
 }
