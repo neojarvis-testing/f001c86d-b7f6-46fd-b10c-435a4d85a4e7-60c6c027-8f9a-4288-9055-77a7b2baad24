@@ -11,11 +11,13 @@ import com.aventstack.extentreports.ExtentTest;
 
 import pages.*;
 import utils.Base;
+import utils.LoggerHandler;
 import utils.Reporter;
 
 public class TestRunner extends Base{
     ExtentReports reports;
     ExtentTest test;
+    LoggerHandler logs = new LoggerHandler();
 
     @BeforeClass
     public void configReport(){
@@ -31,7 +33,7 @@ public class TestRunner extends Base{
     @Test
     public void case1(){
         test=reports.createTest("case1");
-        WatchesPage obj1=new WatchesPage(test);
+        WatchesPage obj1=new WatchesPage(test, logs);
         obj1.testcase1();
     }
     @Test(priority = 2)
@@ -40,31 +42,144 @@ public class TestRunner extends Base{
         RingsPageActions p1 = new RingsPageActions(test);
         p1.ringsExecute();
     }
+    // @Test
+    // public void execute1(){
+    //     test = reports.createTest("testCase04");
+    //     RingsPageActions p1 = new RingsPageActions(test);
+    //     p1.clickOnAccept();
+    //     p1.clickOnSearch();
+    //     p1.inputOnSearchBar();
+    //     p1.enterOnSearchbar();
+        
+    //     p1.clickOnClose();
+    //     p1.clickOnRings();
+    //     p1.clickOnForher();
+    //     p1.clickOnForher();
+    //     p1.clickOnBrand();
+    //     p1.clickOnCarlex();
+    //     p1.clickOnFirst();
+    //     p1.clickOnLive();
+    //     p1.verifyRings();
+    // }
+    // @Test
+    // public void contactExecute(){
+    //     ContactPageActions c1 = new ContactPageActions(test);
+    //     c1.clickOnAccept();
+    //     c1.clickOnContact();
+    //     c1.clickOnLuxury();
+    //     c1.clickOnStore();
+    //     c1.clickOnDelivery();
+    //     c1.clickOnclick();
+    //     c1.clickOnReturn();
+    // }
+
+    // @Test (priority = 1)
+    // public void Rolex(){
+    //     test = reports.createTest("TestCase02");
+    //     HomePage obj = new HomePage(test);
+    //     obj.rolex();
+    // }
+    // @Test(priority = 2)
+    // public void testCasethree()
+    // {
+    //     test = reports.createTest("TestCase03");
+    //     MensWatchActions mensWatch = new MensWatchActions(driver, test);
+    //     mensWatch.MensWatchTestCase();
+    // }
+    // @Test(priority = 3)
+    // public void testCase4()
+    // {
+    //     test = reports.createTest("Test case 4");
+    //     JewelryPage jew  = new JewelryPage(test);
+    //     jew.test4();
+    // }
+
+    // @Test
+    // public void testCase10()
+    // {
+    //     test = reports.createTest("Test case 10");
+    //     AboutMayors abtMay = new AboutMayors(test);
+    //     abtMay.test10();
+    // }
+    // @Test(priority = 6)
+    // public void test(){
+    //     test = reports.createTest("TestCase-07");
+    //     SearchActions sa = new SearchActions(driver,test);
+        
+    //     sa.search();
+
+    // }
+    // @Test(priority = 5)
+    // public void testBracelets(){
+    //     test = reports.createTest("TestCase-05");
+    //     BraceletsActions ba = new BraceletsActions(driver,test);
+    //     ba.braceletsTest();
+
+    // }
+
+    // @Test (priority = 3)
+    // public void testCaseNine(){
+    //     test = reports.createTest("TestCase09");
+    //     AccessibilityActions accessy = new AccessibilityActions(driver,test);
+    //     accessy.accessibilityTestCase();
+    // }
+    @Test
+    public void execute1(){
+        test = reports.createTest("testCase04");
+        RingsPageActions p1 = new RingsPageActions(test,logs);
+        p1.clickOnAccept();
+        p1.clickOnSearch();
+        p1.inputOnSearchBar();
+        p1.enterOnSearchbar();
+        
+        p1.clickOnClose();
+        p1.clickOnRings();
+        p1.clickOnForher();
+        p1.clickOnForher();
+        p1.clickOnBrand();
+        p1.clickOnCarlex();
+        p1.clickOnFirst();
+        p1.clickOnLive();
+        p1.verifyRings();
+
+    }
     @Test(priority = 1)
     public void contactExecute(){
+
         test  = reports.createTest("test case 9");
         ContactPageActions c1 = new ContactPageActions(test);
         c1.runContact();
     }
 
-    @Test 
+
+    /*
+     * Method Name : Rolex
+     * Author Name : Praneeth
+     * Description : This method used to run the home page actions
+     * Parameters : NA
+     * Return Type : void
+     */
+    @Test (priority = 1)
     public void Rolex(){
         test = reports.createTest("TestCase02");
-        HomePage obj = new HomePage(test);
+        HomePage obj = new HomePage(test,logs);
         obj.rolex();
     }
-    @Test
+
+
+    @Test(priority = 2)
     public void testCasethree()
     {
         test = reports.createTest("TestCase03");
-        MensWatchActions mensWatch = new MensWatchActions(driver, test);
+        MensWatchActions mensWatch = new MensWatchActions(driver, test,logs);
         mensWatch.MensWatchTestCase();
     }
+
     @Test(priority = 3)
     public void testCase4()
     {
         test = reports.createTest("Test case 4");
-        JewelryPage jew  = new JewelryPage(test);
+        JewelryPage jew  = new JewelryPage(test,logs);
         jew.test4();
     }
 
@@ -72,21 +187,23 @@ public class TestRunner extends Base{
     public void testCase10()
     {
         test = reports.createTest("Test case 10");
-        AboutMayors abtMay = new AboutMayors(test);
+        AboutMayors abtMay = new AboutMayors(test, logs);
         abtMay.test10();
     }
+
     @Test(priority = 6)
     public void test(){
         test = reports.createTest("TestCase-07");
-        SearchActions sa = new SearchActions(driver,test);
+        SearchActions sa = new SearchActions(driver,test,logs);
         
         sa.search();
 
     }
+
     @Test(priority = 5)
     public void testBracelets(){
         test = reports.createTest("TestCase-05");
-        BraceletsActions ba = new BraceletsActions(driver,test);
+        BraceletsActions ba = new BraceletsActions(driver,test, logs);
         ba.braceletsTest();
 
     }
@@ -94,7 +211,7 @@ public class TestRunner extends Base{
     @Test (priority = 3)
     public void testCaseNine(){
         test = reports.createTest("TestCase09");
-        AccessibilityActions accessy = new AccessibilityActions(driver,test);
+        AccessibilityActions accessy = new AccessibilityActions(driver,test,logs);
         accessy.accessibilityTestCase();
     }
 
@@ -112,6 +229,5 @@ public class TestRunner extends Base{
     {
         reports.flush();
     }
-
 
 }
