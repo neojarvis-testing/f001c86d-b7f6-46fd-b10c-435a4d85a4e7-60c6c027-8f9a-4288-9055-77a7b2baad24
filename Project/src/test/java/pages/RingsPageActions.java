@@ -2,7 +2,6 @@ package pages;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.model.Report;
 
 import uistore.RingsPageLocators;
 import utils.Base;
@@ -16,6 +15,7 @@ public class RingsPageActions extends Base{
     WebDriverHelper helper;
     Assertion asserts;
     ExtentTest test;
+    LoggerHandler logs;
     /*
      * Constructor Name : RingsPageActions
      * Author Name : Krishna Reddy
@@ -45,7 +45,7 @@ public class RingsPageActions extends Base{
         test.log(Status.PASS,"Clicked on searchbar");
         }
         catch(Exception e){
-            LoggerHandler.logError("Clicked on search");
+            logs.logError("Clicked on search");
             test.log(Status.FAIL, "Clicked on search");
             Screenshot.takeScreenshot("src14");
             Reporter.attachScreenshotToReport("Brands", test, "src14");
@@ -69,7 +69,7 @@ public class RingsPageActions extends Base{
         test.log(Status.PASS,"Clicked on searchbar");
         }
         catch(Exception e){
-            LoggerHandler.logError("Clicked on searchbar");
+            logs.logError("Clicked on searchbar");
             test.log(Status.FAIL, "Clicked on searchbar");
             Screenshot.takeScreenshot("src15");
             Reporter.attachScreenshotToReport("Brands", test, "src15");
@@ -90,7 +90,7 @@ public class RingsPageActions extends Base{
         test.log(Status.PASS,"Entered on search"); 
         }
         catch(Exception e){
-            LoggerHandler.logError("Entered on search");
+            logs.logError("Entered on search");
             test.log(Status.FAIL, "Entered on search");
             Screenshot.takeScreenshot("src16");
             Reporter.attachScreenshotToReport("Brands", test, "src16");
@@ -112,7 +112,7 @@ public class RingsPageActions extends Base{
         test.log(Status.PASS,"Clicked on brand"); 
         }
         catch(Exception e){
-            LoggerHandler.logError("Clicked on brand");
+            logs.logError("Clicked on brand");
             test.log(Status.FAIL, "Clicked on brand");
             Screenshot.takeScreenshot("src17");
             Reporter.attachScreenshotToReport("Brands", test, "src17");
@@ -134,7 +134,7 @@ public class RingsPageActions extends Base{
         test.log(Status.PASS,"Clicked on carlex"); 
         }
         catch(Exception e){
-            LoggerHandler.logError("Clicked on carlex");
+            logs.logError("Clicked on carlex");
             test.log(Status.FAIL, "Clicked on carlex");
             Screenshot.takeScreenshot("src18");
             Reporter.attachScreenshotToReport("Brands", test, "src18");
@@ -156,7 +156,7 @@ public class RingsPageActions extends Base{
         test.log(Status.PASS,"Clicked on rings");
         }
         catch(Exception e){
-            LoggerHandler.logError("Clicked on Rings");
+            logs.logError("Clicked on Rings");
             test.log(Status.FAIL, "Clicked on Rings");
             Screenshot.takeScreenshot("src19");
             Reporter.attachScreenshotToReport("Brands", test, "src19");
@@ -178,7 +178,7 @@ public class RingsPageActions extends Base{
         test.log(Status.PASS,"Clicked on forher");
         }
         catch(Exception e){
-            LoggerHandler.logError("Clicked on forher");
+            logs.logError("Clicked on forher");
             test.log(Status.FAIL, "Clicked on forher");
             Screenshot.takeScreenshot("src20");
             Reporter.attachScreenshotToReport("Brands", test, "src20");
@@ -200,7 +200,7 @@ public class RingsPageActions extends Base{
         test.log(Status.PASS,"Clicked on first");
         }
         catch(Exception e){
-            LoggerHandler.logError("Clicked on first");
+            logs.logError("Clicked on first");
             test.log(Status.FAIL, "Clicked on first");
             Screenshot.takeScreenshot("src21");
             Reporter.attachScreenshotToReport("Brands", test, "src21");
@@ -224,7 +224,7 @@ public class RingsPageActions extends Base{
         Reporter.attachScreenshotToReport("src1.png", test, "");
         }
         catch(Exception e){
-            LoggerHandler.logError("Clicked on live");
+            logs.logError("Clicked on live");
             test.log(Status.FAIL, "Clicked on live");
             Screenshot.takeScreenshot("src22");
             Reporter.attachScreenshotToReport("Brands", test, "src22");
@@ -245,7 +245,7 @@ public class RingsPageActions extends Base{
         test.log(Status.PASS,"Clicked on accept cookies");
         }
         catch(Exception e){
-            LoggerHandler.logError("Clicked on accept cookies");
+            logs.logError("Clicked on accept cookies");
             test.log(Status.FAIL, "Clicked on accept cookies");
             Screenshot.takeScreenshot("src23");
             Reporter.attachScreenshotToReport("Brands", test, "src23");
@@ -262,13 +262,13 @@ public class RingsPageActions extends Base{
     public void clickOnClose(){
         try{
         helper.clickOnElement(RingsPageLocators.close);
-        LoggerHandler.logInfo("Clicked on close");
+        logs.logInfo("Clicked on close");
         test.log(Status.PASS,"Clicked on close");
         logs.logInfo("Clicked on searc");
         test.log(Status.PASS,"Clicked on searc");
         }
         catch(Exception e){
-            LoggerHandler.logError("Clicked on close");
+            logs.logError("Clicked on close");
             test.log(Status.FAIL, "Clicked on close");
             Screenshot.takeScreenshot("src24");
             Reporter.attachScreenshotToReport("Brands", test, "src24");
@@ -287,7 +287,7 @@ public class RingsPageActions extends Base{
         asserts.verifyTitleOfPage("Rings");
         }
         catch(Exception e){
-            LoggerHandler.logError("Failed to verify Rings");
+            logs.logError("Failed to verify Rings");
             test.log(Status.FAIL, "Failed to verify Rings");
             Screenshot.takeScreenshot("src25");
             Reporter.attachScreenshotToReport("Brands", test, "src25");

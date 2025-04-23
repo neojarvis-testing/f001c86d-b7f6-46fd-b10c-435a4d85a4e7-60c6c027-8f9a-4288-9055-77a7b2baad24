@@ -16,6 +16,7 @@ public class WatchesPage extends Base{
     public WebDriverHelper helper;
     ExtentTest test;
     Assertion asserts;
+    LoggerHandler logs;
     /*Method name:WatchesPage
     *Author:Sumayya Sultana
     *Description:This method is a constructor od class WatchesPage
@@ -39,11 +40,10 @@ public class WatchesPage extends Base{
         try {
             helper.waitForElementToBeVisible(WatchesLocators.acceptOnCookies,5);
             helper.clickOnElement(WatchesLocators.acceptOnCookies);
-            LoggerHandler.logInfo("Clicked on cookies");
             test.log(Status.INFO,"Clicked on cookies");
             test.log(Status.PASS, "Clicked on cookies");
         } catch (Exception e) {
-            LoggerHandler.logError("Unable to click on the Cookies");
+            logs.logError("Unable to click on the Cookies");
             test.log(Status.INFO,"Unable to click on the Cookies");
             test.log(Status.FAIL, "Unable to click on the Cookies");
             Screenshot.takeScreenshot("Cookies");
@@ -68,7 +68,7 @@ public class WatchesPage extends Base{
             test.log(Status.PASS, "Hover on watches");
            
         } catch (Exception e) {
-            LoggerHandler.logError("Unable to Hover on watches");
+            logs.logError("Unable to Hover on watches");
             test.log(Status.INFO,"Unable to Hover on watches");
             test.log(Status.FAIL, "Unable to Hover on watches");
             Screenshot.takeScreenshot("Hover watches");
@@ -87,11 +87,11 @@ public class WatchesPage extends Base{
         try {
             helper.waitForElementToBeVisible(WatchesLocators.clickOnBestSellers,5);
             helper.clickOnElement(WatchesLocators.clickOnBestSellers);
-            LoggerHandler.logInfo("Clicked n Best Seller");
+            logs.logInfo("Clicked n Best Seller");
             test.log(Status.INFO,"Clicked on Best Seller");
             test.log(Status.PASS, "Clicked on Best Seller");
         } catch (Exception e) {
-            LoggerHandler.logError("Unable to  click on Best Seller");
+            logs.logError("Unable to  click on Best Seller");
             test.log(Status.INFO,"Unable to  click on Best Seller");
             test.log(Status.FAIL, "Unable to  click on Best Seller");
             Screenshot.takeScreenshot("Best Sellers");
@@ -109,11 +109,11 @@ public class WatchesPage extends Base{
     public void verifyTitle(){
         try {
             asserts.verifyTitleOfPage("omega");
-            LoggerHandler.logInfo("Title verified");
+            logs.logInfo("Title verified");
             test.log(Status.INFO,"Title verified");
             test.log(Status.PASS, "Title verified");
         } catch (Exception e) {
-            LoggerHandler.logError("Unable to verify Title");
+            logs.logError("Unable to verify Title");
             test.log(Status.INFO,"Unable to verify Title");
             test.log(Status.FAIL, "Unable to verify Title");
             Screenshot.takeScreenshot("verified Title");
@@ -131,11 +131,11 @@ public class WatchesPage extends Base{
         try {
             helper.waitForElementToBeVisible(WatchesLocators.clickOnCross,5);
             helper.clickOnElement(WatchesLocators.clickOnCross);
-            LoggerHandler.logInfo("Clicked on close pop up");
+            logs.logInfo("Clicked on close pop up");
             test.log(Status.INFO,"Clicked on close pop up");
             test.log(Status.PASS, "Clicked on close pop up");
         } catch (Exception e) {
-            LoggerHandler.logError("Unable to click on close pop up");
+            logs.logError("Unable to click on close pop up");
             test.log(Status.INFO,"Unable to click on close pop up");
             test.log(Status.FAIL, "Unable to click on close pop up");
             Screenshot.takeScreenshot("Close pop up");
@@ -157,11 +157,11 @@ public class WatchesPage extends Base{
             }
             helper.waitForElementToBeVisible(WatchesLocators.clickOnForHim,5);
             helper.clickOnElement(WatchesLocators.clickOnForHim);
-            LoggerHandler.logInfo("Clicked on For Him");
+            logs.logInfo("Clicked on For Him");
             test.log(Status.INFO,"Clicked on For Him");
             test.log(Status.PASS, "Clicked on For Him");
         } catch (Exception e) {
-            LoggerHandler.logError("Unable to click on For Him");
+            logs.logError("Unable to click on For Him");
             test.log(Status.INFO,"Unable to click on For Him");
             test.log(Status.FAIL, "Unable to click on For Him");
             Screenshot.takeScreenshot("Clicked For Him");
@@ -180,11 +180,11 @@ public class WatchesPage extends Base{
         try {
             helper.waitForElementToBeVisible(WatchesLocators.clickOnCartier,5);
             helper.clickOnElement(WatchesLocators.clickOnCartier);
-            LoggerHandler.logInfo("Clicked on Cartier");
+            logs.logInfo("Clicked on Cartier");
             test.log(Status.INFO,"Clicked on Cartier");
             test.log(Status.PASS, "Clicked on Cartier");
         } catch (Exception e) {
-            LoggerHandler.logError("Unable to click on Cartier");
+            logs.logError("Unable to click on Cartier");
             test.log(Status.INFO,"Unable to click on Cartier");
             test.log(Status.FAIL, "Unable to click on Cartier");
             Screenshot.takeScreenshot("Cartier");
@@ -203,11 +203,11 @@ public class WatchesPage extends Base{
         try {
             helper.waitForElementToBeVisible(WatchesLocators.clickOnDialColor,5);
             helper.clickOnElement(WatchesLocators.clickOnDialColor);
-            LoggerHandler.logInfo("Clicked on Color");
+            logs.logInfo("Clicked on Color");
             test.log(Status.INFO,"Clicked on Color");
             test.log(Status.PASS, "Clicked on Color");
         } catch (Exception e) {
-            LoggerHandler.logError("Unable to click on Color");
+            logs.logError("Unable to click on Color");
             test.log(Status.INFO,"Unable to click on Color");
             test.log(Status.FAIL, "Unable to click on Color");
             Screenshot.takeScreenshot("Dial Color");
@@ -227,11 +227,11 @@ public class WatchesPage extends Base{
         try {
             helper.waitForElementToBeVisible(WatchesLocators.clickOnBlack,5);
             helper.clickOnElement(WatchesLocators.clickOnBlack);
-            LoggerHandler.logInfo("Clicked on Black");
+            logs.logInfo("Clicked on Black");
             test.log(Status.INFO,"Clicked on Black");
             test.log(Status.PASS, "Clicked on Black");
         } catch (Exception e) {
-            LoggerHandler.logError("Unable to click on Black");
+            logs.logError("Unable to click on Black");
             test.log(Status.INFO,"Unable to click on Black");
             test.log(Status.FAIL, "Unable to click on Black");
             Screenshot.takeScreenshot("Black");
@@ -252,11 +252,11 @@ public class WatchesPage extends Base{
         try {
             helper.waitForElementToBeVisible(WatchesLocators.clickOnFirstProduct,5);
             helper.clickOnElement(WatchesLocators.clickOnFirstProduct);
-            LoggerHandler.logInfo("Clicked on First Product");
+            logs.logInfo("Clicked on First Product");
             test.log(Status.INFO,"Clicked First on Product");
             test.log(Status.PASS, "Clicked First on Product");
         } catch (Exception e) {
-            LoggerHandler.logError("Unable to click on First Product");
+            logs.logError("Unable to click on First Product");
             test.log(Status.INFO,"Unable to click on First Product");
             test.log(Status.FAIL, "Unable to click on First Product");
             Screenshot.takeScreenshot("First Product");
@@ -276,11 +276,11 @@ public class WatchesPage extends Base{
             helper.waitForElementToBeVisible(WatchesLocators.clickOnAdd,5);
             helper.clickOnElement(WatchesLocators.clickOnAdd);
             Screenshot.takeScreenshot("Add To Shopping Bag");
-            LoggerHandler.logInfo("Clicked on add to cart");
+            logs.logInfo("Clicked on add to cart");
             test.log(Status.INFO,"Clicked on add to cart");
             test.log(Status.PASS, "Clicked on add to cart");
         } catch (Exception e) {
-            LoggerHandler.logError("Unable to click on add to cart");
+            logs.logError("Unable to click on add to cart");
             test.log(Status.INFO,"Unable to click on add to cart");
             test.log(Status.FAIL, "Unable to click on add to cart");
             Screenshot.takeScreenshot("Add to cart");

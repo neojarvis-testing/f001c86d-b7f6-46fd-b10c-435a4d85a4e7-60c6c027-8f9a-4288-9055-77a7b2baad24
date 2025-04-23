@@ -1,8 +1,6 @@
 package pages;
 
 
-import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 
 
@@ -24,6 +22,7 @@ public class ContactPageActions extends Base {
     WebDriverHelper helper;
     Assertion asserts;
     ExtentTest test;
+    LoggerHandler logs;
     /*
      * Constructor Name : ContactPageActions
      * Author Name : Krishna Reddy
@@ -48,11 +47,11 @@ public class ContactPageActions extends Base {
     public void clickOnAccept(){
         try{
         helper.clickOnElement(RingsPageLocators.accept);
-        LoggerHandler.logInfo("Clicked on accept cookies");
+        logs.logInfo("Clicked on accept cookies");
         test.log(Status.PASS,"Clicked on accept cookies");
         }
         catch(Exception e){
-            LoggerHandler.logError("Clicked Accept");
+            logs.logError("Clicked Accept");
             test.log(Status.FAIL, "Clicked Accept");
 
         }
@@ -70,12 +69,12 @@ public class ContactPageActions extends Base {
         helper.clickOnElement(ContactPageLocators.contact);
         asserts.verifyTitleOfPage("Contact Us");
         asserts.verifyURLOfPage("https://www.mayors.com/contact-us");
-        LoggerHandler.logInfo("Clicked on Contact");
+        logs.logInfo("Clicked on Contact");
         test.log(Status.PASS,"Clicked on Contact");
         
         }
         catch(Exception e){
-            LoggerHandler.logError("Clicked Contact");
+            logs.logError("Clicked Contact");
             test.log(Status.FAIL, "Clicked Contact");
             Screenshot.takeScreenshot("src3");
             Reporter.attachScreenshotToReport("Brands", test, "src3");
@@ -95,25 +94,18 @@ public class ContactPageActions extends Base {
             driver.navigate().back();
        helper.waitForElementToBeVisible(ContactPageLocators.luxury, 5);
         helper.clickOnElement(ContactPageLocators.luxury);
-        LoggerHandler.logInfo("Clicked on Luxury");
+        logs.logInfo("Clicked on Luxury");
         test.log(Status.PASS,"Clicked on Luxury");
         asserts.verifyTitleOfPage("Luxury Services | Mayors");
         asserts.verifyURLOfPage("https://www.mayors.com/luxury-services");
+    }catch(Exception e){
+        logs.logError("Clicked Store");
+        test.log(Status.FAIL, "Clicked Store");
+        Screenshot.takeScreenshot("src5");
+        Reporter.attachScreenshotToReport("Brands", test, "src5");
 
     }
-    public void clickOnAccept(){
-        try{
-        helper.clickOnElement(RingsPageLocators.accept);
-        test.log(Status.PASS,"Clicked on accept cookies");
-        }
-        catch(Exception e){
-            LoggerHandler.logError("Clicked Luxury");
-            test.log(Status.FAIL, "Clicked Luxury");
-            Screenshot.takeScreenshot("src4");
-            Reporter.attachScreenshotToReport("Brands", test, "src4");
-
-        }
-    }
+}
     
     /*
      * Method Name : clickOnStore
@@ -127,13 +119,13 @@ public class ContactPageActions extends Base {
         driver.navigate().back();
         helper.waitForElementToBeVisible(ContactPageLocators.store, 5);
          helper.clickOnElement(ContactPageLocators.store);
-         LoggerHandler.logInfo("Clicked on Store");
+         logs.logInfo("Clicked on Store");
         test.log(Status.PASS,"Clicked on Store");
         asserts.verifyTitleOfPage("Store Finder | Mayors");
         asserts.verifyURLOfPage("https://www.mayors.com/store-finder");
        }
        catch(Exception e){
-        LoggerHandler.logError("Clicked Store");
+        logs.logError("Clicked Store");
         test.log(Status.FAIL, "Clicked Store");
         Screenshot.takeScreenshot("src5");
         Reporter.attachScreenshotToReport("Brands", test, "src5");
@@ -153,13 +145,13 @@ public class ContactPageActions extends Base {
             driver.navigate().back();
         helper.waitForElementToBeVisible(ContactPageLocators.delivery, 5);
          helper.clickOnElement(ContactPageLocators.delivery);
-         LoggerHandler.logInfo("Clicked on Delivery");
+         logs.logInfo("Clicked on Delivery");
         test.log(Status.PASS,"Clicked on Delivery");
         asserts.verifyTitleOfPage(" Delivery Information | Mayors");
         asserts.verifyURLOfPage("https://www.mayors.com/delivery-information");
         }
         catch(Exception e){
-            LoggerHandler.logError("Clicked Delivery");
+            logs.logError("Clicked Delivery");
             test.log(Status.FAIL, "Clicked Delivery");
             Screenshot.takeScreenshot("src2");
             Reporter.attachScreenshotToReport("Brands", test, "src2");
@@ -180,13 +172,13 @@ public class ContactPageActions extends Base {
         driver.navigate().back();
         helper.waitForElementToBeVisible(ContactPageLocators.click, 5);
          helper.clickOnElement(ContactPageLocators.click);
-         LoggerHandler.logInfo("Clicked on Click and collect");
+         logs.logInfo("Clicked on Click and collect");
         test.log(Status.PASS,"Clicked on Click and collect");
         asserts.verifyTitleOfPage("Click and Collect | Mayors");
         asserts.verifyURLOfPage("https://www.mayors.com/click-and-collect");
        }
        catch(Exception e){
-        LoggerHandler.logError("Clicked Click and collect");
+        logs.logError("Clicked Click and collect");
         test.log(Status.FAIL, "Clicked Click and collect");
         Screenshot.takeScreenshot("src99");
         Reporter.attachScreenshotToReport("Brands", test, "src99");
@@ -205,13 +197,13 @@ public class ContactPageActions extends Base {
         driver.navigate().back();
         helper.waitForElementToBeVisible(ContactPageLocators.retpolicy, 5);
          helper.clickOnElement(ContactPageLocators.retpolicy);
-         LoggerHandler.logInfo("Clicked on Return");
+         logs.logInfo("Clicked on Return");
         test.log(Status.PASS,"Clicked on Return");
         asserts.verifyTitleOfPage("Return Policy | Mayors");
         asserts.verifyURLOfPage("https://www.mayors.com/return-policy");
        }
        catch(Exception e){
-        LoggerHandler.logError("Clicked Return");
+        logs.logError("Clicked Return");
         test.log(Status.FAIL, "Clicked Return");
         Screenshot.takeScreenshot("src11");
         Reporter.attachScreenshotToReport("Brands", test, "src11");
@@ -231,13 +223,13 @@ public class ContactPageActions extends Base {
         driver.navigate().back();
         helper.waitForElementToBeVisible(ContactPageLocators.affrim, 5);
          helper.clickOnElement(ContactPageLocators.affrim);
-         LoggerHandler.logInfo("Clicked on Affrim");
+         logs.logInfo("Clicked on Affrim");
         test.log(Status.PASS,"Clicked on Affrim");
         asserts.verifyTitleOfPage("Affirm Finance | Mayors");
         asserts.verifyURLOfPage("https://www.mayors.com/affirm-finance");
        }
        catch(Exception e){
-        LoggerHandler.logError("Clicked Affrim");
+        logs.logError("Clicked Affrim");
         test.log(Status.FAIL, "Clicked Affrim");
         Screenshot.takeScreenshot("src12");
         Reporter.attachScreenshotToReport("Brands", test, "src12");
@@ -256,13 +248,13 @@ public class ContactPageActions extends Base {
         driver.navigate().back();
         helper.waitForElementToBeVisible(ContactPageLocators.feedback, 5);
          helper.clickOnElement(ContactPageLocators.feedback);
-         LoggerHandler.logInfo("Clicked on Feedback");
+         logs.logInfo("Clicked on Feedback");
         test.log(Status.PASS,"Clicked on Feedback");
         asserts.verifyTitleOfPage("Your Feedback | Mayors");
         asserts.verifyURLOfPage("https://www.mayors.com/your-feedback");
        }
        catch(Exception e){
-        LoggerHandler.logError("Clicked Feedback");
+        logs.logError("Clicked Feedback");
         test.log(Status.FAIL, "Clicked Feedback");
         Screenshot.takeScreenshot("src13");
         Reporter.attachScreenshotToReport("Brands", test, "src13");
