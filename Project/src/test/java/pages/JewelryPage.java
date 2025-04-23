@@ -15,12 +15,13 @@ public class JewelryPage extends Base{
     public WebDriverHelper helper;
     public Assertion asserts;
     public ExtentTest test;
-
-    public JewelryPage(ExtentTest test)
+    LoggerHandler logs;
+    public JewelryPage(ExtentTest test,LoggerHandler logs)
     {
         helper = new WebDriverHelper(Base.driver);
         this.test=test;
-        asserts = new Assertion(Base.driver);
+        asserts = new Assertion(Base.driver,logs);
+        this.logs = logs;
     }
 
     // public void verifyLogo()
@@ -45,13 +46,11 @@ public class JewelryPage extends Base{
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         test.log(Status.INFO,"");
         test.log(Status.PASS,"");
-        LoggerHandler.logInfo("");
         }
         catch(Exception e)
         {
             test.log(Status.INFO,"");
             test.log(Status.FAIL,"");
-            LoggerHandler.logError("");
         }
 
     }
@@ -62,12 +61,10 @@ public class JewelryPage extends Base{
         test.log(Status.INFO,"");
 
         test.log(Status.PASS,"");
-        LoggerHandler.logInfo("");
         }
         catch(Exception e)
         {
             test.log(Status.FAIL,"");
-            LoggerHandler.logError("");
         }
     }
 
@@ -82,14 +79,12 @@ public class JewelryPage extends Base{
         test.log(Status.INFO,"");
 
         test.log(Status.PASS,"");
-        LoggerHandler.logInfo("");
         }
         catch(Exception e)
         {
             test.log(Status.INFO,"");
 
             test.log(Status.FAIL,"");
-            LoggerHandler.logError("");
         }
     }
     public void clickOnBrandAndCoco()
@@ -101,14 +96,12 @@ public class JewelryPage extends Base{
         helper.clickOnElement(JewelryLocators.cocoRush);
         Base.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         test.log(Status.PASS,"");
-        LoggerHandler.logInfo("");
         }
         catch(Exception e)
         {
             test.log(Status.INFO,"");
 
             test.log(Status.FAIL,"");
-            LoggerHandler.logError("");
         }
 
     }
@@ -124,14 +117,12 @@ public class JewelryPage extends Base{
         test.log(Status.INFO,"");
 
         test.log(Status.PASS,"");
-        LoggerHandler.logInfo("");
         }
         catch(Exception e)
         {
             test.log(Status.INFO,"");
 
             test.log(Status.FAIL,"");
-            LoggerHandler.logError("");
         }
 
     }
@@ -144,14 +135,12 @@ public class JewelryPage extends Base{
         test.log(Status.INFO,"");
 
         test.log(Status.PASS,"");
-        LoggerHandler.logInfo("");
         }
         catch(Exception e)
         {
             test.log(Status.INFO,"");
 
             test.log(Status.FAIL,"");
-            LoggerHandler.logError("");
         }
 
     }

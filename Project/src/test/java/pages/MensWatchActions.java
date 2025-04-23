@@ -18,24 +18,22 @@ public class MensWatchActions extends Base{
     WebDriverHelper helper;
     ExtentTest test;
     Assertion asserts;
+    LoggerHandler logs;
 
-    public MensWatchActions(ExtentTest test) {
-        helper = new WebDriverHelper(driver);
-        this.test=test;
-    }
     /*
      * Method Name: MensWatchActions
      * Author Name: Muskan Jha
      * Description : This method is a constructor of class MensWatchActions 
      * which initialises the instance variables of the class
-     * Parameters : driver, test
+     * Parameters : driver, test, logs
      * Return Type : none
      */
-    public MensWatchActions(WebDriver driver, ExtentTest test) {
+    public MensWatchActions(WebDriver driver, ExtentTest test, LoggerHandler logs) {
         this.driver = driver;
         helper = new WebDriverHelper(driver);
         this.test = test;
-        asserts = new Assertion(driver);
+        asserts = new Assertion(driver,logs);
+        this.logs = logs;
     }
 
     /*
@@ -70,16 +68,20 @@ public class MensWatchActions extends Base{
     public void clickOnAcceptCookies() {
         try {
             helper.clickOnElement(MensWatchLocators.acceptCookies);
-            LoggerHandler.logInfo("clicked cookies");
+            logs.logInfo("clicked cookies");
+            test.log(Status.INFO, "Cookies to be clicked");
             test.log(Status.PASS,"clicked cookies");
         } catch (Exception e) {
             e.getMessage();
-            LoggerHandler.logError("cant clicked cookies");
-            test.log(Status.FAIL,"cant clicked cookies");
-            LoggerHandler.logInfo("clicked on cookies");
-            test.log(Status.PASS, "clicked on cookies");
+            Screenshot.takeScreenshot("AcceptCookiesShot");
+            Reporter.attachScreenshotToReport("AcceptCookiesShot.png",test,"");
+            logs.logError("cant clicked cookies");
+            test.log(Status.INFO, "cookies to be clicked");
+            test.log(Status.FAIL,"click on cookies failed");
+            
         } 
     }
+
     /*
      * Method Name: clickOnAcceptCookies
      * Author Name: Muskan Jha
@@ -92,12 +94,16 @@ public class MensWatchActions extends Base{
         try {
             helper.waitForElementToBeVisible(MensWatchLocators.brands, 3);
             helper.hoverOverElement(MensWatchLocators.brands);
-            LoggerHandler.logInfo("hovered over brands");
+            logs.logInfo("hovered over brands");
+            test.log(Status.INFO, "brands to be hovered on");
             test.log(Status.PASS, "hovered over brands");
         } catch (Exception e) {
             e.getMessage();
-            LoggerHandler.logError("hovered over brands");
-            test.log(Status.FAIL, "hovered over brands");
+            Screenshot.takeScreenshot("BrandsShot");
+            Reporter.attachScreenshotToReport("BrandsShot.png",test,"");
+            logs.logError("hovered over brands");
+            test.log(Status.INFO, "brands to be hovered on");
+            test.log(Status.FAIL, "hovered over brands failed");
         }
     }
 
@@ -111,12 +117,16 @@ public class MensWatchActions extends Base{
     public void clickOnOmega() {
         try {
             helper.clickOnElement(MensWatchLocators.omega);
-            LoggerHandler.logInfo("clicked on omega");
+            logs.logInfo("clicked on omega");
+            test.log(Status.INFO, "omega to be clicked");
             test.log(Status.PASS, "clicked on omega");
         } catch (Exception e) {
             e.getMessage();
-            LoggerHandler.logError("clicked on omega");
-            test.log(Status.FAIL, "clicked on omega");
+            Screenshot.takeScreenshot("OmegaShot");
+            Reporter.attachScreenshotToReport("OmegaShot.png",test,"");
+            logs.logError("clicked on omega");
+            test.log(Status.INFO, "omega to be clicked");
+            test.log(Status.FAIL, "clicked on omega failed");
         }
     }
 
@@ -130,11 +140,13 @@ public class MensWatchActions extends Base{
     public void verifyOmegaTitle() {
         try {
             asserts.verifyTitleOfPage("omega");
-            LoggerHandler.logInfo("title verified");
-            test.log(Status.PASS, "title verified");
+            logs.logInfo("title verified");
+            test.log(Status.INFO, "title to be verified");
+            test.log(Status.PASS, "title verified successfully");
         } catch (Exception e) {
             e.getMessage();
-            LoggerHandler.logError("title verified");
+            logs.logError("title verified");
+            test.log(Status.INFO, "title to be verified");
             test.log(Status.FAIL, "title verified");
 
         }
@@ -150,12 +162,16 @@ public class MensWatchActions extends Base{
     public void clickOnMensWatches() {
         try {
             helper.clickOnElement(MensWatchLocators.mensWatches);
-            LoggerHandler.logInfo("clicked on mens watches");
-            test.log(Status.PASS, "clicked on mens watches");
+            logs.logInfo("clicked on mens watches");
+            test.log(Status.INFO, "click on mens watches to be performed");
+            test.log(Status.PASS, "clicked on mens watches successfully");
         } catch (Exception e) {
             e.getMessage();
-            LoggerHandler.logError("clicked on mens watches");
-            test.log(Status.FAIL, "clicked on mens watches");
+            Screenshot.takeScreenshot("MensWatchesShot");
+            Reporter.attachScreenshotToReport("MensWatchesShot.png",test,"");
+            logs.logError("did not click on mens watches");
+            test.log(Status.INFO, "click on mens watches");
+            test.log(Status.FAIL, "failed to click on mens watches");
         }
     }
 
@@ -170,12 +186,16 @@ public class MensWatchActions extends Base{
     public void clickOnSeaMaster() {
         try {
             helper.clickOnElement(MensWatchLocators.seaMasterFilter);
-            LoggerHandler.logInfo("clicked on sea master");
+            logs.logInfo("clicked on sea master");
+            test.log(Status.INFO, "click on sea master to performed");
             test.log(Status.PASS, "clicked on sea master");
         } catch (Exception e) {
             e.getMessage();
-            LoggerHandler.logError("clicked on sea master");
-            test.log(Status.FAIL, "clicked on mens watches");
+            Screenshot.takeScreenshot("SeaMasterShot");
+            Reporter.attachScreenshotToReport("SeaMasterShot.png",test,"");
+            logs.logError("did not click on sea master");
+            test.log(Status.INFO, "click on sea master to be performed");
+            test.log(Status.FAIL, "failed to click on sea master");
         }
     }
 
@@ -189,12 +209,16 @@ public class MensWatchActions extends Base{
     public void clickOnBlue() {
         try {
             helper.clickOnElement(MensWatchLocators.blueFilter);
-            LoggerHandler.logInfo("clicked on blue filter");
+            logs.logInfo("clicked on blue filter");
+            test.log(Status.INFO, "blue under dial filter to be clicked");
             test.log(Status.PASS, "clicked on blue filter");
         } catch (Exception e) {
             e.getMessage();
-            LoggerHandler.logError("clicked on blue filter");
-            test.log(Status.FAIL, "clicked on blue filter");
+            Screenshot.takeScreenshot("BlueShot");
+            Reporter.attachScreenshotToReport("BlueShot.png",test,"");
+            logs.logError("clicked on blue filter");
+            test.log(Status.INFO, "blue under dial filter to be clicked");
+            test.log(Status.FAIL, "click on blue filter failed");
         }
     }
 
@@ -209,11 +233,15 @@ public class MensWatchActions extends Base{
     public void clickOnFirstProduct() {
         try {
             helper.clickOnElement(MensWatchLocators.firstProduct);
-            LoggerHandler.logInfo("clicked on first product");
+            logs.logInfo("clicked on first product");
+            test.log(Status.INFO, "first product on the result page to be clicked");
             test.log(Status.PASS, "clicked on first product");
         } catch (Exception e) {
             e.getMessage();
-            LoggerHandler.logError("clicked on first product");
+            Screenshot.takeScreenshot("FirstProductShot");
+            Reporter.attachScreenshotToReport("FirstProductShot.png",test,"");
+            logs.logError("clicked on first product");
+            test.log(Status.INFO, "first product on the result page to be clicked");
             test.log(Status.FAIL, "clicked on first product");
         }
     }
@@ -229,12 +257,16 @@ public class MensWatchActions extends Base{
     public void clickOnAddToShoppingBag() {
         try {
             helper.clickOnElement(MensWatchLocators.addToCart);
-            LoggerHandler.logInfo("clicked on first product");
-            test.log(Status.PASS, "clicked on first product");
+            logs.logInfo("click on Add To Shopping Bag");
+            test.log(Status.INFO,"Add To Shopping Bag button to be clicked");
+            test.log(Status.PASS, "click on Add To Shopping Bag");
         } catch (Exception e) {
             e.getMessage();
-            LoggerHandler.logError("clicked on first product");
-            test.log(Status.FAIL, "clicked on first product");
+            Screenshot.takeScreenshot("AddToShoppingBagShot");
+            Reporter.attachScreenshotToReport("AddToShoppingBagShot.png",test,"");
+            logs.logError("click on Add To Shopping Bag failed");
+            test.log(Status.INFO,"Add To Shopping Bag button to be clicked");
+            test.log(Status.FAIL, "click on Add To Shopping Bag failed");
 
         }
     }
@@ -250,12 +282,14 @@ public class MensWatchActions extends Base{
     public void verifyKeyword() {
         try {
             asserts.verifyTextInPage(MensWatchLocators.textVerify, "stores");
-            LoggerHandler.logInfo("stores keyword verified");
+            logs.logInfo("stores keyword verified");
+            test.log(Status.INFO,"stores keyword verification to be performed");
             test.log(Status.PASS, "stores keyword verified");
         } catch (Exception e) {
             e.getMessage();
-            LoggerHandler.logError("stores keyword verified");
-            test.log(Status.FAIL, "stores keyword verified");
+            logs.logError("stores keyword verification failed");
+            test.log(Status.INFO,"stores keyword verification to be performed");
+            test.log(Status.FAIL, "stores keyword verification failed");
         }
     }
 
@@ -270,12 +304,14 @@ public class MensWatchActions extends Base{
         try {
             Screenshot.takeScreenshot("AddToCart_Screenshot");
             Reporter.attachScreenshotToReport("AddToCart.png", test, "");
-            LoggerHandler.logInfo("screenshot taken");
-            test.log(Status.PASS, "screenshot taken");
+            logs.logInfo("screenshot captured");
+            test.log(Status.INFO,"Screenshot to be captured");
+            test.log(Status.PASS, "screenshot captured successfully");
         } catch (Exception e) {
             e.getMessage();
-            LoggerHandler.logError("screenshot taken");
-            test.log(Status.FAIL, "screenshot taken");
+            logs.logError("screenshot captured for the failed operation");
+            test.log(Status.INFO,"Screenshot to be captured");
+            test.log(Status.FAIL, "screenshot capture failed");
         }
     }
 }
