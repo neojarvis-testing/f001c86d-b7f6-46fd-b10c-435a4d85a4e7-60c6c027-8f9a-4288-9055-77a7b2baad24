@@ -11,8 +11,10 @@ import com.aventstack.extentreports.Status;
 public class Assertion {
 	private WebDriver driver;
 	ExtentTest test;
-	public Assertion(WebDriver driver) {
+	LoggerHandler logs;
+	public Assertion(WebDriver driver, LoggerHandler logs) {
 		this.driver = driver;
+		this.logs = logs;
 	}
     /*
      * Method Name : verifyTextInPage
@@ -24,12 +26,12 @@ public class Assertion {
 	public void verifyTextInPage(By locator, String value) {
 		try {
 			WebElement element = driver.findElement(locator);
-			LoggerHandler.logInfo(element.getText());
+			logs.logInfo(element.getText());
 			Assert.assertTrue(element.getText().contains(value));
-			LoggerHandler.logInfo("Text verified");
+			logs.logInfo("Text verified");
 			test.log(Status.PASS,"Text verified");
 		} catch (AssertionError e) {
-			LoggerHandler.logError("Text Invalid");
+			logs.logError("Text Invalid");
 			test.log(Status.FAIL, "Text Invalid");
 		}
 	}
@@ -43,12 +45,12 @@ public class Assertion {
 	public void verifyURLOfPage(String value) {
 		try {
 			String text = driver.getCurrentUrl();
-			LoggerHandler.logInfo(text);
+			logs.logInfo(text);
 			Assert.assertTrue(text.contains(value));
-			LoggerHandler.logInfo("URL verified");
+			logs.logInfo("URL verified");
 			test.log(Status.PASS,"URL verified");
 		} catch (AssertionError e) {
-			LoggerHandler.logError("URL incorrect");
+			logs.logError("URL incorrect");
 			test.log(Status.FAIL, "URL incorrect");
 		}
 
@@ -63,12 +65,12 @@ public class Assertion {
 	public void verifyTitleOfPage(String value) {
 		try {
 			String text = driver.getTitle();
-			LoggerHandler.logInfo(text);
+			logs.logInfo(text);
 			Assert.assertTrue(text.contains(value));
-			LoggerHandler.logInfo("Title verified");
+			logs.logInfo("Title verified");
 			test.log(Status.PASS,"Title verified");
 		} catch (AssertionError e) {
-			LoggerHandler.logError("Title of page is invalid");
+			logs.logError("Title of page is invalid");
 			test.log(Status.FAIL, "Title of page is invalid");
 		}
 

@@ -20,11 +20,12 @@ public class AboutMayors extends Base{
      * Return type: none
      * Parameters: An ExtentTest instance
      */
-    public AboutMayors(ExtentTest test)
+    public AboutMayors(ExtentTest test,LoggerHandler logs)
     {
         helper = new WebDriverHelper(driver);
         this.test=test;
-        assertt = new Assertion(driver);
+        assertt = new Assertion(driver,logs);
+        this.logs = logs;
     }
 
     /*
@@ -41,6 +42,7 @@ public class AboutMayors extends Base{
         helper.clickOnElement(JewelryLocators.acceptCook);
         test.log(Status.INFO,"scroll down to footer");
         helper.javascriptScroll(AboutUsPageLocators.aboutMayors);
+        logs.logInfo("scroll down to footer");
         helper.clickOnElement(AboutUsPageLocators.aboutMayors);
         assertt.verifyURLOfPage("https://www.mayors.com/about-us");
         assertt.verifyTitleOfPage(" About Us ");
@@ -52,8 +54,7 @@ public class AboutMayors extends Base{
         }
         catch(Exception e)
         {
-            test.log(Status.INFO,"Failed to click on About Mayors");
-            LoggerHandler.logError("Failed to perform About Mayors clicking operations");
+            logs.logError("Failed to perform About Mayors clicking operations");
             test.log(Status.FAIL,"Failed to perform About Mayors clicking operations");
             Reporter.attachScreenshotToReport("Failed About Mayors click",test,"");
         }
@@ -83,8 +84,9 @@ public class AboutMayors extends Base{
         }
         catch(Exception e)
         {
-            test.log(Status.INFO,"Failed to click on Press in footer section");
-            LoggerHandler.logError("Failed to perform press click operations");
+            test.log(Status.INFO,"");
+
+            logs.logError("Failed to perform press click operations");
             test.log(Status.FAIL,"Failed to perform press click operations");
             Reporter.attachScreenshotToReport("Failed Press click",test,"");
         }
@@ -141,8 +143,9 @@ public class AboutMayors extends Base{
         }
         catch(Exception e)
         {
-            test.log(Status.INFO,"Failed to click on Sustainanility in footer section");
-            LoggerHandler.logError("Failed to perform Sustainability click operations");
+            test.log(Status.INFO,"");
+
+            logs.logError("Failed to perform Sustainability click operations");
             test.log(Status.FAIL,"Failed to perform Sustainability click operations");
             Reporter.attachScreenshotToReport("Failed Sustainability click",test,"");
         }
@@ -171,8 +174,9 @@ public class AboutMayors extends Base{
         }
         catch(Exception e)
         {
-            test.log(Status.INFO,"Failed to click on NewsLetterSignup in footer section");
-            LoggerHandler.logError("Failed to perfrom News Letter clicking operations");
+            test.log(Status.INFO,"");
+
+            logs.logError("Failed to perfrom News Letter clicking operations");
             test.log(Status.FAIL,"Failed to perfrom News Letter clicking operations");
             Reporter.attachScreenshotToReport("Failed NewsLetterSignUp click",test,"");
         }
@@ -198,8 +202,9 @@ public class AboutMayors extends Base{
         }
         catch(Exception e)
         {
-            test.log(Status.INFO,"Failed to click on rolex in footer section");
-            LoggerHandler.logError("Failed to perform rolex clicking operations");
+            test.log(Status.INFO,"");
+
+            logs.logError("Failed to perform rolex clicking operations");
             test.log(Status.FAIL,"Failed to perform rolex clicking operations");
             Reporter.attachScreenshotToReport("Failed Rolex click",test,"");       
         }
@@ -225,8 +230,9 @@ public class AboutMayors extends Base{
         }
         catch(Exception e)
         {
-            test.log(Status.INFO,"Failed to click on wedding in footer section");
-          LoggerHandler.logError("Failed to perform Wedding click operations");
+            test.log(Status.INFO,"");
+
+            logs.logError("Failed to perform Wedding click operations");
             test.log(Status.FAIL,"Failed to perform Wedding click operations");
             Reporter.attachScreenshotToReport("Failed Wedding click",test,"");           
         }
@@ -252,8 +258,9 @@ public class AboutMayors extends Base{
         }
         catch(Exception e)
         {
-            test.log(Status.INFO,"Failed to click on Brands in footer section");
-            LoggerHandler.logError("Failed to perform Brands clicking operations");
+            test.log(Status.INFO,"");
+
+            logs.logError("Failed to perform Brands clicking operations");
             test.log(Status.FAIL,"Failed to perform Brands clicking operations");
             Reporter.attachScreenshotToReport("Failed Brands click",test,"");
         }
@@ -280,8 +287,9 @@ public class AboutMayors extends Base{
         }
         catch(Exception e)
         {
-            test.log(Status.INFO,"Verification of About Mayors text has failed");
-            LoggerHandler.logError("Failed to verify and take a screenshot");
+            test.log(Status.INFO,"");
+
+            logs.logError("Failed to verify and take a screenshot");
             test.log(Status.FAIL,"Failed to verify and take a screenshot");
             Reporter.attachScreenshotToReport("Failed to Verify About Mayors label",test,"");
         }

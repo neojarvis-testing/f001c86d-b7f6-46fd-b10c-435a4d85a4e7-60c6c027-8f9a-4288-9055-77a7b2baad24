@@ -19,11 +19,13 @@ public class JewelryPage extends Base{
      * Return type: none
      * Parameters: ExtentTest instance
      */
-    public JewelryPage(ExtentTest test)
+
+    public JewelryPage(ExtentTest test,LoggerHandler logs)
     {
         helper = new WebDriverHelper(Base.driver);
         this.test=test;
-        asserts = new Assertion(Base.driver);
+        asserts = new Assertion(Base.driver,logs);
+        this.logs = logs;
     }
 
     /*

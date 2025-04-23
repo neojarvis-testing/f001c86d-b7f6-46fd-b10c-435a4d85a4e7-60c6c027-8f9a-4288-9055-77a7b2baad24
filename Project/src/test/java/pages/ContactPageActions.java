@@ -1,6 +1,10 @@
 package pages;
 
+
 import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -14,41 +18,23 @@ import utils.WebDriverHelper;
 
 public class ContactPageActions extends Base {
 
-        WebDriverHelper helper;
+    WebDriver driver;
+    WebDriverHelper helper;
     Assertion asserts;
     ExtentTest test;
-    
-    public ContactPageActions(ExtentTest test) {
+    LoggerHandler logs;
+    public ContactPageActions(WebDriver driver, ExtentTest test, LoggerHandler logs) {
+        this.driver = driver;
         helper = new WebDriverHelper(driver);
-        this.test=test;
-        asserts = new Assertion(driver);
+        this.test = test;
+        asserts = new Assertion(driver, logs);
+        this.logs = logs;
     }
-    public void clickOnContact(){
-       // helper.hoverOverElement(ContactPageLocators.contact);
-        helper.clickOnElement(ContactPageLocators.contact);
-        driver.navigate().back();
-
-       // driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-    }
-    public void verifyContact(){
-        asserts.verifyTitleOfPage("Contact Us | Mayors");
-    }
-    public void verifyContactURL(){
-        asserts.verifyURLOfPage("https://www.mayors.com/contact-us");
-    }
-    public void clickOnLuxury(){
-       // helper.hoverOverElement(ContactPageLocators.luxury);
-       helper.waitForElementToBeVisible(ContactPageLocators.luxury, 5);
-        helper.clickOnElement(ContactPageLocators.luxury);
-        driver.navigate().back();
-        //driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-    }
-    public void verifyLuxury(){
-        asserts.verifyTitleOfPage("Luxury Services | Mayors");
-    }
-    public void verifyLuxuryURL(){
-        asserts.verifyURLOfPage("https://www.mayors.com/luxury-services");
-    }
+     /*a.Method name:clickOnAccept
+    *b.Author:Krishna Reddy
+    *Description:This Method is for click on accept cookies 
+    *Return Type:void
+    */
     public void clickOnAccept(){
         try{
         helper.clickOnElement(RingsPageLocators.accept);
@@ -56,105 +42,208 @@ public class ContactPageActions extends Base {
         test.log(Status.PASS,"Clicked on accept cookies");
         }
         catch(Exception e){
-            System.out.println(e.getMessage());
+            LoggerHandler.logError("Clicked Accept");
+            test.log(Status.FAIL, "Clicked Accept");
+
         }
     }
-   
+    /*a.Method name:clickOnContact
+    *b.Author:Krishna Reddy
+    *Description:This Method is for clicking on contact us
+    *Return Type:void
+    */
+    public void clickOnContact(){
+        try{
+        helper.clickOnElement(ContactPageLocators.contact);
+        asserts.verifyTitleOfPage("Contact Us");
+        asserts.verifyURLOfPage("https://www.mayors.com/contact-us");
+        LoggerHandler.logInfo("Clicked on Contact");
+        test.log(Status.PASS,"Clicked on Contact");
+        
+        }
+        catch(Exception e){
+            LoggerHandler.logError("Clicked Contact");
+            test.log(Status.FAIL, "Clicked Contact");
+
+        }
+    }
+    
+     /*a.Method name:clickOnLuxury
+    *b.Author:Krishna Reddy
+    *Description:This Method is for click on luxury
+    *Return Type:void
+    */
+    public void clickOnLuxury(){
+        try{
+            driver.navigate().back();
+       helper.waitForElementToBeVisible(ContactPageLocators.luxury, 5);
+        helper.clickOnElement(ContactPageLocators.luxury);
+        LoggerHandler.logInfo("Clicked on Luxury");
+        test.log(Status.PASS,"Clicked on Luxury");
+        asserts.verifyTitleOfPage("Luxury Services | Mayors");
+        asserts.verifyURLOfPage("https://www.mayors.com/luxury-services");
+
+    }
+    public void clickOnAccept(){
+        try{
+        helper.clickOnElement(RingsPageLocators.accept);
+        test.log(Status.PASS,"Clicked on accept cookies");
+        }
+        catch(Exception e){
+            LoggerHandler.logError("Clicked Luxury");
+            test.log(Status.FAIL, "Clicked Luxury");
+
+        }
+    }
+    
+    /*a.Method name:clickOnStore
+    *b.Author:Krishna Reddy
+    *Description:This Method is for clicking on store
+    *Return Type:void
+    */
     public void clickOnStore(){
-       
+       try{
+        driver.navigate().back();
         helper.waitForElementToBeVisible(ContactPageLocators.store, 5);
          helper.clickOnElement(ContactPageLocators.store);
-         driver.navigate().back();
-        
-     }
-     public void verifyStore(){
+         LoggerHandler.logInfo("Clicked on Store");
+        test.log(Status.PASS,"Clicked on Store");
         asserts.verifyTitleOfPage("Store Finder | Mayors");
-    }
-    public void verifyStoreURL(){
         asserts.verifyURLOfPage("https://www.mayors.com/store-finder");
+       }
+       catch(Exception e){
+        LoggerHandler.logError("Clicked Store");
+        test.log(Status.FAIL, "Clicked Store");
+
     }
+}
+    
+     /*a.Method name:clickOnDelivery
+    *b.Author:Krishna Reddy
+    *Description:This Method is for click On Delivery
+    *Return Type:void
+    */
      public void clickOnDelivery(){
-       
+        try{
+            driver.navigate().back();
         helper.waitForElementToBeVisible(ContactPageLocators.delivery, 5);
          helper.clickOnElement(ContactPageLocators.delivery);
-         driver.navigate().back();
+         LoggerHandler.logInfo("Clicked on Delivery");
+        test.log(Status.PASS,"Clicked on Delivery");
+        asserts.verifyTitleOfPage(" Delivery Information | Mayors");
+        asserts.verifyURLOfPage("https://www.mayors.com/delivery-information");
+        }
+        catch(Exception e){
+            LoggerHandler.logError("Clicked Delivery");
+            test.log(Status.FAIL, "Clicked Delivery");
+
+        }
         
      }
-     public void verifyDelivery(){
-        asserts.verifyTitleOfPage(" Delivery Information | Mayors");
-    }
-    public void verifyDeliveryURL(){
-        asserts.verifyURLOfPage("https://www.mayors.com/delivery-information");
-    }
+     /*a.Method name:clickOnclick
+    *b.Author:Krishna Reddy
+    *Description:This Method is for clicking on click and collect
+    *Return Type:void
+    */
      public void clickOnclick(){
-       
+       try{
+        driver.navigate().back();
         helper.waitForElementToBeVisible(ContactPageLocators.click, 5);
          helper.clickOnElement(ContactPageLocators.click);
-         driver.navigate().back();
-        
-     }
-     public void verifyclick(){
+         LoggerHandler.logInfo("Clicked on Delivery");
+        test.log(Status.PASS,"Clicked on Delivery");
         asserts.verifyTitleOfPage("Click and Collect | Mayors");
-    }
-    public void verifyClickURL(){
         asserts.verifyURLOfPage("https://www.mayors.com/click-and-collect");
+       }
+       catch(Exception e){
+        LoggerHandler.logError("Clicked Click");
+        test.log(Status.FAIL, "Clicked Click");
+
     }
+}
+      /*a.Method name:clickOnReturn
+    *b.Author:Krishna Reddy
+    *Description:This Method is for clicking on return 
+    *Return Type:void
+    */
      public void clickOnReturn(){
-       
+       try{
+        driver.navigate().back();
         helper.waitForElementToBeVisible(ContactPageLocators.retpolicy, 5);
          helper.clickOnElement(ContactPageLocators.retpolicy);
-         driver.navigate().back();
-        
-     }
-     public void verifyReturn(){
+         LoggerHandler.logInfo("Clicked on Return");
+        test.log(Status.PASS,"Clicked on Return");
         asserts.verifyTitleOfPage("Return Policy | Mayors");
-    }
-    public void verifyReturnURL(){
         asserts.verifyURLOfPage("https://www.mayors.com/return-policy");
+       }
+       catch(Exception e){
+        LoggerHandler.logError("Clicked Return");
+        test.log(Status.FAIL, "Clicked Return");
+
     }
+}
+
+      /*a.Method name:clickOnAffrim
+    *b.Author:Krishna Reddy
+    *Description:This Method is forclick the Affrim
+    *Return Type:void
+    */
      public void clickOnAffrim(){
-       
+       try{
+        driver.navigate().back();
         helper.waitForElementToBeVisible(ContactPageLocators.affrim, 5);
          helper.clickOnElement(ContactPageLocators.affrim);
-         driver.navigate().back();
-        
-     }
-     public void verifyAffrim(){
+         LoggerHandler.logInfo("Clicked on Affrim");
+        test.log(Status.PASS,"Clicked on Affrim");
         asserts.verifyTitleOfPage("Affirm Finance | Mayors");
-    }
-    public void verifyAffrimURL(){
         asserts.verifyURLOfPage("https://www.mayors.com/affirm-finance");
+       }
+       catch(Exception e){
+        LoggerHandler.logError("Clicked Affrim");
+        test.log(Status.FAIL, "Clicked Affrim");
+
     }
+}
+     /*a.Method name:clickOnFeedback
+    *b.Author:Krishna Reddy
+    *Description:This Method is for clicking on feedback
+    *Return Type:void
+    */
      public void clickOnFeedback(){
-       
+       try{
+        driver.navigate().back();
         helper.waitForElementToBeVisible(ContactPageLocators.feedback, 5);
          helper.clickOnElement(ContactPageLocators.feedback);
-         driver.navigate().back();
-        
-     }
-     public void verifyFeedback(){
+         LoggerHandler.logInfo("Clicked on Feedback");
+        test.log(Status.PASS,"Clicked on Feedback");
         asserts.verifyTitleOfPage("Your Feedback | Mayors");
-    }
-    public void verifyFeedbackURL(){
         asserts.verifyURLOfPage("https://www.mayors.com/your-feedback");
+       }
+       catch(Exception e){
+        LoggerHandler.logError("Clicked Feedback");
+        test.log(Status.FAIL, "Clicked Feedback");
+
     }
-    public void clusterVerification(){
-        verifyAffrim();
-        verifyAffrimURL();
-        verifyLuxury();
-        verifyLuxuryURL();
-        verifyContact();
-        verifyContactURL();
-        verifyDelivery();
-        verifyDeliveryURL();
-        verifyReturn();
-        verifyReturnURL();
-        verifyFeedback();
-        verifyFeedbackURL();
-        verifyStore();
-        verifyStoreURL();
-        verifyclick();
-        verifyClickURL();
+      
+     }
+
+    //  /*a.Method name:clusterVerification
+    // *b.Author:Krishna Reddy
+    // *Description:This Method is for verification of group of elements
+    // *Return Type:void
+    // */
+    public void runContact(){
+        clickOnAccept();
+        clickOnContact();
+        clickOnLuxury();
+        clickOnStore();
+        clickOnDelivery();
+        clickOnclick();
+        clickOnReturn();
+        clickOnAffrim();
+        clickOnFeedback();
+        
+       
         
     }
     

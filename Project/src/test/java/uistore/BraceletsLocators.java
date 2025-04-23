@@ -22,7 +22,7 @@ public class BraceletsLocators {
 
     public static By brace = By.xpath("(//div[text()='Bracelets '])[2]");
 
-    public static By firstPro = By.xpath("//div[text()='18k Rose Gold 0.35cttw Diamond My Twin Wire Memory Bracelet Size Medium']");
+    public static By firstPro = By.xpath("//div[text()='18k Yellow Gold My Twin Toi & Moi 0.35cttw Diamond Wire Memory bracelet Size Medium']");
 
     public static By addToShopping = By.cssSelector("#addToCartSubmit");
 }
