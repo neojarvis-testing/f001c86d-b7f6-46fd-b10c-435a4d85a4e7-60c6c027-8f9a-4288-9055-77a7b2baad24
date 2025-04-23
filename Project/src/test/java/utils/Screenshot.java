@@ -10,6 +10,13 @@ import org.openqa.selenium.TakesScreenshot;
 
 import com.google.common.io.Files;
 
+/*
+ * Author: Kotha Sai Ragunath
+ * Method Name: takeScreenshot
+ * Description: This static method captures a screenshot of the current browser state, appending a timestamp to the file name, and saves it in a designated "screenshots" directory.
+ * Parameters: String fileName - Base name for the screenshot file.
+ * Return Type: void
+ */
 
 public class Screenshot extends Base{
 

@@ -96,8 +96,7 @@ public class TestRunner extends Base{
     @Test(priority = 6)
     public void test(){
         test = reports.createTest("TestCase-07");
-        SearchActions sa = new SearchActions(driver,test);
-        
+        SearchActions sa = new SearchActions(driver,test);    
         sa.search();
 
     }
