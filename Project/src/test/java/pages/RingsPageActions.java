@@ -235,14 +235,10 @@ public class RingsPageActions extends Base{
     public void verifyRings(){
         try{
         asserts.verifyTitleOfPage("Rings");
-        }catch(Exception e){
-            e.printStackTrace();
-        }
         }
         catch(Exception e){
             LoggerHandler.logError("Verify Rings");
             test.log(Status.FAIL, "Verify Rings");
-    
         }
         
     }

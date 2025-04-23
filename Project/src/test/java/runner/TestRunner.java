@@ -29,7 +29,6 @@ public class TestRunner extends Base{
     public void configBrowser(){
         openBrowser();
     }
-
     @Test
     public void case1(){
         test=reports.createTest("case1");
@@ -130,8 +129,7 @@ public class TestRunner extends Base{
         p1.clickOnAccept();
         p1.clickOnSearch();
         p1.inputOnSearchBar();
-        p1.enterOnSearchbar();
-        
+        p1.enterOnSearchbar();       
         p1.clickOnClose();
         p1.clickOnRings();
         p1.clickOnForher();
@@ -174,7 +172,6 @@ public class TestRunner extends Base{
         MensWatchActions mensWatch = new MensWatchActions(driver, test,logs);
         mensWatch.MensWatchTestCase();
     }
-
     @Test(priority = 3)
     public void testCase4()
     {
