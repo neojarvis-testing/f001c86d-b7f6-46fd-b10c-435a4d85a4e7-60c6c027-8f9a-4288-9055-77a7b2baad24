@@ -13,6 +13,7 @@ public class Property {
     *Return Type:Properties
     */
 
+
     public Properties loadBaseProperties(){
         String propertiesPath = System.getProperty("user.dir") + "/config/browser.properties";
         try {
@@ -23,11 +24,9 @@ public class Property {
 
         } catch (Exception e) {
             System.out.println("Can not load properties file "+e.getMessage());
+
         }
         return prop;
     }
 }
-
-
-
 

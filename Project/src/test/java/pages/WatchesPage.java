@@ -16,18 +16,17 @@ public class WatchesPage extends Base{
     public WebDriverHelper helper;
     ExtentTest test;
     Assertion asserts;
-
     /*Method name:WatchesPage
     *Author:Sumayya Sultana
     *Description:This method is a constructor od class WatchesPage
     *Parameters: test
     *Return Type:none
     */
-    
-    public WatchesPage(ExtentTest test){
+    public WatchesPage(ExtentTest test,LoggerHandler logs){
         helper=new WebDriverHelper(driver);
         this.test = test;
-        asserts = new Assertion(driver);
+        asserts = new Assertion(driver,logs);
+        this.logs=logs;
     }
      
     /*Method name:acceptOnCookies
@@ -64,8 +63,8 @@ public class WatchesPage extends Base{
             acceptOnCookies();
             helper.waitForElementToBeVisible(WatchesLocators.hoverOnWatches,5);
             helper.hoverOverElement(WatchesLocators.hoverOnWatches);
-            LoggerHandler.logInfo("Hover on watches");
             test.log(Status.INFO,"Hover on watches");
+            logs.logInfo("Hover on watches");
             test.log(Status.PASS, "Hover on watches");
            
         } catch (Exception e) {
@@ -213,6 +212,7 @@ public class WatchesPage extends Base{
             test.log(Status.FAIL, "Unable to click on Color");
             Screenshot.takeScreenshot("Dial Color");
             Reporter.attachScreenshotToReport("Dial Color", test, "Dial Color");
+
         }
     }
 
@@ -236,6 +236,7 @@ public class WatchesPage extends Base{
             test.log(Status.FAIL, "Unable to click on Black");
             Screenshot.takeScreenshot("Black");
             Reporter.attachScreenshotToReport("Black", test, "Black");
+
         }
     }
 
@@ -260,6 +261,7 @@ public class WatchesPage extends Base{
             test.log(Status.FAIL, "Unable to click on First Product");
             Screenshot.takeScreenshot("First Product");
             Reporter.attachScreenshotToReport("First Product", test, "First Product");
+
         }
     }
     
