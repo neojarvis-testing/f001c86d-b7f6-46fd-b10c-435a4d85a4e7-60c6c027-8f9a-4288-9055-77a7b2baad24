@@ -196,5 +196,16 @@ public class WebDriverHelper {
             System.out.println(e.getMessage());
         }    
     }
+    /*
+     * Method Name : excelReading
+     * Author Name : Praneeth
+     * Description : This method is used read data from a excel reader
+     * Parameters : path
+     * Return Type : void
+     */
+    public String excelReading(int sheet, int row , int col){
+        String text = ExcelReader.excelReader(System.getProperty("user.dir")+"/testdata/Excel.xlsx",sheet,row,col);
+        return text;
+    }
     
 }
