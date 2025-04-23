@@ -14,6 +14,8 @@ import uistore.RingsPageLocators;
 import utils.Assertion;
 import utils.Base;
 import utils.LoggerHandler;
+import utils.Reporter;
+import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class ContactPageActions extends Base {
@@ -22,7 +24,13 @@ public class ContactPageActions extends Base {
     WebDriverHelper helper;
     Assertion asserts;
     ExtentTest test;
-    LoggerHandler logs;
+    /*
+     * Constructor Name : ContactPageActions
+     * Author Name : Krishna Reddy
+     * Description : This constructor creates the instances of the WebDriverHelper and Assertion.
+     * Parameters : N/A
+     * Return Type : void
+     */
     public ContactPageActions(WebDriver driver, ExtentTest test, LoggerHandler logs) {
         this.driver = driver;
         helper = new WebDriverHelper(driver);
@@ -30,11 +38,13 @@ public class ContactPageActions extends Base {
         asserts = new Assertion(driver, logs);
         this.logs = logs;
     }
-     /*a.Method name:clickOnAccept
-    *b.Author:Krishna Reddy
-    *Description:This Method is for click on accept cookies 
-    *Return Type:void
-    */
+   /*
+     * Method Name : clickOnAccept
+     * Author Name : Krishna Reddy
+     * Description : This method clicks on Accept cookies on the home page
+     * Parameters : N/A
+     * Return Type : void
+     */
     public void clickOnAccept(){
         try{
         helper.clickOnElement(RingsPageLocators.accept);
@@ -47,11 +57,14 @@ public class ContactPageActions extends Base {
 
         }
     }
-    /*a.Method name:clickOnContact
-    *b.Author:Krishna Reddy
-    *Description:This Method is for clicking on contact us
-    *Return Type:void
-    */
+     /*
+     * Method Name : clickOnContact
+     * Author Name : Krishna Reddy
+     * Description : This method clicks on Contact us on the home page
+     * Parameters : N/A
+     * Return Type : void
+     */
+    
     public void clickOnContact(){
         try{
         helper.clickOnElement(ContactPageLocators.contact);
@@ -64,15 +77,19 @@ public class ContactPageActions extends Base {
         catch(Exception e){
             LoggerHandler.logError("Clicked Contact");
             test.log(Status.FAIL, "Clicked Contact");
+            Screenshot.takeScreenshot("src3");
+            Reporter.attachScreenshotToReport("Brands", test, "src3");
 
         }
     }
     
-     /*a.Method name:clickOnLuxury
-    *b.Author:Krishna Reddy
-    *Description:This Method is for click on luxury
-    *Return Type:void
-    */
+     /*
+     * Method Name : clickOnContact
+     * Author Name : Krishna Reddy
+     * Description : This method clicks on Luxury on the home page
+     * Parameters : N/A
+     * Return Type : void
+     */
     public void clickOnLuxury(){
         try{
             driver.navigate().back();
@@ -92,15 +109,19 @@ public class ContactPageActions extends Base {
         catch(Exception e){
             LoggerHandler.logError("Clicked Luxury");
             test.log(Status.FAIL, "Clicked Luxury");
+            Screenshot.takeScreenshot("src4");
+            Reporter.attachScreenshotToReport("Brands", test, "src4");
 
         }
     }
     
-    /*a.Method name:clickOnStore
-    *b.Author:Krishna Reddy
-    *Description:This Method is for clicking on store
-    *Return Type:void
-    */
+    /*
+     * Method Name : clickOnStore
+     * Author Name : Krishna Reddy
+     * Description : This method clicks on Store on the home page
+     * Parameters : N/A
+     * Return Type : void
+     */
     public void clickOnStore(){
        try{
         driver.navigate().back();
@@ -114,15 +135,19 @@ public class ContactPageActions extends Base {
        catch(Exception e){
         LoggerHandler.logError("Clicked Store");
         test.log(Status.FAIL, "Clicked Store");
+        Screenshot.takeScreenshot("src5");
+        Reporter.attachScreenshotToReport("Brands", test, "src5");
 
     }
 }
     
-     /*a.Method name:clickOnDelivery
-    *b.Author:Krishna Reddy
-    *Description:This Method is for click On Delivery
-    *Return Type:void
-    */
+     /*
+     * Method Name : clickOnDelivery
+     * Author Name : Krishna Reddy
+     * Description : This method clicks on Delivery on the home page
+     * Parameters : N/A
+     * Return Type : void
+     */
      public void clickOnDelivery(){
         try{
             driver.navigate().back();
@@ -136,36 +161,45 @@ public class ContactPageActions extends Base {
         catch(Exception e){
             LoggerHandler.logError("Clicked Delivery");
             test.log(Status.FAIL, "Clicked Delivery");
+            Screenshot.takeScreenshot("src2");
+            Reporter.attachScreenshotToReport("Brands", test, "src2");
+           
 
         }
         
      }
-     /*a.Method name:clickOnclick
-    *b.Author:Krishna Reddy
-    *Description:This Method is for clicking on click and collect
-    *Return Type:void
-    */
+      /*
+     * Method Name : clickOnclick
+     * Author Name : Krishna Reddy
+     * Description : This method clicks on click and collect on the home page
+     * Parameters : N/A
+     * Return Type : void
+     */
      public void clickOnclick(){
        try{
         driver.navigate().back();
         helper.waitForElementToBeVisible(ContactPageLocators.click, 5);
          helper.clickOnElement(ContactPageLocators.click);
-         LoggerHandler.logInfo("Clicked on Delivery");
-        test.log(Status.PASS,"Clicked on Delivery");
+         LoggerHandler.logInfo("Clicked on Click and collect");
+        test.log(Status.PASS,"Clicked on Click and collect");
         asserts.verifyTitleOfPage("Click and Collect | Mayors");
         asserts.verifyURLOfPage("https://www.mayors.com/click-and-collect");
        }
        catch(Exception e){
-        LoggerHandler.logError("Clicked Click");
-        test.log(Status.FAIL, "Clicked Click");
+        LoggerHandler.logError("Clicked Click and collect");
+        test.log(Status.FAIL, "Clicked Click and collect");
+        Screenshot.takeScreenshot("src99");
+        Reporter.attachScreenshotToReport("Brands", test, "src99");
 
     }
 }
-      /*a.Method name:clickOnReturn
-    *b.Author:Krishna Reddy
-    *Description:This Method is for clicking on return 
-    *Return Type:void
-    */
+      /*
+     * Method Name : clickOnReturn
+     * Author Name : Krishna Reddy
+     * Description : This method clicks on Return Policy on the home page
+     * Parameters : N/A
+     * Return Type : void
+     */
      public void clickOnReturn(){
        try{
         driver.navigate().back();
@@ -179,15 +213,19 @@ public class ContactPageActions extends Base {
        catch(Exception e){
         LoggerHandler.logError("Clicked Return");
         test.log(Status.FAIL, "Clicked Return");
+        Screenshot.takeScreenshot("src11");
+        Reporter.attachScreenshotToReport("Brands", test, "src11");
 
     }
 }
 
-      /*a.Method name:clickOnAffrim
-    *b.Author:Krishna Reddy
-    *Description:This Method is forclick the Affrim
-    *Return Type:void
-    */
+     /*
+     * Method Name : clickOnAffrim
+     * Author Name : Krishna Reddy
+     * Description : This method clicks on Affrim on the home page
+     * Parameters : N/A
+     * Return Type : void
+     */
      public void clickOnAffrim(){
        try{
         driver.navigate().back();
@@ -201,14 +239,18 @@ public class ContactPageActions extends Base {
        catch(Exception e){
         LoggerHandler.logError("Clicked Affrim");
         test.log(Status.FAIL, "Clicked Affrim");
+        Screenshot.takeScreenshot("src12");
+        Reporter.attachScreenshotToReport("Brands", test, "src12");
 
     }
 }
-     /*a.Method name:clickOnFeedback
-    *b.Author:Krishna Reddy
-    *Description:This Method is for clicking on feedback
-    *Return Type:void
-    */
+      /*
+     * Method Name : clickOnFeedback
+     * Author Name : Krishna Reddy
+     * Description : This method clicks on Feedback on the home page
+     * Parameters : N/A
+     * Return Type : void
+     */
      public void clickOnFeedback(){
        try{
         driver.navigate().back();
@@ -222,16 +264,20 @@ public class ContactPageActions extends Base {
        catch(Exception e){
         LoggerHandler.logError("Clicked Feedback");
         test.log(Status.FAIL, "Clicked Feedback");
+        Screenshot.takeScreenshot("src13");
+        Reporter.attachScreenshotToReport("Brands", test, "src13");
 
     }
       
      }
 
-    //  /*a.Method name:clusterVerification
-    // *b.Author:Krishna Reddy
-    // *Description:This Method is for verification of group of elements
-    // *Return Type:void
-    // */
+     /*
+    * Method Name : runContact
+    * Author Name : Krishna Reddy
+    * Description : This method is a cluster of all the methods which needs to be executed
+    * Parameters : N/A
+    * Return Type : void
+    */
     public void runContact(){
         clickOnAccept();
         clickOnContact();

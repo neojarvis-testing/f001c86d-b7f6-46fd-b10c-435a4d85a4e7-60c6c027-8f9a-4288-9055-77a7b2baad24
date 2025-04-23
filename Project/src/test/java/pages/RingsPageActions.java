@@ -16,17 +16,25 @@ public class RingsPageActions extends Base{
     WebDriverHelper helper;
     Assertion asserts;
     ExtentTest test;
-    LoggerHandler logs;
+    /*
+     * Constructor Name : RingsPageActions
+     * Author Name : Krishna Reddy
+     * Description : This constructor creates the instances of the WebDriverHelper and Assertion.
+     * Parameters : N/A
+     * Return Type : void
+     */
     public RingsPageActions(ExtentTest test,LoggerHandler logs) {
         helper = new WebDriverHelper(driver);
         this.test=test;
         asserts = new Assertion(driver,logs);
         this.logs=logs;
     }
-    /*a.Method name:clickOnSearch
-    *b.Author:Krishna Reddy
-    *Description:This Method is for clicking on Search
-    *Return Type:void
+    /*
+    * Method Name : clickOnSearch
+    * Author Name : Krishna Reddy
+    * Description : This method clicks on Search on the home page
+    * Parameters : N/A
+    * Return Type : void
     */
     public void clickOnSearch(){
         try{
@@ -39,13 +47,17 @@ public class RingsPageActions extends Base{
         catch(Exception e){
             LoggerHandler.logError("Clicked on search");
             test.log(Status.FAIL, "Clicked on search");
+            Screenshot.takeScreenshot("src14");
+            Reporter.attachScreenshotToReport("Brands", test, "src14");
     
         }
     }
-    /*a.Method name:inputOnSearchBar
-    *b.Author:Krishna Reddy
-    *Description:This Method is for giving input in searchbar
-    *Return Type:void
+    /*
+    * Method Name : inputOnSearchBar
+    * Author Name : Krishna Reddy
+    * Description : This method gives input Rings to the searchbar on the home page
+    * Parameters : N/A
+    * Return Type : void
     */
     public void inputOnSearchBar(){
         try{
@@ -59,13 +71,17 @@ public class RingsPageActions extends Base{
         catch(Exception e){
             LoggerHandler.logError("Clicked on searchbar");
             test.log(Status.FAIL, "Clicked on searchbar");
+            Screenshot.takeScreenshot("src15");
+            Reporter.attachScreenshotToReport("Brands", test, "src15");
     
         }
     }
-    /*a.Method name:enterOnSearchbar
-    *b.Author:Krishna Reddy
-    *Description:This Method is for enter on searchbar
-    *Return Type:void
+   /*
+    * Method Name : enterOnSearchbar
+    * Author Name : Krishna Reddy
+    * Description : This method enter on the searchbar.
+    * Parameters : N/A
+    * Return Type : void
     */
     public void enterOnSearchbar(){
         try{
@@ -76,15 +92,18 @@ public class RingsPageActions extends Base{
         catch(Exception e){
             LoggerHandler.logError("Entered on search");
             test.log(Status.FAIL, "Entered on search");
+            Screenshot.takeScreenshot("src16");
+            Reporter.attachScreenshotToReport("Brands", test, "src16");
     
         }
     }
-    /*a.Method name:clickOnBrand
-    *b.Author:Krishna Reddy
-    *Description:This Method is for clicking on Brand
-    *Return Type:void
+   /*
+    * Method Name : clickOnBrand
+    * Author Name : Krishna Reddy
+    * Description : This method clicks on the brand in the Rings Page.
+    * Parameters : N/A
+    * Return Type : void
     */
-    
     public void clickOnBrand(){
         try{
         helper.waitForElementToBeVisible(RingsPageLocators.brand, 3);
@@ -95,15 +114,18 @@ public class RingsPageActions extends Base{
         catch(Exception e){
             LoggerHandler.logError("Clicked on brand");
             test.log(Status.FAIL, "Clicked on brand");
+            Screenshot.takeScreenshot("src17");
+            Reporter.attachScreenshotToReport("Brands", test, "src17");
     
         }
     }
-    /*a.Method name:clickOnCarlex
-    *b.Author:Krishna Reddy
-    *Description:This Method is for clicking on Carlex
-    *Return Type:void
+   /*
+    * Method Name : clickOnCarlex
+    * Author Name : Krishna Reddy
+    * Description : This method clicks on the Carlex in the Rings Page.
+    * Parameters : N/A
+    * Return Type : void
     */
-    
     public void clickOnCarlex(){
         try{
         helper.waitForElementToBeVisible(RingsPageLocators.carlex, 3);
@@ -114,13 +136,17 @@ public class RingsPageActions extends Base{
         catch(Exception e){
             LoggerHandler.logError("Clicked on carlex");
             test.log(Status.FAIL, "Clicked on carlex");
+            Screenshot.takeScreenshot("src18");
+            Reporter.attachScreenshotToReport("Brands", test, "src18");
     
         }
     }
-     /*a.Method name:clickOnRings
-    *b.Author:Krishna Reddy
-    *Description:This Method is for clicking on Rings
-    *Return Type:void
+     /*
+    * Method Name : clickOnRings
+    * Author Name : Krishna Reddy
+    * Description : This method clicks on the Rings in the Rings Page.
+    * Parameters : N/A
+    * Return Type : void
     */
     public void clickOnRings(){
         try{
@@ -132,13 +158,17 @@ public class RingsPageActions extends Base{
         catch(Exception e){
             LoggerHandler.logError("Clicked on Rings");
             test.log(Status.FAIL, "Clicked on Rings");
+            Screenshot.takeScreenshot("src19");
+            Reporter.attachScreenshotToReport("Brands", test, "src19");
     
         }
     }
-    /*a.Method name:clickOnForHer
-    *b.Author:Krishna Reddy
-    *Description:This Method is for clicking on Forher
-    *Return Type:void
+    /*
+    * Method Name : clickOnForher
+    * Author Name : Krishna Reddy
+    * Description : This method clicks on the forher in the Rings Page.
+    * Parameters : N/A
+    * Return Type : void
     */
     public void clickOnForher(){
         try{
@@ -150,13 +180,17 @@ public class RingsPageActions extends Base{
         catch(Exception e){
             LoggerHandler.logError("Clicked on forher");
             test.log(Status.FAIL, "Clicked on forher");
+            Screenshot.takeScreenshot("src20");
+            Reporter.attachScreenshotToReport("Brands", test, "src20");
     
         }
     }
-    /*a.Method name:clickOnFirst
-    *b.Author:Krishna Reddy
-    *Description:This Method is for clicking on First
-    *Return Type:void
+    /*
+    * Method Name : clickOnFirst
+    * Author Name : Krishna Reddy
+    * Description : This method clicks on the first label  in the Rings Page.
+    * Parameters : N/A
+    * Return Type : void
     */
     public void clickOnFirst(){
         try{
@@ -168,13 +202,17 @@ public class RingsPageActions extends Base{
         catch(Exception e){
             LoggerHandler.logError("Clicked on first");
             test.log(Status.FAIL, "Clicked on first");
+            Screenshot.takeScreenshot("src21");
+            Reporter.attachScreenshotToReport("Brands", test, "src21");
     
         }
     }
-    /*a.Method name:clickOnLive
-    *b.Author:Krishna Reddy
-    *Description:This Method is for clicking on Live
-    *Return Type:void
+      /*
+    * Method Name : clickOnLive
+    * Author Name : Krishna Reddy
+    * Description : This method clicks on the Live Expert on the First label Page.
+    * Parameters : N/A
+    * Return Type : void
     */
     public void clickOnLive(){
         try{
@@ -188,13 +226,17 @@ public class RingsPageActions extends Base{
         catch(Exception e){
             LoggerHandler.logError("Clicked on live");
             test.log(Status.FAIL, "Clicked on live");
+            Screenshot.takeScreenshot("src22");
+            Reporter.attachScreenshotToReport("Brands", test, "src22");
     
         }
     }
-    /*a.Method name:clickOnAccept
-    *b.Author:Krishna Reddy
-    *Description:This Method is for clicking on Accept cookies
-    *Return Type:void
+     /*
+    * Method Name : clickOnAccept
+    * Author Name : Krishna Reddy
+    * Description : This method clicks on the Accept cookies on the home Page.
+    * Parameters : N/A
+    * Return Type : void
     */
     public void clickOnAccept(){
         try{
@@ -205,13 +247,17 @@ public class RingsPageActions extends Base{
         catch(Exception e){
             LoggerHandler.logError("Clicked on accept cookies");
             test.log(Status.FAIL, "Clicked on accept cookies");
+            Screenshot.takeScreenshot("src23");
+            Reporter.attachScreenshotToReport("Brands", test, "src23");
     
         }
     }
-    /*a.Method name:clickOnClose
-    *b.Author:Krishna Reddy
-    *Description:This Method is for clicking on Close
-    *Return Type:void
+     /*
+    * Method Name : clickOnClose
+    * Author Name : Krishna Reddy
+    * Description : This method clicks on the close button of the pop-up on the home Page.
+    * Parameters : N/A
+    * Return Type : void
     */
     public void clickOnClose(){
         try{
@@ -224,24 +270,37 @@ public class RingsPageActions extends Base{
         catch(Exception e){
             LoggerHandler.logError("Clicked on close");
             test.log(Status.FAIL, "Clicked on close");
+            Screenshot.takeScreenshot("src24");
+            Reporter.attachScreenshotToReport("Brands", test, "src24");
     
         }
     }
-    /*a.Method name:verifyRings
-    *b.Author:Krishna Reddy
-    *Description:This Method is for Verifying the rings
-    *Return Type:void
+     /*
+    * Method Name : verifyRings
+    * Author Name : Krishna Reddy
+    * Description : This method verify the Rings title of the Rings page.
+    * Parameters : N/A
+    * Return Type : void
     */
     public void verifyRings(){
         try{
         asserts.verifyTitleOfPage("Rings");
         }
         catch(Exception e){
-            LoggerHandler.logError("Verify Rings");
-            test.log(Status.FAIL, "Verify Rings");
+            LoggerHandler.logError("Failed to verify Rings");
+            test.log(Status.FAIL, "Failed to verify Rings");
+            Screenshot.takeScreenshot("src25");
+            Reporter.attachScreenshotToReport("Brands", test, "src25");
         }
         
     }
+     /*
+    * Method Name : ringsExecute
+    * Author Name : Krishna Reddy
+    * Description : This method clusters the methods which needs to be executed.
+    * Parameters : N/A
+    * Return Type : void
+    */
     public void ringsExecute(){
         clickOnAccept();
         clickOnSearch();
