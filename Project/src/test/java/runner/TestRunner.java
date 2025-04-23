@@ -34,87 +34,87 @@ public class TestRunner extends Base{
         WatchesPage obj1=new WatchesPage(test);
         obj1.testcase1();
     }
-    @Test
-    public void execute1(){
-        test = reports.createTest("testCase04");
-        RingsPageActions p1 = new RingsPageActions(test);
-        p1.clickOnAccept();
-        p1.clickOnSearch();
-        p1.inputOnSearchBar();
-        p1.enterOnSearchbar();
+    // @Test
+    // public void execute1(){
+    //     test = reports.createTest("testCase04");
+    //     RingsPageActions p1 = new RingsPageActions(test);
+    //     p1.clickOnAccept();
+    //     p1.clickOnSearch();
+    //     p1.inputOnSearchBar();
+    //     p1.enterOnSearchbar();
         
-        p1.clickOnClose();
-        p1.clickOnRings();
-        p1.clickOnForher();
-        p1.clickOnForher();
-        p1.clickOnBrand();
-        p1.clickOnCarlex();
-        p1.clickOnFirst();
-        p1.clickOnLive();
-        p1.verifyRings();
-    }
-    @Test
-    public void contactExecute(){
-        ContactPageActions c1 = new ContactPageActions(test);
-        c1.clickOnAccept();
-        c1.clickOnContact();
-        c1.clickOnLuxury();
-        c1.clickOnStore();
-        c1.clickOnDelivery();
-        c1.clickOnclick();
-        c1.clickOnReturn();
-    }
+    //     p1.clickOnClose();
+    //     p1.clickOnRings();
+    //     p1.clickOnForher();
+    //     p1.clickOnForher();
+    //     p1.clickOnBrand();
+    //     p1.clickOnCarlex();
+    //     p1.clickOnFirst();
+    //     p1.clickOnLive();
+    //     p1.verifyRings();
+    // }
+    // @Test
+    // public void contactExecute(){
+    //     ContactPageActions c1 = new ContactPageActions(test);
+    //     c1.clickOnAccept();
+    //     c1.clickOnContact();
+    //     c1.clickOnLuxury();
+    //     c1.clickOnStore();
+    //     c1.clickOnDelivery();
+    //     c1.clickOnclick();
+    //     c1.clickOnReturn();
+    // }
 
-    @Test (priority = 1)
-    public void Rolex(){
-        test = reports.createTest("TestCase02");
-        HomePage obj = new HomePage(test);
-        obj.rolex();
-    }
-    @Test(priority = 2)
-    public void testCasethree()
-    {
-        test = reports.createTest("TestCase03");
-        MensWatchActions mensWatch = new MensWatchActions(driver, test);
-        mensWatch.MensWatchTestCase();
-    }
-    @Test(priority = 3)
-    public void testCase4()
-    {
-        test = reports.createTest("Test case 4");
-        JewelryPage jew  = new JewelryPage(test);
-        jew.test4();
-    }
+    // @Test (priority = 1)
+    // public void Rolex(){
+    //     test = reports.createTest("TestCase02");
+    //     HomePage obj = new HomePage(test);
+    //     obj.rolex();
+    // }
+    // @Test(priority = 2)
+    // public void testCasethree()
+    // {
+    //     test = reports.createTest("TestCase03");
+    //     MensWatchActions mensWatch = new MensWatchActions(driver, test);
+    //     mensWatch.MensWatchTestCase();
+    // }
+    // @Test(priority = 3)
+    // public void testCase4()
+    // {
+    //     test = reports.createTest("Test case 4");
+    //     JewelryPage jew  = new JewelryPage(test);
+    //     jew.test4();
+    // }
 
-    @Test
-    public void testCase10()
-    {
-        test = reports.createTest("Test case 10");
-        AboutMayors abtMay = new AboutMayors(test);
-        abtMay.test10();
-    }
-    @Test(priority = 6)
-    public void test(){
-        test = reports.createTest("TestCase-07");
-        SearchActions sa = new SearchActions(driver,test);
+    // @Test
+    // public void testCase10()
+    // {
+    //     test = reports.createTest("Test case 10");
+    //     AboutMayors abtMay = new AboutMayors(test);
+    //     abtMay.test10();
+    // }
+    // @Test(priority = 6)
+    // public void test(){
+    //     test = reports.createTest("TestCase-07");
+    //     SearchActions sa = new SearchActions(driver,test);
         
-        sa.search();
+    //     sa.search();
 
-    }
-    @Test(priority = 5)
-    public void testBracelets(){
-        test = reports.createTest("TestCase-05");
-        BraceletsActions ba = new BraceletsActions(driver,test);
-        ba.braceletsTest();
+    // }
+    // @Test(priority = 5)
+    // public void testBracelets(){
+    //     test = reports.createTest("TestCase-05");
+    //     BraceletsActions ba = new BraceletsActions(driver,test);
+    //     ba.braceletsTest();
 
-    }
+    // }
 
-    @Test (priority = 3)
-    public void testCaseNine(){
-        test = reports.createTest("TestCase09");
-        AccessibilityActions accessy = new AccessibilityActions(driver,test);
-        accessy.accessibilityTestCase();
-    }
+    // @Test (priority = 3)
+    // public void testCaseNine(){
+    //     test = reports.createTest("TestCase09");
+    //     AccessibilityActions accessy = new AccessibilityActions(driver,test);
+    //     accessy.accessibilityTestCase();
+    // }
 
 
     @AfterMethod

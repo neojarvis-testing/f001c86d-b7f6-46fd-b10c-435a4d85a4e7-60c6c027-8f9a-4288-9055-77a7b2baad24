@@ -7,7 +7,7 @@ public class Property {
     public static FileInputStream file;
     public static Properties prop=null;
 
-     /*a.Method name:loadBaseProperties
+    /*a.Method name:loadBaseProperties
     *b.Author:Sumayya Sultana
     *Description:This Method is for load configuration settings from an external properties file
     *Return Type:Properties
@@ -23,9 +23,11 @@ public class Property {
 
         } catch (Exception e) {
             System.out.println("Can not load properties file "+e.getMessage());
-
         }
         return prop;
     }
 }
+
+
+
 
