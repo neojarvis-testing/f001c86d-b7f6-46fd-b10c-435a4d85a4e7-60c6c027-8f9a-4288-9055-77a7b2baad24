@@ -195,7 +195,6 @@ public class TestRunner extends Base{
     public void test(){
         test = reports.createTest("TestCase-07");
         SearchActions sa = new SearchActions(driver,test,logs);
-        
         sa.search();
 
     }
