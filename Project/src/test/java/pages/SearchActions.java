@@ -20,10 +20,8 @@ public class SearchActions {
     WebDriverHelper helper;
     Assertion assertion;
     ExtentTest test;
+    LoggerHandler logs;
 
-    // public void verifyLogo() {
-
-    // }
     /*Author: Kotha Sai Ragunath
      * Method Name: SearchActions
      * Description: This is a constructor that initializes the driver, helper, test and assertion objects.
@@ -48,7 +46,7 @@ public class SearchActions {
         try {
             helper.clickOnElement(SearchLocators.acceptAndCookies);
             test.log(Status.INFO, "Clicked On Accept and Cookies");
-            LoggerHandler.logInfo("Clicked On Accept and Cookies");
+            logs.logInfo("Clicked On Accept and Cookies");
             test.log(Status.PASS, "Clicked On Accept and Cookies");
 
         } catch (Exception e) {
@@ -73,7 +71,7 @@ public class SearchActions {
             helper.typeInElement(SearchLocators.searchBar, "Earrings");
             helper.enterAction(SearchLocators.searchBar);
             test.log(Status.INFO, "Searched For Earings");
-            LoggerHandler.logInfo("Searched For Earings");
+            logs.logInfo("Searched For Earings");
             test.log(Status.PASS, "Searched For Earings");
         }catch (Exception e) {
             System.out.println(e.getMessage());
@@ -94,7 +92,7 @@ public class SearchActions {
         try {
             assertion.verifyTextInPage(SearchLocators.earRings, "Earrings");
             test.log(Status.INFO, "Verified the text Earings");
-            LoggerHandler.logInfo("Verified the text Earings");
+            logs.logInfo("Verified the text Earings");
             test.log(Status.PASS, "Verified the text Earings");
         } catch (Exception e) {
             e.printStackTrace();
@@ -120,7 +118,7 @@ public class SearchActions {
             test.log(Status.PASS, "Clicked On Dismiss");
         } catch (Exception e) {
             test.log(Status.INFO, "Clicked On Dismiss");
-            LoggerHandler.logError("Clicked On Dismiss");
+            logs.logError("Clicked On Dismiss");
             System.out.println(e.getMessage());
             logs.logError("Clicked On Dismiss");
             test.log(Status.FAIL, "Clicked On Dismiss");
@@ -142,7 +140,7 @@ public class SearchActions {
         try {
             helper.clickOnElement(SearchLocators.brand);
             test.log(Status.INFO, "Clicked On Brand");
-            LoggerHandler.logInfo("Clicked On Brand");
+            logs.logInfo("Clicked On Brand");
             test.log(Status.PASS, "Clicked On Brand");
 
         }catch (Exception e) {
@@ -168,7 +166,7 @@ public class SearchActions {
             helper.clickOnElement(SearchLocators.gucci);
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
             test.log(Status.INFO, "Clicked On Gucci");
-            LoggerHandler.logInfo("Clicked On Gucci");
+            logs.logInfo("Clicked On Gucci");
             test.log(Status.PASS, "Clicked On Gucci");
 
         } catch (Exception e) {
@@ -197,7 +195,7 @@ public class SearchActions {
            
             helper.clickOnElement(SearchLocators.roseGold);
             test.log(Status.INFO, "Clicked On RoseGold");
-            LoggerHandler.logInfo("Clicked On RoseGold");
+            logs.logInfo("Clicked On RoseGold");
             test.log(Status.PASS, "Clicked On RoseGold");
 
         }catch (Exception e) {
@@ -226,7 +224,7 @@ public class SearchActions {
             helper.clickOnElement(SearchLocators.dropEarring);
             helper.clickOnElement(SearchLocators.dropEarring);
             test.log(Status.INFO, "Clicked On DropEarring");
-            LoggerHandler.logInfo("Clicked On DropEarring");
+            logs.logInfo("Clicked On DropEarring");
             test.log(Status.PASS, "Clicked On DropEarring");
 
         }catch (Exception e) {
@@ -251,7 +249,7 @@ public class SearchActions {
         try {
             helper.clickOnElement(SearchLocators.firstProduct);
            test.log(Status.INFO, "Clicked On FirstProduct");
-            LoggerHandler.logInfo("Clicked On FirstProduct");
+            logs.logInfo("Clicked On FirstProduct");
             test.log(Status.PASS, "Clicked On FirstProduct");
 
         }catch (Exception e) {
@@ -275,7 +273,7 @@ public class SearchActions {
         try {
             helper.clickOnElement(SearchLocators.getLiveExpert);
             test.log(Status.INFO, "Clicked On getLiveExpert");
-            LoggerHandler.logInfo("Clicked On getLiveExpert");
+            logs.logInfo("Clicked On getLiveExpert");
             test.log(Status.PASS, "Clicked On getLiveExpert");
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -299,7 +297,7 @@ public class SearchActions {
         try {
             Screenshot.takeScreenshot("Earrings");
             test.log(Status.INFO, "Captured Screenshot for Earrings");
-            LoggerHandler.logInfo("Captured Screenshot for Earrings");
+            logs.logInfo("Captured Screenshot for Earrings");
             test.log(Status.PASS, "Captured Screenshot for Earrings");
         }catch (Exception e) {
             System.out.println(e.getMessage());

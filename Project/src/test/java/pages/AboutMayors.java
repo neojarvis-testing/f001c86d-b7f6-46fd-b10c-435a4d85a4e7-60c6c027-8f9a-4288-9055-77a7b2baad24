@@ -13,6 +13,7 @@ public class AboutMayors extends Base{
     public WebDriverHelper helper;
     public ExtentTest test;
     public Assertion assertt;
+    LoggerHandler logs;
    /*
      * Constructor name: JewelryPage
      * Author: Pavan Kumar
@@ -48,7 +49,7 @@ public class AboutMayors extends Base{
         assertt.verifyTitleOfPage(" About Us ");
         test.log(Status.INFO,"Clicked on About Mayors in footer section");
         test.log(Status.PASS,"Successfully performed About Mayors clicking operations");
-        LoggerHandler.logInfo("Successfully performed About Mayors clicking operations");
+        logs.logInfo("Successfully performed About Mayors clicking operations");
         driver.navigate().to(Base.prop.getProperty("url"));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         }
@@ -78,7 +79,7 @@ public class AboutMayors extends Base{
         test.log(Status.PASS,"navigate back to home page");
         test.log(Status.INFO,"Clicked on Press in footer section");
         test.log(Status.PASS,"Clicking on Press is a success");
-        LoggerHandler.logInfo("Clicking on Press is a success");
+        logs.logInfo("Clicking on Press is a success");
         driver.navigate().to(Base.prop.getProperty("url"));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         }
@@ -108,14 +109,14 @@ public class AboutMayors extends Base{
         assertt.verifyTitleOfPage("Careers");
         test.log(Status.INFO,"Clicked on Carreers");
         test.log(Status.PASS,"Successfully performed careers click operations");
-        LoggerHandler.logInfo("Successfully performed careers click operations");
+        logs.logInfo("Successfully performed careers click operations");
         driver.navigate().to(Base.prop.getProperty("url"));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));       
         }
         catch(Exception e)
         {
             test.log(Status.INFO,"Failed to click on Careers in footer section");
-            LoggerHandler.logError("Failed to perform careers click operations");
+            logs.logError("Failed to perform careers click operations");
             test.log(Status.FAIL,"Failed to perform careers click operations");
             Reporter.attachScreenshotToReport("Failed careers click",test,"");
         }
@@ -137,7 +138,7 @@ public class AboutMayors extends Base{
         assertt.verifyTitleOfPage("Sustainability");
         test.log(Status.INFO,"Clicked on Sustainability in footer section");
         test.log(Status.PASS,"Sucessfully performed clicking on Sustainability operations");
-        LoggerHandler.logInfo("Sucessfully performed clicking on Sustainability operations");
+        logs.logInfo("Sucessfully performed clicking on Sustainability operations");
         driver.navigate().to(Base.prop.getProperty("url"));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));       
         }
@@ -168,7 +169,7 @@ public class AboutMayors extends Base{
         assertt.verifyTitleOfPage("Newsletter");
         test.log(Status.INFO,"Clicked on NewsLetterSignUp");
         test.log(Status.PASS,"Successfully performed News Letter clicking operations");
-        LoggerHandler.logInfo("Successfully performed News Letter clicking operations");
+        logs.logInfo("Successfully performed News Letter clicking operations");
         driver.navigate().to(Base.prop.getProperty("url"));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));       
         }
@@ -196,7 +197,7 @@ public class AboutMayors extends Base{
         assertt.verifyTitleOfPage("Rolex");
         test.log(Status.INFO,"Clicked on Roles in footer section");
         test.log(Status.PASS,"Successfully performed rolex clicking operations");
-        LoggerHandler.logInfo("Successfully performed rolex clicking operations");
+        logs.logInfo("Successfully performed rolex clicking operations");
         driver.navigate().to(Base.prop.getProperty("url"));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));       
         }
@@ -224,7 +225,7 @@ public class AboutMayors extends Base{
         assertt.verifyTitleOfPage("Wedding");
         test.log(Status.INFO,"Clicked on wedding in footer section");
         test.log(Status.PASS,"Successfully performed wedding clicking operations");
-        LoggerHandler.logInfo("Successfully performed wedding clicking operations");
+        logs.logInfo("Successfully performed wedding clicking operations");
         driver.navigate().to(Base.prop.getProperty("url"));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));       
         }
@@ -252,7 +253,7 @@ public class AboutMayors extends Base{
         assertt.verifyTitleOfPage("Brands");
         test.log(Status.INFO,"Clicked on brands in footer section");
         test.log(Status.PASS,"Successfully performed Brands clicking operations");
-        LoggerHandler.logInfo("Successfully performed Brands clicking operations");
+        logs.logInfo("Successfully performed Brands clicking operations");
         driver.navigate().to(Base.prop.getProperty("url"));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));       
         }
@@ -281,7 +282,7 @@ public class AboutMayors extends Base{
         Reporter.attachScreenshotToReport("mayors.png",test,"");
         test.log(Status.INFO,"Verification of About Mayors label is successful");
         test.log(Status.PASS,"Successfully verified and took a screenshot");
-        LoggerHandler.logInfo("Successfully verified and took a screenshot");
+        logs.logInfo("Successfully verified and took a screenshot");
         driver.navigate().to(Base.prop.getProperty("url"));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));       
         }

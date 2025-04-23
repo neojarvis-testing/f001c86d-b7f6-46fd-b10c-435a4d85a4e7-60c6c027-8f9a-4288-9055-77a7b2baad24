@@ -9,7 +9,6 @@ import uistore.MensWatchLocators;
 import utils.Assertion;
 import utils.Base;
 import utils.LoggerHandler;
-import utils.LoggerHandler;
 import utils.Reporter;
 import utils.Screenshot;
 import utils.WebDriverHelper;
@@ -29,7 +28,6 @@ public class MensWatchActions extends Base{
      * Return Type : none
      */
     public MensWatchActions(WebDriver driver, ExtentTest test, LoggerHandler logs) {
-        this.driver = driver;
         helper = new WebDriverHelper(driver);
         this.test = test;
         asserts = new Assertion(driver,logs);

@@ -24,10 +24,6 @@ public class Base {
     *Return Type:void
     */
     public void openBrowser() {
-        prop = property.loadBaseProperties();
-    Property property= new Property();
-
-    public void openBrowser() {
             prop=property.loadBaseProperties();
         try {
             driver = new RemoteWebDriver(new URL(prop.getProperty("gridurl")), new ChromeOptions());
