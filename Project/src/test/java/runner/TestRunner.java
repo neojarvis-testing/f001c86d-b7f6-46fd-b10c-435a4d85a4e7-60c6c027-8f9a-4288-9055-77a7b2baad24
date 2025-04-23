@@ -36,6 +36,12 @@ public class TestRunner extends Base{
         WatchesPage obj1=new WatchesPage(test, logs);
         obj1.testcase1();
     }
+    @Test(priority = 2)
+    public void execute1(){
+        test = reports.createTest("testCase04");
+        RingsPageActions p1 = new RingsPageActions(test);
+        p1.ringsExecute();
+    }
     // @Test
     // public void execute1(){
     //     test = reports.createTest("testCase04");
@@ -135,18 +141,17 @@ public class TestRunner extends Base{
         p1.clickOnFirst();
         p1.clickOnLive();
         p1.verifyRings();
+
     }
-    @Test
+    @Test(priority = 1)
     public void contactExecute(){
-        ContactPageActions c1 = new ContactPageActions(driver, test,logs);
-        c1.clickOnAccept();
-        c1.clickOnContact();
-        c1.clickOnLuxury();
-        c1.clickOnStore();
-        c1.clickOnDelivery();
-        c1.clickOnclick();
-        c1.clickOnReturn();
+
+        test  = reports.createTest("test case 9");
+        ContactPageActions c1 = new ContactPageActions(test);
+        c1.runContact();
     }
+
+
     /*
      * Method Name : Rolex
      * Author Name : Praneeth
@@ -160,6 +165,7 @@ public class TestRunner extends Base{
         HomePage obj = new HomePage(test,logs);
         obj.rolex();
     }
+
 
     @Test(priority = 2)
     public void testCasethree()
