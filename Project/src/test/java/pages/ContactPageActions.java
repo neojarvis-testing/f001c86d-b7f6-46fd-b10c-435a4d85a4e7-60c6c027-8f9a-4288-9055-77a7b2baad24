@@ -2,6 +2,8 @@ package pages;
 
 import java.time.Duration;
 
+import org.openqa.selenium.WebDriver;
+
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
@@ -14,14 +16,17 @@ import utils.WebDriverHelper;
 
 public class ContactPageActions extends Base {
 
-        WebDriverHelper helper;
+    WebDriver driver;
+    WebDriverHelper helper;
     Assertion asserts;
     ExtentTest test;
-    
-    public ContactPageActions(ExtentTest test) {
+    LoggerHandler logs;
+    public ContactPageActions(WebDriver driver, ExtentTest test, LoggerHandler logs) {
+        this.driver = driver;
         helper = new WebDriverHelper(driver);
-        this.test=test;
-        asserts = new Assertion(driver);
+        this.test = test;
+        asserts = new Assertion(driver, logs);
+        this.logs = logs;
     }
     public void clickOnContact(){
        // helper.hoverOverElement(ContactPageLocators.contact);
@@ -52,7 +57,6 @@ public class ContactPageActions extends Base {
     public void clickOnAccept(){
         try{
         helper.clickOnElement(RingsPageLocators.accept);
-        LoggerHandler.logInfo("Clicked on accept cookies");
         test.log(Status.PASS,"Clicked on accept cookies");
         }
         catch(Exception e){

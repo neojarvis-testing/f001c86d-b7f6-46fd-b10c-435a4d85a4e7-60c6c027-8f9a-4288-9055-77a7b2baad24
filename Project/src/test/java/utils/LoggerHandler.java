@@ -12,29 +12,29 @@ public class LoggerHandler {
             logDir.mkdirs();
         }
     }
-    private static final Logger log = LogManager.getLogger(LoggerHandler.class);
+    private final Logger log = LogManager.getLogger(LoggerHandler.class);
  
-    public static void logTrace(String msg) {
+    public void logTrace(String msg) {
         log.trace(msg);
     }
  
-    public static void logDebug(String msg) {
+    public void logDebug(String msg) {
         log.debug(msg);
     }
  
-    public static void logInfo(String msg) {
+    public void logInfo(String msg) {
         log.info(msg);
     }
  
-    public static void logWarn(String msg) {
+    public void logWarn(String msg) {
         log.warn(msg);
     }
  
-    public static void logError(String msg) {
+    public void logError(String msg) {
         log.error(msg);
     }
  
-    public static void logFatal(String msg) {
+    public void logFatal(String msg) {
         log.fatal(msg);
     }
 }

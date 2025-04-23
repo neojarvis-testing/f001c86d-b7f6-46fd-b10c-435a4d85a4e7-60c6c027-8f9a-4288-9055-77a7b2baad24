@@ -11,11 +11,13 @@ import com.aventstack.extentreports.ExtentTest;
 
 import pages.*;
 import utils.Base;
+import utils.LoggerHandler;
 import utils.Reporter;
 
 public class TestRunner extends Base{
     ExtentReports reports;
     ExtentTest test;
+    LoggerHandler logs = new LoggerHandler();
 
     @BeforeClass
     public void configReport(){
@@ -31,13 +33,13 @@ public class TestRunner extends Base{
     @Test
     public void case1(){
         test=reports.createTest("case1");
-        WatchesPage obj1=new WatchesPage(test);
+        WatchesPage obj1=new WatchesPage(test, logs);
         obj1.testcase1();
     }
     @Test
     public void execute1(){
         test = reports.createTest("testCase04");
-        RingsPageActions p1 = new RingsPageActions(test);
+        RingsPageActions p1 = new RingsPageActions(test,logs);
         p1.clickOnAccept();
         p1.clickOnSearch();
         p1.inputOnSearchBar();
@@ -55,7 +57,7 @@ public class TestRunner extends Base{
     }
     @Test
     public void contactExecute(){
-        ContactPageActions c1 = new ContactPageActions(test);
+        ContactPageActions c1 = new ContactPageActions(driver, test,logs);
         c1.clickOnAccept();
         c1.clickOnContact();
         c1.clickOnLuxury();
@@ -68,21 +70,23 @@ public class TestRunner extends Base{
     @Test (priority = 1)
     public void Rolex(){
         test = reports.createTest("TestCase02");
-        HomePage obj = new HomePage(test);
+        HomePage obj = new HomePage(test,logs);
         obj.rolex();
     }
+
     @Test(priority = 2)
     public void testCasethree()
     {
         test = reports.createTest("TestCase03");
-        MensWatchActions mensWatch = new MensWatchActions(driver, test);
+        MensWatchActions mensWatch = new MensWatchActions(driver, test,logs);
         mensWatch.MensWatchTestCase();
     }
+
     @Test(priority = 3)
     public void testCase4()
     {
         test = reports.createTest("Test case 4");
-        JewelryPage jew  = new JewelryPage(test);
+        JewelryPage jew  = new JewelryPage(test,logs);
         jew.test4();
     }
 
@@ -90,21 +94,23 @@ public class TestRunner extends Base{
     public void testCase10()
     {
         test = reports.createTest("Test case 10");
-        AboutMayors abtMay = new AboutMayors(test);
+        AboutMayors abtMay = new AboutMayors(test, logs);
         abtMay.test10();
     }
+
     @Test(priority = 6)
     public void test(){
         test = reports.createTest("TestCase-07");
-        SearchActions sa = new SearchActions(driver,test);
+        SearchActions sa = new SearchActions(driver,test,logs);
         
         sa.search();
 
     }
+
     @Test(priority = 5)
     public void testBracelets(){
         test = reports.createTest("TestCase-05");
-        BraceletsActions ba = new BraceletsActions(driver,test);
+        BraceletsActions ba = new BraceletsActions(driver,test, logs);
         ba.braceletsTest();
 
     }
@@ -112,7 +118,7 @@ public class TestRunner extends Base{
     @Test (priority = 3)
     public void testCaseNine(){
         test = reports.createTest("TestCase09");
-        AccessibilityActions accessy = new AccessibilityActions(driver,test);
+        AccessibilityActions accessy = new AccessibilityActions(driver,test,logs);
         accessy.accessibilityTestCase();
     }
 
@@ -130,6 +136,5 @@ public class TestRunner extends Base{
     {
         reports.flush();
     }
-
 
 }
