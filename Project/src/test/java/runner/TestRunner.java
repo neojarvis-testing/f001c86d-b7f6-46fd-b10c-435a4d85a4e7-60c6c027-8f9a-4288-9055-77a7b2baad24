@@ -34,44 +34,26 @@ public class TestRunner extends Base{
         WatchesPage obj1=new WatchesPage(test);
         obj1.testcase1();
     }
-    @Test
+    @Test(priority = 2)
     public void execute1(){
         test = reports.createTest("testCase04");
         RingsPageActions p1 = new RingsPageActions(test);
-        p1.clickOnAccept();
-        p1.clickOnSearch();
-        p1.inputOnSearchBar();
-        p1.enterOnSearchbar();
-        
-        p1.clickOnClose();
-        p1.clickOnRings();
-        p1.clickOnForher();
-        p1.clickOnForher();
-        p1.clickOnBrand();
-        p1.clickOnCarlex();
-        p1.clickOnFirst();
-        p1.clickOnLive();
-        p1.verifyRings();
+        p1.ringsExecute();
     }
-    @Test
+    @Test(priority = 1)
     public void contactExecute(){
+        test  = reports.createTest("test case 9");
         ContactPageActions c1 = new ContactPageActions(test);
-        c1.clickOnAccept();
-        c1.clickOnContact();
-        c1.clickOnLuxury();
-        c1.clickOnStore();
-        c1.clickOnDelivery();
-        c1.clickOnclick();
-        c1.clickOnReturn();
+        c1.runContact();
     }
 
-    @Test (priority = 1)
+    @Test 
     public void Rolex(){
         test = reports.createTest("TestCase02");
         HomePage obj = new HomePage(test);
         obj.rolex();
     }
-    @Test(priority = 2)
+    @Test
     public void testCasethree()
     {
         test = reports.createTest("TestCase03");
