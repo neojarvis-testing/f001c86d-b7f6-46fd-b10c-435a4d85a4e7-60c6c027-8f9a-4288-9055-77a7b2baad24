@@ -32,6 +32,13 @@ public class WatchesPage extends Base{
         try {
             helper.waitForElementToBeVisible(WatchesLocators.acceptOnCookies,5);
             helper.clickOnElement(WatchesLocators.acceptOnCookies);
+            logs.logInfo("Clicked cookies");
+            test.log(Status.INFO,"Clicked cookies");
+            test.log(Status.PASS, "Clicked cookies");
+        } catch (Exception e) {
+            LoggerHandler.logError("cant Clicked cookies");
+            test.log(Status.INFO,"cant clicked cookies");
+            test.log(Status.FAIL, "cant Clicked cookies");
              logs.logInfo("Clicked cookies");
             test.log(Status.PASS, "Clicked cookies");
         } catch (Exception e) {
@@ -51,11 +58,13 @@ public class WatchesPage extends Base{
             acceptOnCookies();
             helper.waitForElementToBeVisible(WatchesLocators.hoverOnWatches,5);
             helper.hoverOverElement(WatchesLocators.hoverOnWatches);
+            test.log(Status.INFO,"Hover on watches");
             logs.logInfo("Hover on watches");
             test.log(Status.PASS, "Hover on watches");
            
         } catch (Exception e) {
             e.printStackTrace();
+            test.log(Status.INFO,"cant Hover on watches");
             logs.logError("cant Hover on watches");
             test.log(Status.FAIL, "cant Hover on watches");
         }
@@ -71,6 +80,13 @@ public class WatchesPage extends Base{
         try {
             helper.waitForElementToBeVisible(WatchesLocators.clickOnBestSellers,5);
             helper.clickOnElement(WatchesLocators.clickOnBestSellers);
+            LoggerHandler.logInfo("clicked Best Seller");
+            test.log(Status.INFO,"clicked Best Seller");
+            test.log(Status.PASS, "clicked Best Seller");
+        } catch (Exception e) {
+            e.printStackTrace();
+            LoggerHandler.logError("cant clicked Best Seller");
+            test.log(Status.INFO,"cant clicked Best Seller");
             logs.logInfo("clicked Best Seller");
             test.log(Status.PASS, "clicked Best Seller");
         } catch (Exception e) {
@@ -89,6 +105,13 @@ public class WatchesPage extends Base{
     public void verifyTitle(){
         try {
             asserts.verifyTitleOfPage("omega");
+            LoggerHandler.logInfo("Title verified");
+            test.log(Status.INFO,"Title verified");
+            test.log(Status.PASS, "Title verified");
+        } catch (Exception e) {
+            e.printStackTrace();
+            LoggerHandler.logError("cant verified Title");
+            test.log(Status.INFO,"cant verified Title");
             logs.logInfo("Title verified");
             test.log(Status.PASS, "Title verified");
         } catch (Exception e) {
@@ -107,6 +130,14 @@ public class WatchesPage extends Base{
         try {
             helper.waitForElementToBeVisible(WatchesLocators.clickOnCross,5);
             helper.clickOnElement(WatchesLocators.clickOnCross);
+            LoggerHandler.logInfo("clicked close pop up");
+            test.log(Status.INFO,"clicked close pop up");
+            test.log(Status.PASS, "clicked close pop up");
+        } catch (Exception e) {
+            e.printStackTrace();
+            LoggerHandler.logError("cant clicked close pop up");
+            test.log(Status.INFO,"cant clicked close pop up");
+            test.log(Status.FAIL, "cant clicked close pop up");
             logs.logInfo("clicked cross");
             test.log(Status.PASS, "clicked cross");
         } catch (Exception e) {
@@ -129,6 +160,13 @@ public class WatchesPage extends Base{
             }
             helper.waitForElementToBeVisible(WatchesLocators.clickOnForHim,5);
             helper.clickOnElement(WatchesLocators.clickOnForHim);
+            LoggerHandler.logInfo("clicked For Him");
+            test.log(Status.INFO,"clicked For Him");
+            test.log(Status.PASS, "clicked For Him");
+        } catch (Exception e) {
+            e.printStackTrace();
+            LoggerHandler.logError("cant clicked For Him");
+            test.log(Status.INFO,"cant clicked For Him");
             logs.logInfo("clicked For Him");
             test.log(Status.PASS, "clicked For Him");
         } catch (Exception e) {
@@ -148,7 +186,8 @@ public class WatchesPage extends Base{
         try {
             helper.waitForElementToBeVisible(WatchesLocators.clickOnCartier,5);
             helper.clickOnElement(WatchesLocators.clickOnCartier);
-            logs.logInfo("clicked Cartier");
+            LoggerHandler.logInfo("clicked Cartier");
+            test.log(Status.INFO,"clicked Cartier");
             test.log(Status.PASS, "clicked Cartier");
         } catch (Exception e) {
             e.printStackTrace();
@@ -167,7 +206,8 @@ public class WatchesPage extends Base{
         try {
             helper.waitForElementToBeVisible(WatchesLocators.clickOnDialColor,5);
             helper.clickOnElement(WatchesLocators.clickOnDialColor);
-            logs.logInfo("clicked Dial Color");
+            LoggerHandler.logInfo("clicked Dial Color");
+            test.log(Status.INFO,"clicked Dial Color");
             test.log(Status.PASS, "clicked Dial Color");
         } catch (Exception e) {
             e.printStackTrace();
@@ -186,7 +226,8 @@ public class WatchesPage extends Base{
         try {
             helper.waitForElementToBeVisible(WatchesLocators.clickOnBlack,5);
             helper.clickOnElement(WatchesLocators.clickOnBlack);
-            logs.logInfo("clicked on Black");
+            LoggerHandler.logInfo("clicked on Black");
+            test.log(Status.INFO,"clicked on Black");
             test.log(Status.PASS, "clicked on Black");
         } catch (Exception e) {
             e.printStackTrace();
@@ -206,7 +247,8 @@ public class WatchesPage extends Base{
         try {
             helper.waitForElementToBeVisible(WatchesLocators.clickOnFirstProduct,5);
             helper.clickOnElement(WatchesLocators.clickOnFirstProduct);
-            logs.logInfo("clicked First Product");
+            LoggerHandler.logInfo("clicked First Product");
+            test.log(Status.INFO,"clicked First Product");
             test.log(Status.PASS, "clicked First Product");
         } catch (Exception e) {
             e.printStackTrace();
@@ -225,6 +267,11 @@ public class WatchesPage extends Base{
             helper.waitForElementToBeVisible(WatchesLocators.clickOnAdd,5);
             helper.clickOnElement(WatchesLocators.clickOnAdd);
             Screenshot.takeScreenshot("Add To Shopping Bag");
+            test.log(Status.INFO,"clicked add to cart");
+            test.log(Status.PASS, "clicked add to cart");
+        } catch (Exception e) {
+            e.printStackTrace();
+            test.log(Status.INFO,"cant clicked add to cart");
             logs.logInfo("clicked add to cart");
             test.log(Status.PASS, "clicked add to cart");
         } catch (Exception e) {
@@ -243,6 +290,5 @@ public class WatchesPage extends Base{
         clickOnBlack();
         clickOnFirstProduct();
         clickOnAdd();
-
     } 
 }

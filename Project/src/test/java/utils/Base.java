@@ -15,6 +15,15 @@ public class Base {
     public static WebDriver driver;
     public static FileInputStream file;
     public static Properties prop;
+    Property property = new Property();
+     
+    /*a.Method name:openBrowser
+    *b.Author:Sumayya Sultana
+    *Description:This Method is for opening Browser
+    *Return Type:void
+    */
+    public void openBrowser() {
+        prop = property.loadBaseProperties();
     Property property= new Property();
 
     public void openBrowser() {

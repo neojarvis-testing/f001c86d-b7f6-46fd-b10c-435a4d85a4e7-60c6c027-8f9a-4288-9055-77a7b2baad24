@@ -7,6 +7,13 @@ public class Property {
     public static FileInputStream file;
     public static Properties prop=null;
 
+    /*a.Method name:loadBaseProperties
+    *b.Author:Sumayya Sultana
+    *Description:This Method is for load configuration settings from an external properties file
+    *Return Type:Properties
+    */
+
+
     public Properties loadBaseProperties(){
         String propertiesPath = System.getProperty("user.dir") + "/config/browser.properties";
         try {
@@ -22,3 +29,4 @@ public class Property {
         return prop;
     }
 }
+
