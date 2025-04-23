@@ -1,14 +1,11 @@
 package utils;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 import java.util.Properties;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.events.EventFiringDecorator;
@@ -18,27 +15,19 @@ public class Base {
     public static WebDriver driver;
     public static FileInputStream file;
     public static Properties prop;
-
-    public void loadProperties() throws IOException {
-        String propertiesPath = System.getProperty("user.dir") + "/config/browser.properties";
-        try {
-            file = new FileInputStream(propertiesPath);
-            prop = new Properties();
-            prop.load(file);
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-
-        }
-    }
+    Property property = new Property();
+     
+    /*a.Method name:openBrowser
+    *b.Author:Sumayya Sultana
+    *Description:This Method is for opening Browser
+    *Return Type:void
+    */
+    public void openBrowser() {
+        prop = property.loadBaseProperties();
+    Property property= new Property();
 
     public void openBrowser() {
-        try {
-            loadProperties();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
+            prop=property.loadBaseProperties();
         try {
             driver = new RemoteWebDriver(new URL(prop.getProperty("gridurl")), new ChromeOptions());
         } catch (MalformedURLException e) {

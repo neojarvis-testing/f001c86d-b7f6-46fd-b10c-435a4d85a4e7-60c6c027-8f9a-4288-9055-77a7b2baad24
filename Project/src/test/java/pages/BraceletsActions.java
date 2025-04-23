@@ -30,11 +30,12 @@ public class BraceletsActions {
      * Return Type: None (Constructor)
      */
 
-    public BraceletsActions(WebDriver driver,ExtentTest test) {
+    public BraceletsActions(WebDriver driver, ExtentTest test, LoggerHandler logs) {
         this.driver = driver;
         helper = new WebDriverHelper(driver);
-        this.test =test;
-        assertion = new Assertion(driver);
+        this.test = test;
+        assertion = new Assertion(driver, logs);
+        this.logs = logs;
     }
     /*
      * Author: Kotha Sai Ragunath
@@ -52,8 +53,8 @@ public class BraceletsActions {
          test.log(Status.INFO, "Clicked On Accept and Cookies");
         test.log(Status.PASS, "Clicked On Accept and Cookies");
         }catch(Exception e){
-            test.log(Status.INFO, "Clicked On Accept and Cookies");
-            LoggerHandler.logError("Clicked On Accept and Cookies");
+            System.out.println(e.getMessage());
+            logs.logError("Clicked On Accept and Cookies");
             test.log(Status.FAIL, "Clicked On Accept and Cookies");
             Reporter.attachScreenshotToReport("Clicked cookies",test,"Accept and Cookies");
         }
@@ -76,10 +77,9 @@ public class BraceletsActions {
             test.log(Status.INFO, "Hovered over wedding");
             test.log(Status.PASS, "Hovered over wedding");
             
-        } catch (Exception e) {
-
-            test.log(Status.INFO, "Hovered over wedding");
-            LoggerHandler.logError("Hovered over wedding");
+        }catch (Exception e) {
+            System.out.println(e.getMessage());
+            logs.logError("Hovered over wedding");
             test.log(Status.FAIL, "Hovered over wedding");
             Reporter.attachScreenshotToReport("Hovered over wedding",test,"Hovered over wedding");
         }
@@ -101,13 +101,13 @@ public class BraceletsActions {
             helper.clickOnElement(BraceletsLocators.bracelets);
             LoggerHandler.logInfo("Clicked On Bracelets");
             test.log(Status.INFO, "Clicked On Bracelets");
+            logs.logInfo("Clicked On Bracelets");
             test.log(Status.PASS, "Clicked On Bracelets");
-            
-           
-
         }catch(Exception e){
             LoggerHandler.logError("Clicked On Bracelets");
             test.log(Status.INFO, "Clicked On Bracelets");
+            System.out.println(e.getMessage());
+            logs.logError("Clicked On Bracelets");
             test.log(Status.FAIL,"Clicked On Bracelets");
             Reporter.attachScreenshotToReport("Clicked On Bracelets",test,"Clicked Bracelets");
         }
@@ -128,10 +128,9 @@ public class BraceletsActions {
             LoggerHandler.logInfo("Verified the text Jewelry");
             test.log(Status.PASS, "Verified the text Jewelry");
             
-        } catch (Exception e) {
-           
-            test.log(Status.INFO, "Verified the text Jewelry");
-            LoggerHandler.logError("Verified the text Jewelry");
+        }catch (Exception e) {
+            System.out.println(e.getMessage());
+            logs.logError("Verified the text Jewelry");
             test.log(Status.FAIL, "Verified the text Jewelry");
             Reporter.attachScreenshotToReport("Verified the text Jewelr",test,"Jewelry");
             
@@ -154,8 +153,8 @@ public class BraceletsActions {
         test.log(Status.INFO, "Clicked On Dismiss");
         test.log(Status.PASS, "Clicked On Dismiss");
     }catch(Exception e){
-        LoggerHandler.logError("Clicked On Dismis");
-        test.log(Status.INFO, "Clicked On Dismiss");
+        System.out.println(e.getMessage());
+        logs.logError("Clicked On Dismis");
         test.log(Status.FAIL, "Clicked On Dismiss");
         Reporter.attachScreenshotToReport("Clicked On Dismiss",test,"Dismiss");
     }
@@ -179,10 +178,10 @@ public class BraceletsActions {
             LoggerHandler.logInfo("Clicked On Yellow Gold");
         test.log(Status.PASS, "Clicked On Yellow Gold");
 
-        }catch (Exception e) {
-
-            test.log(Status.INFO, "Clicked On Yellow Gold");
-            LoggerHandler.logError("Clicked On Yellow Gold");
+        }
+        catch (Exception e) {
+            System .out.println(e.getMessage());
+            logs.logError("Clicked On Yellow Gold");
             test.log(Status.FAIL, "Clicked On Yellow Gold");
             Reporter.attachScreenshotToReport("Clicked On Yellow Gold",test,"Yellow Gold");
         }
@@ -196,12 +195,15 @@ public class BraceletsActions {
             helper.clickOnElement(BraceletsLocators.diamond);
             test.log(Status.INFO, "Clicked On Diamond");
             LoggerHandler.logInfo("Clicked On Diamond");
+            logs.logInfo("Clicked On Diamond");
         test.log(Status.PASS, "Clicked On Diamond");
 
             
         }catch (Exception e) {
             test.log(Status.INFO, "Clicked On Diamond");
             LoggerHandler.logError("Clicked On Diamond");
+            System .out.println(e.getMessage());
+            logs.logError("Clicked On Diamond");
         test.log(Status.FAIL, "Clicked On Diamond");
         Reporter.attachScreenshotToReport("Clicked On Diamond",test,"Diamond");
         }
@@ -223,12 +225,15 @@ public class BraceletsActions {
             helper.clickOnElement(BraceletsLocators.brace);
             test.log(Status.INFO, "Clicked On Bracelets Under BraceletStyles");
             LoggerHandler.logInfo("Clicked On Bracelets Under BraceletStyles");
+            logs.logInfo("Clicked On Bracelets Under BraceletStyles");
         test.log(Status.PASS, "Clicked On Bracelets Under BraceletStyles");
 
             
         } catch (Exception e) {
             test.log(Status.INFO, "Clicked On Bracelets Under BraceletStyles");
             LoggerHandler.logError("Clicked On Bracelets Under BraceletStyles");
+            System .out.println(e.getMessage());
+            logs.logError("Clicked On Bracelets Under BraceletStyles");
         test.log(Status.FAIL, "Clicked On Bracelets Under BraceletStyles");
         Reporter.attachScreenshotToReport("Clicked On Bracelets Under BraceletStyles",test,"BraceletsStyle");
         }
@@ -246,13 +251,14 @@ public class BraceletsActions {
     public void clickOnfirstPro(){
         try{
             helper.clickOnElement(BraceletsLocators.firstPro);
+
             LoggerHandler.logInfo("Clicked On First Product");
             test.log(Status.INFO, "Clicked On First Product");
         test.log(Status.PASS, "Clicked On First Product");
 
         }catch(Exception e){
-            test.log(Status.INFO, "Clicked On First Product");
-            LoggerHandler.logError("Clicked On First Product");
+            System.out.println(e.getMessage());
+            logs.logError("Clicked On First Product");
         test.log(Status.FAIL, "Clicked On First Product");
         Reporter.attachScreenshotToReport("Clicked On First Product",test,"Product");
         }
@@ -274,9 +280,9 @@ public class BraceletsActions {
             LoggerHandler.logInfo("Clicked On AddToShopping");
         test.log(Status.PASS, "Clicked On AddToShopping");
 
-        } catch (Exception e) {
-            test.log(Status.INFO, "Clicked On AddToShopping");
-            LoggerHandler.logError("Clicked On AddToShopping");
+        }catch (Exception e) {
+            System.out.println(e.getMessage());
+            logs.logError("Clicked On AddToShopping");
         test.log(Status.FAIL, "Clicked On AddToShopping");
         Reporter.attachScreenshotToReport("Clicked On AddToShopping",test,"AddToShopping");
         }
@@ -298,9 +304,8 @@ public class BraceletsActions {
         test.log(Status.INFO, "Clicked On Bracelets Screenshot");
         test.log(Status.PASS, "Clicked On Bracelets Screenshot");
     }catch(Exception e){
-        
-        LoggerHandler.logError("Captured Bracelets Screenshot");
-        test.log(Status.INFO, "Clicked On Bracelets Screenshot");
+        System.out.println(e.getMessage());
+        logs.logError("Captured Bracelets Screenshot");
         test.log(Status.FAIL, "Clicked On Bracelets Screenshot");
         Reporter.attachScreenshotToReport("Clicked On Bracelets Screenshot",test,"Bracelets Screenshot");
     }
