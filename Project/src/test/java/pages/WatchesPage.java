@@ -264,6 +264,5 @@ public class WatchesPage extends Base{
         clickOnBlack();
         clickOnFirstProduct();
         clickOnAdd();
-
     } 
 }
