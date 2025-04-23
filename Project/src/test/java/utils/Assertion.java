@@ -47,11 +47,11 @@ public class Assertion {
 			String text = driver.getCurrentUrl();
 			logs.logInfo(text);
 			Assert.assertTrue(text.contains(value));
-			logs.logInfo("URL verified");
-			test.log(Status.PASS,"URL verified");
+			logs.logInfo(text + " verified");
+			test.log(Status.PASS, text + " verified");
 		} catch (AssertionError e) {
-			logs.logError("URL incorrect");
-			test.log(Status.FAIL, "URL incorrect");
+			logs.logError(value + " incorrect");
+			test.log(Status.FAIL, value + "incorrect");
 		}
 
 	}
