@@ -39,6 +39,7 @@ public class HomePage extends Base{
             Reporter.attachScreenshotToReport("mayors", test, "mayors");
         } catch (Exception e) {
             logs.logError("Clicked on Cookies");
+            test.log(Status.INFO,"Click on cookies");
             test.log(Status.FAIL,"Not clicked on Cookies");
             Screenshot.takeScreenshot("Cookies");
             Reporter.attachScreenshotToReport("Brands", test, "Cookies attached");
@@ -59,6 +60,7 @@ public class HomePage extends Base{
             test.log(Status.PASS,"Clicked on Rolex");
         } catch (Exception e) {
             logs.logError("Clicked on Rolex");
+            test.log(Status.INFO,"Click on Rolex");
             test.log(Status.FAIL,"Clicked on Rolex");
             Screenshot.takeScreenshot("Clicked on Rolex");
             Reporter.attachScreenshotToReport("Brands", test, "Clicked on Rolex");
@@ -80,6 +82,7 @@ public class HomePage extends Base{
             test.log(Status.PASS,"Clicked on DeepSea");
         } catch (Exception e) {
             logs.logError("Clicked on DeepSea");
+            test.log(Status.INFO,"Click on DeepSea");
             test.log(Status.FAIL,"Clicked on DeepSea");
             Screenshot.takeScreenshot("Clicked on DeepSea");
             Reporter.attachScreenshotToReport("Brands", test, "Clicked on DeepSea");
@@ -102,6 +105,7 @@ public class HomePage extends Base{
             test.log(Status.PASS,"navigate back to home page");
         } catch (Exception e) {
             logs.logError("Clicked on Rolex Watches");
+            test.log(Status.INFO,"Click on Rolex watches");
             test.log(Status.FAIL,"Clicked on Rolex Watches");
             Screenshot.takeScreenshot("Cookies");
             Reporter.attachScreenshotToReport("Brands", test, "Cookies attached");
@@ -121,11 +125,11 @@ public class HomePage extends Base{
             helper.clickOnElement(HomePageLocators.discoverWatches);
             Thread.sleep(3000);
             logs.logInfo("Clicked on Discover Watches");
-            logs.logInfo("Clicked on Discover Watches");
             test.log(Status.INFO,"Click on discover watches");
             test.log(Status.PASS,"Clicked on Discover Watches");
         } catch (Exception e) {
             logs.logError("Clicked on Discover Watches");
+            test.log(Status.INFO,"Click on discover watches");
             test.log(Status.FAIL,"Clicked on Discover Watches");
             Screenshot.takeScreenshot("Discover watches");
             Reporter.attachScreenshotToReport("Brands", test, "Discover watches");

@@ -11,6 +11,7 @@ import com.aventstack.extentreports.ExtentTest;
 
 import pages.*;
 import utils.Base;
+import utils.EmailTrigger;
 import utils.LoggerHandler;
 import utils.Reporter;
 
@@ -29,7 +30,6 @@ public class TestRunner extends Base{
     public void configBrowser(){
         openBrowser();
     }
-
     @Test
     public void case1(){
         test=reports.createTest("case1");
@@ -141,6 +141,13 @@ public class TestRunner extends Base{
     public void flushReport()
     {
         reports.flush();
+               EmailTrigger sender = new EmailTrigger();
+       sender.sendEmail(
+           "inturipranith2456@gmail.com",
+           "Selenium Test Report",
+           "Please find the attached Extent report.",
+           System.getProperty("user.dir")+"/reports/Mayors_Report_2025.04.23.22.30.42.html"
+       );
     }
 
 }
