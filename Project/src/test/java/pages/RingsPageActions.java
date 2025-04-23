@@ -36,8 +36,8 @@ public class RingsPageActions extends Base{
     }
     public void inputOnSearchBar(){
         try{
-        
-        helper.enterText(RingsPageLocators.searchbar, "Rings");
+        String text = helper.excelReading(0, 2, 0);
+        helper.enterText(RingsPageLocators.searchbar, text);
         LoggerHandler.logInfo("Clicked on searchbar");
         test.log(Status.PASS,"Clicked on searchbar");
         }

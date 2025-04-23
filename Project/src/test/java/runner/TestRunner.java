@@ -64,7 +64,13 @@ public class TestRunner extends Base{
         c1.clickOnclick();
         c1.clickOnReturn();
     }
-
+    /*
+     * Method Name : Rolex
+     * Author Name : Praneeth
+     * Description : This method used to run the home page actions
+     * Parameters : NA
+     * Return Type : void
+     */
     @Test (priority = 1)
     public void Rolex(){
         test = reports.createTest("TestCase02");

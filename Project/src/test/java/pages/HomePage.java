@@ -8,7 +8,6 @@ import utils.Base;
 import utils.Screenshot;
 import utils.WebDriverHelper;
 import utils.Assertion;
-import utils.ExcelReader;
 import utils.LoggerHandler;
 import utils.Reporter;
 
@@ -116,9 +115,10 @@ public class HomePage extends Base{
      */
     public void clickOnDiscoverWatches(){
         try {
-            String text = ExcelReader.excelReader(System.getProperty("user.dir")+"/testdata/Excel.xlsx",0,1,0);
-            asserts.verifyURLOfPage(text);
+            
+            helper.hoverOverElement(HomePageLocators.discoverWatches);
             helper.clickOnElement(HomePageLocators.discoverWatches);
+            Thread.sleep(3000);
             LoggerHandler.logInfo("Clicked on Discover Watches");
             test.log(Status.INFO,"Click on discover watches");
             test.log(Status.PASS,"Clicked on Discover Watches");
@@ -158,15 +158,10 @@ public class HomePage extends Base{
      */
     public void verifyRolex(){
         try {
-            String da = ExcelReader.excelReader(System.getProperty("user.dir")+"/testdata/Excel.xlsx",0,0,0);
-            asserts.verifyTextInPage(HomePageLocators.rolexText,da);
+            String text = helper.excelReading(0, 0, 0);
+            asserts.verifyTextInPage(HomePageLocators.rolexText, text);
             Screenshot.takeScreenshot("Rolex Watch");
-            LoggerHandler.logInfo("Verified Rolex text");
-            test.log(Status.INFO,"Verify Rolex text");
-            test.log(Status.PASS,"Verified Rolex text");
         } catch (Exception e) {
-            LoggerHandler.logError("Verified Rolex text");
-            test.log(Status.FAIL,"Verified Rolex text");
             Screenshot.takeScreenshot("Rolex text");
             Reporter.attachScreenshotToReport("Brands", test, "Rolex Text");
         }
