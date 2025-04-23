@@ -1,5 +1,11 @@
 package pages;
 
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+
+
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
@@ -14,7 +20,8 @@ import utils.WebDriverHelper;
 
 public class ContactPageActions extends Base {
 
-        WebDriverHelper helper;
+    WebDriver driver;
+    WebDriverHelper helper;
     Assertion asserts;
     ExtentTest test;
     /*
@@ -24,10 +31,12 @@ public class ContactPageActions extends Base {
      * Parameters : N/A
      * Return Type : void
      */
-    public ContactPageActions(ExtentTest test) {
+    public ContactPageActions(WebDriver driver, ExtentTest test, LoggerHandler logs) {
+        this.driver = driver;
         helper = new WebDriverHelper(driver);
-        this.test=test;
-        asserts = new Assertion(driver);
+        this.test = test;
+        asserts = new Assertion(driver, logs);
+        this.logs = logs;
     }
    /*
      * Method Name : clickOnAccept
@@ -90,6 +99,12 @@ public class ContactPageActions extends Base {
         test.log(Status.PASS,"Clicked on Luxury");
         asserts.verifyTitleOfPage("Luxury Services | Mayors");
         asserts.verifyURLOfPage("https://www.mayors.com/luxury-services");
+
+    }
+    public void clickOnAccept(){
+        try{
+        helper.clickOnElement(RingsPageLocators.accept);
+        test.log(Status.PASS,"Clicked on accept cookies");
         }
         catch(Exception e){
             LoggerHandler.logError("Clicked Luxury");

@@ -23,10 +23,11 @@ public class RingsPageActions extends Base{
      * Parameters : N/A
      * Return Type : void
      */
-    public RingsPageActions(ExtentTest test) {
+    public RingsPageActions(ExtentTest test,LoggerHandler logs) {
         helper = new WebDriverHelper(driver);
         this.test=test;
-        asserts = new Assertion(driver);
+        asserts = new Assertion(driver,logs);
+        this.logs=logs;
     }
     /*
     * Method Name : clickOnSearch
@@ -40,7 +41,7 @@ public class RingsPageActions extends Base{
 
         helper.waitForElementToBeVisible(RingsPageLocators.searchbar, 3);
         helper.clickOnElement(RingsPageLocators.searchbar);
-        LoggerHandler.logInfo("Clicked on search");
+        logs.logInfo("Clicked on search");
         test.log(Status.PASS,"Clicked on searchbar");
         }
         catch(Exception e){
@@ -60,9 +61,11 @@ public class RingsPageActions extends Base{
     */
     public void inputOnSearchBar(){
         try{
-        
+        String text = helper.excelReading(0, 2, 0);
+        helper.enterText(RingsPageLocators.searchbar, text);
+        logs.logInfo("Clicked on searchbar");
         helper.enterText(RingsPageLocators.searchbar, "Rings");
-        LoggerHandler.logInfo("Clicked on searchbar");
+        logs.logInfo("Clicked on searchbar");
         test.log(Status.PASS,"Clicked on searchbar");
         }
         catch(Exception e){
@@ -83,7 +86,7 @@ public class RingsPageActions extends Base{
     public void enterOnSearchbar(){
         try{
         helper.enterAction(RingsPageLocators.searchbar);
-        LoggerHandler.logInfo("Entered on search");
+        logs.logInfo("Entered on search");
         test.log(Status.PASS,"Entered on search"); 
         }
         catch(Exception e){
@@ -105,7 +108,7 @@ public class RingsPageActions extends Base{
         try{
         helper.waitForElementToBeVisible(RingsPageLocators.brand, 3);
         helper.clickOnElement(RingsPageLocators.brand);
-        LoggerHandler.logInfo("Clicked on brand");
+        logs.logInfo("Clicked on brand");
         test.log(Status.PASS,"Clicked on brand"); 
         }
         catch(Exception e){
@@ -127,7 +130,7 @@ public class RingsPageActions extends Base{
         try{
         helper.waitForElementToBeVisible(RingsPageLocators.carlex, 3);
         helper.clickOnElement(RingsPageLocators.carlex);
-        LoggerHandler.logInfo("Clicked on carlex");
+        logs.logInfo("Clicked on carlex");
         test.log(Status.PASS,"Clicked on carlex"); 
         }
         catch(Exception e){
@@ -149,7 +152,7 @@ public class RingsPageActions extends Base{
         try{
         helper.waitForElementToBeVisible(RingsPageLocators.rings, 3);
         helper.clickOnElement(RingsPageLocators.rings);
-        LoggerHandler.logInfo("Clicked on rings");
+        logs.logInfo("Clicked on rings");
         test.log(Status.PASS,"Clicked on rings");
         }
         catch(Exception e){
@@ -171,7 +174,7 @@ public class RingsPageActions extends Base{
         try{
         helper.waitForElementToBeVisible(RingsPageLocators.forher, 3);
         helper.clickOnElement(RingsPageLocators.forher);
-        LoggerHandler.logInfo("Clicked on forher");
+        logs.logInfo("Clicked on forher");
         test.log(Status.PASS,"Clicked on forher");
         }
         catch(Exception e){
@@ -193,7 +196,7 @@ public class RingsPageActions extends Base{
         try{
 
         helper.clickOnElement(RingsPageLocators.first);
-        LoggerHandler.logInfo("Clicked on first");
+        logs.logInfo("Clicked on first");
         test.log(Status.PASS,"Clicked on first");
         }
         catch(Exception e){
@@ -215,7 +218,7 @@ public class RingsPageActions extends Base{
         try{
         helper.waitForElementToBeVisible(RingsPageLocators.live, 3);
         helper.clickOnElement(RingsPageLocators.live);
-        LoggerHandler.logInfo("Clicked on live");
+        logs.logInfo("Clicked on live");
         test.log(Status.PASS,"Clicked on live");
         Screenshot.takeScreenshot("src1");
         Reporter.attachScreenshotToReport("src1.png", test, "");
@@ -238,7 +241,7 @@ public class RingsPageActions extends Base{
     public void clickOnAccept(){
         try{
         helper.clickOnElement(RingsPageLocators.accept);
-        LoggerHandler.logInfo("Clicked on accept cookies");
+        logs.logInfo("Clicked on accept cookies");
         test.log(Status.PASS,"Clicked on accept cookies");
         }
         catch(Exception e){
@@ -261,6 +264,8 @@ public class RingsPageActions extends Base{
         helper.clickOnElement(RingsPageLocators.close);
         LoggerHandler.logInfo("Clicked on close");
         test.log(Status.PASS,"Clicked on close");
+        logs.logInfo("Clicked on searc");
+        test.log(Status.PASS,"Clicked on searc");
         }
         catch(Exception e){
             LoggerHandler.logError("Clicked on close");
@@ -286,7 +291,6 @@ public class RingsPageActions extends Base{
             test.log(Status.FAIL, "Failed to verify Rings");
             Screenshot.takeScreenshot("src25");
             Reporter.attachScreenshotToReport("Brands", test, "src25");
-    
         }
         
     }

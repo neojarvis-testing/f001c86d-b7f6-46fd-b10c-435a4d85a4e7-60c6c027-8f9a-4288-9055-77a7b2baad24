@@ -8,6 +8,7 @@ import uistore.WatchesLocators;
 import utils.Assertion;
 import utils.Base;
 import utils.LoggerHandler;
+import utils.Reporter;
 import utils.Screenshot;
 import utils.WebDriverHelper;
 
@@ -15,33 +16,45 @@ public class WatchesPage extends Base{
     public WebDriverHelper helper;
     ExtentTest test;
     Assertion asserts;
-    
-    public WatchesPage(ExtentTest test){
+    /*Method name:WatchesPage
+    *Author:Sumayya Sultana
+    *Description:This method is a constructor od class WatchesPage
+    *Parameters: test
+    *Return Type:none
+    */
+    public WatchesPage(ExtentTest test,LoggerHandler logs){
         helper=new WebDriverHelper(driver);
         this.test = test;
-        asserts = new Assertion(driver);
+        asserts = new Assertion(driver,logs);
+        this.logs=logs;
     }
      
-    /*a.Method name:acceptOnCookies
-    *b.Author:Sumayya Sultana
-    *Description:This Method is for accepting cookies
+    /*Method name:acceptOnCookies
+    *Author:Sumayya Sultana
+    *Description:This method is for accepting cookies
+    *Parameters: N/A
     *Return Type:void
     */
     public void acceptOnCookies(){
         try {
             helper.waitForElementToBeVisible(WatchesLocators.acceptOnCookies,5);
             helper.clickOnElement(WatchesLocators.acceptOnCookies);
-             LoggerHandler.logInfo("Clicked cookies");
-            test.log(Status.PASS, "Clicked cookies");
+            LoggerHandler.logInfo("Clicked on cookies");
+            test.log(Status.INFO,"Clicked on cookies");
+            test.log(Status.PASS, "Clicked on cookies");
         } catch (Exception e) {
-            LoggerHandler.logError("Clicked cookies");
-            test.log(Status.FAIL, "Clicked cookies");
+            LoggerHandler.logError("Unable to click on the Cookies");
+            test.log(Status.INFO,"Unable to click on the Cookies");
+            test.log(Status.FAIL, "Unable to click on the Cookies");
+            Screenshot.takeScreenshot("Cookies");
+            Reporter.attachScreenshotToReport("Cookies", test, "Cookies");
         }
     }
 
-    /*a.Method name:hoveronwatches
-    *b.Author:Sumayya Sultana
-    *Description:This Method is for hovering on watches
+    /*Method name:hoverOnWatches
+    *Author:Sumayya Sultana
+    *Description:This method is for hovering on watches
+    *Parameters: N/A
     *Return Type:void
     */
 
@@ -50,19 +63,23 @@ public class WatchesPage extends Base{
             acceptOnCookies();
             helper.waitForElementToBeVisible(WatchesLocators.hoverOnWatches,5);
             helper.hoverOverElement(WatchesLocators.hoverOnWatches);
-            LoggerHandler.logInfo("Hover on watches");
+            test.log(Status.INFO,"Hover on watches");
+            logs.logInfo("Hover on watches");
             test.log(Status.PASS, "Hover on watches");
            
         } catch (Exception e) {
-            e.printStackTrace();
-            LoggerHandler.logError("cant Hover on watches");
-            test.log(Status.FAIL, "cant Hover on watches");
+            LoggerHandler.logError("Unable to Hover on watches");
+            test.log(Status.INFO,"Unable to Hover on watches");
+            test.log(Status.FAIL, "Unable to Hover on watches");
+            Screenshot.takeScreenshot("Hover watches");
+            Reporter.attachScreenshotToReport("Hover watches", test, "Hover watches");
         }
     }
 
-    /*a.Method name:clickOnBestSellers
-    *b.Author:Sumayya Sultana
-    *Description:This Method is for clicking on Best Sellers
+    /*Method name:clickOnBestSellers
+    *Author:Sumayya Sultana
+    *Description:This method is for clicking on Best Sellers
+    *Parameters: N/A
     *Return Type:void
     */
 
@@ -70,18 +87,22 @@ public class WatchesPage extends Base{
         try {
             helper.waitForElementToBeVisible(WatchesLocators.clickOnBestSellers,5);
             helper.clickOnElement(WatchesLocators.clickOnBestSellers);
-            LoggerHandler.logInfo("clicked Best Seller");
-            test.log(Status.PASS, "clicked Best Seller");
+            LoggerHandler.logInfo("Clicked n Best Seller");
+            test.log(Status.INFO,"Clicked on Best Seller");
+            test.log(Status.PASS, "Clicked on Best Seller");
         } catch (Exception e) {
-            e.printStackTrace();
-            LoggerHandler.logError("cant clicked Best Seller");
-            test.log(Status.FAIL, "cant clicked Best Seller");
+            LoggerHandler.logError("Unable to  click on Best Seller");
+            test.log(Status.INFO,"Unable to  click on Best Seller");
+            test.log(Status.FAIL, "Unable to  click on Best Seller");
+            Screenshot.takeScreenshot("Best Sellers");
+            Reporter.attachScreenshotToReport("Best Sellers", test, "Best Sellers");
         }
     }
 
-    /*a.Method name:verify Title
-    *b.Author:Sumayya Sultana
-    *Description:This Method is for verifying Title
+    /*Method name:verifyTitle
+    *Author:Sumayya Sultana
+    *Description:This method is for verifying Title
+    *Parameters: N/A
     *Return Type:void
     */
 
@@ -89,35 +110,43 @@ public class WatchesPage extends Base{
         try {
             asserts.verifyTitleOfPage("omega");
             LoggerHandler.logInfo("Title verified");
+            test.log(Status.INFO,"Title verified");
             test.log(Status.PASS, "Title verified");
         } catch (Exception e) {
-            e.printStackTrace();
-            LoggerHandler.logError("cant verified Title");
-            test.log(Status.FAIL, "cant verified Title");
+            LoggerHandler.logError("Unable to verify Title");
+            test.log(Status.INFO,"Unable to verify Title");
+            test.log(Status.FAIL, "Unable to verify Title");
+            Screenshot.takeScreenshot("verified Title");
+            Reporter.attachScreenshotToReport("verified Title", test, "verified Title");
         }
     }
 
-    /*a.Method name:clickOnClosePopUp 
-    *b.Author:Sumayya Sultana
-    *Description:This Method is for closing pop up
+    /*Method name:clickOnClosePopUp 
+    *Author:Sumayya Sultana
+    *Description:This method is for closing pop up
+    *Parameters: N/A
     *Return Type:void
     */
     public void clickOnClosePopUp(){
         try {
             helper.waitForElementToBeVisible(WatchesLocators.clickOnCross,5);
             helper.clickOnElement(WatchesLocators.clickOnCross);
-            LoggerHandler.logInfo("clicked cross");
-            test.log(Status.PASS, "clicked cross");
+            LoggerHandler.logInfo("Clicked on close pop up");
+            test.log(Status.INFO,"Clicked on close pop up");
+            test.log(Status.PASS, "Clicked on close pop up");
         } catch (Exception e) {
-            e.printStackTrace();
-            LoggerHandler.logError("cant clicked cross");
-            test.log(Status.FAIL, "cant clicked cross");
+            LoggerHandler.logError("Unable to click on close pop up");
+            test.log(Status.INFO,"Unable to click on close pop up");
+            test.log(Status.FAIL, "Unable to click on close pop up");
+            Screenshot.takeScreenshot("Close pop up");
+            Reporter.attachScreenshotToReport("Close pop up", test, "Close pop up");
         }
     }
 
-    /*a.Method name:clickOnForHim 
-    *b.Author:Sumayya Sultana
-    *Description:This Method is for clicking on For Him
+    /*Method name:clickOnForHim 
+    *Author:Sumayya Sultana
+    *Description:This method is for clicking on For Him
+    *Parameters: N/A
     *Return Type:void
     */
     public void clickOnForHim(){
@@ -128,18 +157,22 @@ public class WatchesPage extends Base{
             }
             helper.waitForElementToBeVisible(WatchesLocators.clickOnForHim,5);
             helper.clickOnElement(WatchesLocators.clickOnForHim);
-            LoggerHandler.logInfo("clicked For Him");
-            test.log(Status.PASS, "clicked For Him");
+            LoggerHandler.logInfo("Clicked on For Him");
+            test.log(Status.INFO,"Clicked on For Him");
+            test.log(Status.PASS, "Clicked on For Him");
         } catch (Exception e) {
-            e.printStackTrace();
-            LoggerHandler.logError("cant clicked For Him");
-            test.log(Status.FAIL, "cant clicked For Him");
+            LoggerHandler.logError("Unable to click on For Him");
+            test.log(Status.INFO,"Unable to click on For Him");
+            test.log(Status.FAIL, "Unable to click on For Him");
+            Screenshot.takeScreenshot("Clicked For Him");
+            Reporter.attachScreenshotToReport("Clicked For Him", test, "Clicked For Him");
         }
     }
 
-    /*a.Method name:clickOnCartier 
-    *b.Author:Sumayya Sultana
-    *Description:This Method is for clicking on Cartier
+    /*Method name:clickOnCartier 
+    *Author:Sumayya Sultana
+    *Description:This method is for clicking on Cartier
+    *Parameters: N/A
     *Return Type:void
     */
 
@@ -147,18 +180,22 @@ public class WatchesPage extends Base{
         try {
             helper.waitForElementToBeVisible(WatchesLocators.clickOnCartier,5);
             helper.clickOnElement(WatchesLocators.clickOnCartier);
-            LoggerHandler.logInfo("clicked Cartier");
-            test.log(Status.PASS, "clicked Cartier");
+            LoggerHandler.logInfo("Clicked on Cartier");
+            test.log(Status.INFO,"Clicked on Cartier");
+            test.log(Status.PASS, "Clicked on Cartier");
         } catch (Exception e) {
-            e.printStackTrace();
-            LoggerHandler.logError("cant clicked Cartier");
-            test.log(Status.FAIL, "cant clicked Cartier");
+            LoggerHandler.logError("Unable to click on Cartier");
+            test.log(Status.INFO,"Unable to click on Cartier");
+            test.log(Status.FAIL, "Unable to click on Cartier");
+            Screenshot.takeScreenshot("Cartier");
+            Reporter.attachScreenshotToReport("Cartier", test, "Cartier");
         }
     }
 
-    /*a.Method name:clickOnDialColor
-    *b.Author:Sumayya Sultana
-    *Description:This Method is for clicking on Dial Color
+    /*Method name:clickOnDialColor
+    *Author:Sumayya Sultana
+    *Description:This method is for clicking on Dial Color
+    *Parameters: N/A
     *Return Type:void
     */
 
@@ -166,18 +203,23 @@ public class WatchesPage extends Base{
         try {
             helper.waitForElementToBeVisible(WatchesLocators.clickOnDialColor,5);
             helper.clickOnElement(WatchesLocators.clickOnDialColor);
-            LoggerHandler.logInfo("clicked Dial Color");
-            test.log(Status.PASS, "clicked Dial Color");
+            LoggerHandler.logInfo("Clicked on Color");
+            test.log(Status.INFO,"Clicked on Color");
+            test.log(Status.PASS, "Clicked on Color");
         } catch (Exception e) {
-            e.printStackTrace();
-            LoggerHandler.logError("cant clicked Dial Color");
-            test.log(Status.FAIL, "cant clicked Dial Color");
+            LoggerHandler.logError("Unable to click on Color");
+            test.log(Status.INFO,"Unable to click on Color");
+            test.log(Status.FAIL, "Unable to click on Color");
+            Screenshot.takeScreenshot("Dial Color");
+            Reporter.attachScreenshotToReport("Dial Color", test, "Dial Color");
+
         }
     }
 
-    /*a.Method name:clickOnBlack
-    *b.Author:Sumayya Sultana
-    *Description:This Method is for clicking on Black
+    /*Method name:clickOnBlack
+    *Author:Sumayya Sultana
+    *Description:This method is for clicking on Black
+    *Parameters: N/A
     *Return Type:void
     */
 
@@ -185,18 +227,23 @@ public class WatchesPage extends Base{
         try {
             helper.waitForElementToBeVisible(WatchesLocators.clickOnBlack,5);
             helper.clickOnElement(WatchesLocators.clickOnBlack);
-            LoggerHandler.logInfo("clicked on Black");
-            test.log(Status.PASS, "clicked on Black");
+            LoggerHandler.logInfo("Clicked on Black");
+            test.log(Status.INFO,"Clicked on Black");
+            test.log(Status.PASS, "Clicked on Black");
         } catch (Exception e) {
-            e.printStackTrace();
-            LoggerHandler.logError("cant clicked on Black");
-            test.log(Status.FAIL, "cant clicked on Black");
+            LoggerHandler.logError("Unable to click on Black");
+            test.log(Status.INFO,"Unable to click on Black");
+            test.log(Status.FAIL, "Unable to click on Black");
+            Screenshot.takeScreenshot("Black");
+            Reporter.attachScreenshotToReport("Black", test, "Black");
+
         }
     }
 
-    /*a.Method name:clickOnFirstProduct
-    *b.Author:Sumayya Sultana
-    *Description:This Method is for clicking on first product
+    /*Method name:clickOnFirstProduct
+    *Author:Sumayya Sultana
+    *Description:This method is for clicking on first product
+    *Parameters: N/A
     *Return Type:void
     */
 
@@ -205,18 +252,23 @@ public class WatchesPage extends Base{
         try {
             helper.waitForElementToBeVisible(WatchesLocators.clickOnFirstProduct,5);
             helper.clickOnElement(WatchesLocators.clickOnFirstProduct);
-            LoggerHandler.logInfo("clicked First Product");
-            test.log(Status.PASS, "clicked First Product");
+            LoggerHandler.logInfo("Clicked on First Product");
+            test.log(Status.INFO,"Clicked First on Product");
+            test.log(Status.PASS, "Clicked First on Product");
         } catch (Exception e) {
-            e.printStackTrace();
-            LoggerHandler.logError("cant clicked First Product");
-            test.log(Status.FAIL, "cant clicked First Product");
+            LoggerHandler.logError("Unable to click on First Product");
+            test.log(Status.INFO,"Unable to click on First Product");
+            test.log(Status.FAIL, "Unable to click on First Product");
+            Screenshot.takeScreenshot("First Product");
+            Reporter.attachScreenshotToReport("First Product", test, "First Product");
+
         }
     }
     
-    /*a.Method name:clickOnAdd
-    *b.Author:Sumayya Sultana
-    *Description:This Method is for clicking on add to cart
+    /*Method name:clickOnAdd
+    *Author:Sumayya Sultana
+    *Description:This method is for clicking on add to cart
+    *Parameters: N/A
     *Return Type:void
     */
     public void clickOnAdd(){
@@ -224,14 +276,24 @@ public class WatchesPage extends Base{
             helper.waitForElementToBeVisible(WatchesLocators.clickOnAdd,5);
             helper.clickOnElement(WatchesLocators.clickOnAdd);
             Screenshot.takeScreenshot("Add To Shopping Bag");
-            LoggerHandler.logInfo("clicked add to cart");
-            test.log(Status.PASS, "clicked add to cart");
+            LoggerHandler.logInfo("Clicked on add to cart");
+            test.log(Status.INFO,"Clicked on add to cart");
+            test.log(Status.PASS, "Clicked on add to cart");
         } catch (Exception e) {
-            e.printStackTrace();
-            LoggerHandler.logError("cant clicked add to cart");
-            test.log(Status.FAIL, "cant clicked add to cart");
+            LoggerHandler.logError("Unable to click on add to cart");
+            test.log(Status.INFO,"Unable to click on add to cart");
+            test.log(Status.FAIL, "Unable to click on add to cart");
+            Screenshot.takeScreenshot("Add to cart");
+            Reporter.attachScreenshotToReport("Add to cart", test, "Add to cart");
         }
     }
+
+    /*Method name:testcase1
+    *Author:Sumayya Sultana
+    *Description:This method is cluster method for all the above actions
+    *Parameters: N/A
+    *Return Type:void
+    */
 
     public void testcase1(){
         hoverOnWatches();
@@ -242,6 +304,5 @@ public class WatchesPage extends Base{
         clickOnBlack();
         clickOnFirstProduct();
         clickOnAdd();
-
     } 
 }
